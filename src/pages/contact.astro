@@ -1,0 +1,278 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact Us">
+  <!-- Page Header -->
+  <section class="bg-gradient-to-r from-primary to-secondary text-white py-16">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold text-center">Contact Us</h1>
+      <p class="text-xl text-center mt-4">Let's discuss how we can help your business</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        
+        <!-- Contact Form -->
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h2 class="text-2xl font-bold mb-6">Send Us a Message</h2>
+          <form id="contact-form" class="space-y-4" action="/api/contact" method="POST">
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">
+                  First Name <span class="text-red-500">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="firstName" 
+                  name="firstName" 
+                  required 
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                  placeholder="John"
+                />
+              </div>
+              <div>
+                <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">
+                  Last Name <span class="text-red-500">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="lastName" 
+                  name="lastName" 
+                  required 
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                  placeholder="Doe"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+                Email Address <span class="text-red-500">*</span>
+              </label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                placeholder="john@example.com"
+              />
+            </div>
+
+            <div>
+              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
+                Phone Number
+              </label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                placeholder="+91 98765 43210"
+              />
+            </div>
+
+            <div>
+              <label for="company" class="block text-sm font-medium text-gray-700 mb-1">
+                Company
+              </label>
+              <input 
+                type="text" 
+                id="company" 
+                name="company" 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                placeholder="Your Company Name"
+              />
+            </div>
+
+            <div>
+              <label for="service" class="block text-sm font-medium text-gray-700 mb-1">
+                Service Interested In <span class="text-red-500">*</span>
+              </label>
+              <select 
+                id="service" 
+                name="service" 
+                required 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+              >
+                <option value="">Select a service</option>
+                <optgroup label="Ritesource Infosystems">
+                  <option value="healthcare-qa">Healthcare Documentation QA</option>
+                  <option value="software-testing">Software Testing Services</option>
+                </optgroup>
+                <optgroup label="eExperts Data Solutions">
+                  <option value="geospatial">Geospatial Data Services</option>
+                  <option value="electronics">Electronics Data Solutions</option>
+                  <option value="ai-workflows">AI-Driven Workflows</option>
+                </optgroup>
+                <option value="other">Other / Multiple Services</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">
+                Message <span class="text-red-500">*</span>
+              </label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="4" 
+                required 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                placeholder="Tell us about your project requirements..."
+              ></textarea>
+            </div>
+
+            <div>
+              <label for="attachment" class="block text-sm font-medium text-gray-700 mb-1">
+                Attachment (Optional)
+              </label>
+              <input 
+                type="file" 
+                id="attachment" 
+                name="attachment" 
+                accept=".pdf,.doc,.docx,.xls,.xlsx,.zip"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+              />
+              <p class="text-xs text-gray-500 mt-1">Accepted formats: PDF, DOC, DOCX, XLS, XLSX, ZIP (Max 10MB)</p>
+            </div>
+
+            <button 
+              type="submit" 
+              class="w-full bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition"
+            >
+              Send Message
+            </button>
+          </form>
+
+          <!-- Success Message (hidden by default) -->
+          <div id="success-message" class="hidden mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+            Thank you for your message! We'll get back to you within 24 hours.
+          </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="space-y-8">
+          <!-- Office Hours -->
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <h3 class="text-2xl font-bold mb-4">Office Hours</h3>
+            <div class="space-y-2">
+              <div class="flex justify-between">
+                <span class="font-medium">Monday - Friday:</span>
+                <span>9:00 AM - 6:00 PM</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="font-medium">Saturday:</span>
+                <span>9:00 AM - 1:00 PM</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="font-medium">Sunday:</span>
+                <span>Closed</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ahmedabad Office -->
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <h3 class="text-xl font-bold mb-4 text-primary">Ahmedabad Office</h3>
+            <div class="space-y-3">
+              <div class="flex items-start">
+                <span class="text-2xl mr-3">📍</span>
+                <div>
+                  <p>210, Shivalik Curv,</p>
+                  <p>Near Pakwan Cross Road,</p>
+                  <p>Bodakdev, Ahmedabad - 380054</p>
+                  <p>Gujarat, India</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <span class="text-2xl mr-3">📞</span>
+                <a href="tel:+917948955466" class="text-primary hover:text-secondary transition">
+                  +91 79 4895 5466
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Valsad Office -->
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <h3 class="text-xl font-bold mb-4 text-secondary">Valsad Office</h3>
+            <div class="space-y-3">
+              <div class="flex items-start">
+                <span class="text-2xl mr-3">📍</span>
+                <div>
+                  <p>506, 5th floor, Millennium Empire,</p>
+                  <p>Near D-Mart, Valsad - 396001</p>
+                  <p>Gujarat, India</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Email Addresses -->
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <h3 class="text-xl font-bold mb-4">Email Us</h3>
+            <div class="space-y-2">
+              <a href="mailto:info@ritesource.com" class="flex items-center text-primary hover:text-secondary transition">
+                <span class="text-2xl mr-3">✉️</span>
+                info@ritesource.com
+              </a>
+              <a href="mailto:info@eexperts.info" class="flex items-center text-primary hover:text-secondary transition">
+                <span class="text-2xl mr-3">✉️</span>
+                info@eexperts.info
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section class="bg-gray-100 py-12">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-2xl font-bold text-center mb-8">Find Us</h2>
+        <div class="bg-white rounded-lg shadow-lg p-2">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.8969745456!2d72.49671!3d23.027474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b3f4b8b5e5f%3A0x7e5e5e5e5e5e5e5e!2sShivalik%20Curv%2C%20Bodakdev%2C%20Ahmedabad!5e0!3m2!1sen!2sin!4v1234567890"
+            width="100%" 
+            height="400" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            class="rounded-lg"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Simple form handling (will be replaced with Cloudflare Workers later)
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const successMessage = document.getElementById('success-message');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    // For now, just show success message
+    // Later this will send to Cloudflare Workers
+    successMessage?.classList.remove('hidden');
+    form.reset();
+    
+    // Scroll to success message
+    successMessage?.scrollIntoView({ behavior: 'smooth' });
+    
+    // Hide message after 5 seconds
+    setTimeout(() => {
+      successMessage?.classList.add('hidden');
+    }, 5000);
+  });
+</script>
