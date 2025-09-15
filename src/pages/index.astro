@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Home">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-primary to-secondary text-white py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          Two Companies, One Vision
+        </h1>
+        <p class="text-xl md:text-2xl mb-8">
+          Excellence in Quality Assurance and Data Solutions
+        </p>
+        <p class="text-lg max-w-3xl mx-auto mb-8">
+          Ritesource Infosystems LLP and Efficiency Experts Data Solutions LLP partner with businesses worldwide to deliver precision, adaptability, and speed in technical solutions.
+        </p>
+        <div class="space-x-4">
+          <a href="/services" class="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition inline-block">
+            Our Services
+          </a>
+          <a href="/contact" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition inline-block">
+            Get in Touch
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Companies Overview -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Ritesource -->
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h2 class="text-3xl font-bold text-primary mb-4">Ritesource Infosystems LLP</h2>
+          <p class="text-gray-600 mb-6">
+            Established in 2008, evolved from PCB engineering to become a leader in quality assurance services.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <span class="text-secondary mr-2">✓</span>
+              <span>Healthcare Documentation QA</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-secondary mr-2">✓</span>
+              <span>Medical Transcription Review</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-secondary mr-2">✓</span>
+              <span>Software Testing Services</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-secondary mr-2">✓</span>
+              <span>HIPAA Compliant Processes</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- eExperts -->
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h2 class="text-3xl font-bold text-secondary mb-4">Efficiency Experts Data Solutions LLP</h2>
+          <p class="text-gray-600 mb-6">
+            Launched in 2023 to address the growing demand for specialized data services and technical solutions.
+          </p>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <span class="text-primary mr-2">✓</span>
+              <span>Geospatial Data Analysis</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary mr-2">✓</span>
+              <span>Electronics Component Data</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary mr-2">✓</span>
+              <span>AI-Driven Workflows</span>
+            </li>
+            <li class="flex items-start">
+              <span class="text-primary mr-2">✓</span>
+              <span>Map Digitization Services</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics -->
+  <section class="bg-gray-100 py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-4xl font-bold text-primary">17+</div>
+          <div class="text-gray-600 mt-2">Years of Excellence</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-secondary">65+</div>
+          <div class="text-gray-600 mt-2">Team Members</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-primary">2000+</div>
+          <div class="text-gray-600 mt-2">Miles Data Processed</div>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-secondary">99.5%</div>
+          <div class="text-gray-600 mt-2">Accuracy Rate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+        Why <span class="text-primary">Choose</span> <span class="text-secondary">Us?</span>
+      </h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🎯</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Detail-Driven</h3>
+          <p class="text-gray-600">
+            We understand the "why" behind your requests and help solve the bigger picture.
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="bg-secondary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">⚡</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Fast & Reliable</h3>
+          <p class="text-gray-600">
+            Quick turnarounds without compromising quality, backed by proven processes.
+          </p>
+        </div>
+        <div class="text-center">
+          <div class="bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-2xl">🔒</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-3">Data Security</h3>
+          <p class="text-gray-600">
+            HIPAA-compliant processes with strict confidentiality protocols.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-r from-secondary to-primary text-white py-16">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Ready to Transform Your Business?
+      </h2>
+      <p class="text-xl mb-8">
+        Let's create solutions that move your business forward - fast and right.
+      </p>
+      <a href="/contact" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition inline-block">
+        Start Your Project Today
+      </a>
+    </div>
+  </section>
+</BaseLayout>
