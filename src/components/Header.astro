@@ -1,0 +1,52 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<header class="bg-white shadow-lg sticky top-0 z-50">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center py-4">
+      <!-- Logo Section -->
+      <div class="flex items-center space-x-2">
+        <a href="/" class="flex items-center space-x-3">
+          <div class="text-2xl font-bold">
+            <span class="text-primary">Ritesource</span>
+            <span class="text-dark mx-1">&</span>
+            <span class="text-secondary">eExperts</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <a href="/" class={`hover:text-secondary transition ${currentPath === '/' ? 'text-secondary font-semibold' : 'text-dark'}`}>Home</a>
+        <a href="/about" class={`hover:text-secondary transition ${currentPath === '/about/' ? 'text-secondary font-semibold' : 'text-dark'}`}>About Us</a>
+        <a href="/services" class={`hover:text-secondary transition ${currentPath === '/services/' ? 'text-secondary font-semibold' : 'text-dark'}`}>Services</a>
+        <a href="/contact" class={`hover:text-secondary transition ${currentPath === '/contact/' ? 'text-secondary font-semibold' : 'text-dark'}`}>Contact</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden" id="mobile-menu-button">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="hidden md:hidden pb-4">
+      <a href="/" class="block py-2 hover:text-secondary transition">Home</a>
+      <a href="/about" class="block py-2 hover:text-secondary transition">About Us</a>
+      <a href="/services" class="block py-2 hover:text-secondary transition">Services</a>
+      <a href="/contact" class="block py-2 hover:text-secondary transition">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>
