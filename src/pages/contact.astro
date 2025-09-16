@@ -1,227 +1,617 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Business hours configuration (IST)
+const businessHours = {
+  monday: { open: '09:00', close: '18:00' },
+  tuesday: { open: '09:00', close: '18:00' },
+  wednesday: { open: '09:00', close: '18:00' },
+  thursday: { open: '09:00', close: '18:00' },
+  friday: { open: '09:00', close: '18:00' },
+  saturday: { open: '09:00', close: '13:00' },
+  sunday: { open: 'closed', close: 'closed' }
+};
+
+// FAQ data
+const faqs = [
+  {
+    question: "What services do you offer?",
+    answer: "We offer comprehensive Quality Assurance services through Ritesource (Healthcare Documentation QA, Software Testing) and Data Solutions through eExperts (Geospatial Analysis, Electronics Data Services, AI-Driven Workflows)."
+  },
+  {
+    question: "What's your typical turnaround time?",
+    answer: "For most projects, we deliver within 24-48 hours. Complex projects may take 3-5 business days. Rush delivery options are available for urgent requirements."
+  },
+  {
+    question: "Do you work with international clients?",
+    answer: "Yes! We work with clients globally, particularly in North America. Our teams work across time zones to ensure seamless communication and delivery."
+  },
+  {
+    question: "What are your data security measures?",
+    answer: "We are HIPAA compliant with strict confidentiality protocols. All data is handled through secure channels with encryption, access controls, and regular security audits."
+  },
+  {
+    question: "How do you ensure quality?",
+    answer: "We maintain a 99.5% accuracy rate through multi-level quality checks, experienced teams, and continuous process improvement. Every project goes through our rigorous QA process."
+  },
+  {
+    question: "Can you handle large-scale projects?",
+    answer: "Absolutely! With 65+ team members and scalable infrastructure, we can handle projects of any size. We've processed 2000+ miles of geospatial data and 1L+ electronics components data."
+  },
+  {
+    question: "What industries do you specialize in?",
+    answer: "Healthcare, Software Development, Electronics Manufacturing, and Geospatial/Mapping industries. Our expertise spans both technical and domain-specific requirements."
+  },
+  {
+    question: "How do we get started?",
+    answer: "Simply fill out our contact form, schedule a call, or reach out via WhatsApp. We'll discuss your requirements and provide a customized solution within 24 hours."
+  }
+];
 ---
 
-<BaseLayout title="Contact Us">
-  <!-- Page Header -->
-  <section class="bg-gradient-to-r from-primary to-secondary text-white py-16">
+<BaseLayout 
+  title="Contact Us" 
+  description="Get in touch with Ritesource & eExperts for Quality Assurance and Data Solutions. Offices in Ahmedabad and Valsad, Gujarat."
+>
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ritesource Infosystems & Efficiency Experts Data Solutions",
+    "alternateName": ["Ritesource", "eExperts"],
+    "description": "Quality Assurance and Data Solutions provider with 17+ years of experience",
+    "address": [{
+      "@type": "PostalAddress",
+      "streetAddress": "D-607 Ganesh Glory-11, Jagatpur road, off SG Highway",
+      "addressLocality": "Ahmedabad",
+      "addressRegion": "Gujarat",
+      "postalCode": "382470",
+      "addressCountry": "IN"
+    }, {
+      "@type": "PostalAddress",
+      "streetAddress": "506, 5th floor, Millennium Empire, Near D-Mart",
+      "addressLocality": "Valsad",
+      "addressRegion": "Gujarat",
+      "postalCode": "396001",
+      "addressCountry": "IN"
+    }],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "availableLanguage": ["en", "hi", "gu"]
+    },
+    "foundingDate": "2008",
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "value": 65,
+      "minValue": 60,
+      "maxValue": 70
+    }
+  })} />
+
+  <!-- Page Header with Business Status -->
+  <section class="bg-gradient-to-r from-primary to-secondary text-white py-16 relative">
     <div class="container mx-auto px-4">
-      <h1 class="text-4xl md:text-5xl font-bold text-center">Contact Us</h1>
-      <p class="text-xl text-center mt-4">Let's discuss how we can help your business</p>
+      <div class="text-center">
+        <h1 class="text-4xl md:text-5xl font-bold">Contact Us</h1>
+        <p class="text-xl mt-4">Let's discuss how we can help your business</p>
+        
+        <!-- Business Hours Status -->
+        <div id="business-status" class="mt-6 inline-flex items-center bg-white/20 backdrop-blur rounded-full px-6 py-2">
+          <span id="status-dot" class="w-3 h-3 rounded-full mr-2"></span>
+          <span id="status-text" class="font-medium"></span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Trust Signals Bar -->
+  <section class="bg-gray-50 py-6 border-b">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-wrap justify-center items-center gap-8 text-center">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">🏢</span>
+          <div class="text-left">
+            <div class="text-2xl font-bold text-primary">17+</div>
+            <div class="text-sm text-gray-600">Years in Business</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">👥</span>
+          <div class="text-left">
+            <div class="text-2xl font-bold text-secondary">65+</div>
+            <div class="text-sm text-gray-600">Team Members</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">✅</span>
+          <div class="text-left">
+            <div class="text-2xl font-bold text-primary">99.5%</div>
+            <div class="text-sm text-gray-600">Accuracy Rate</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">🔒</span>
+          <div class="text-left">
+            <div class="text-xl font-bold text-secondary">HIPAA</div>
+            <div class="text-sm text-gray-600">Compliant</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Multi-Step Contact Form Section -->
   <section class="py-16">
     <div class="container mx-auto px-4">
-      <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+      <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
         
-        <!-- Contact Form -->
+        <!-- Multi-Step Contact Form -->
         <div class="bg-white rounded-lg shadow-lg p-8">
-          <h2 class="text-2xl font-bold mb-6">Send Us a Message</h2>
-          <form id="contact-form" class="space-y-4" action="/api/contact" method="POST">
-            <div class="grid md:grid-cols-2 gap-4">
-              <div>
-                <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">
-                  First Name <span class="text-red-500">*</span>
-                </label>
-                <input 
-                  type="text" 
-                  id="firstName" 
-                  name="firstName" 
-                  required 
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
-                  placeholder="John"
-                />
+          <div class="mb-6">
+            <h2 class="text-2xl font-bold mb-2">Send Us a Message</h2>
+            <p class="text-gray-600">We'll respond within 24 hours</p>
+            
+            <!-- Step Indicator -->
+            <div class="flex items-center justify-between mt-6">
+              <div class="flex-1">
+                <div class="flex items-center">
+                  <div id="step1-circle" class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">1</div>
+                  <div class="flex-1 h-1 bg-primary mx-2"></div>
+                </div>
+                <p class="text-xs mt-1">Service</p>
               </div>
-              <div>
-                <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">
-                  Last Name <span class="text-red-500">*</span>
-                </label>
-                <input 
-                  type="text" 
-                  id="lastName" 
-                  name="lastName" 
-                  required 
-                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
-                  placeholder="Doe"
-                />
+              <div class="flex-1">
+                <div class="flex items-center">
+                  <div id="step2-circle" class="w-10 h-10 bg-gray-300 text-white rounded-full flex items-center justify-center font-bold">2</div>
+                  <div class="flex-1 h-1 bg-gray-300 mx-2"></div>
+                </div>
+                <p class="text-xs mt-1 text-gray-400">Details</p>
+              </div>
+              <div class="flex-1">
+                <div class="flex items-center">
+                  <div id="step3-circle" class="w-10 h-10 bg-gray-300 text-white rounded-full flex items-center justify-center font-bold">3</div>
+                </div>
+                <p class="text-xs mt-1 text-gray-400">Contact</p>
               </div>
             </div>
+          </div>
 
-            <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
-                Email Address <span class="text-red-500">*</span>
-              </label>
-              <input 
-                type="email" 
-                id="email" 
-                name="email" 
-                required 
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
-                placeholder="john@example.com"
-              />
+          <form id="contact-form" class="space-y-4">
+            <!-- Step 1: Service Selection -->
+            <div id="step1" class="step-content">
+              <div class="space-y-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-3">
+                    Which service are you interested in? <span class="text-red-500">*</span>
+                  </label>
+                  <div class="space-y-2">
+                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
+                      <input type="radio" name="service" value="healthcare-qa" class="mr-3" required>
+                      <div>
+                        <div class="font-medium">Healthcare Documentation QA</div>
+                        <div class="text-sm text-gray-500">Medical transcription, clinical documentation</div>
+                      </div>
+                    </label>
+                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
+                      <input type="radio" name="service" value="software-testing" class="mr-3">
+                      <div>
+                        <div class="font-medium">Software Testing Services</div>
+                        <div class="text-sm text-gray-500">Manual & automated testing, QA</div>
+                      </div>
+                    </label>
+                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
+                      <input type="radio" name="service" value="geospatial" class="mr-3">
+                      <div>
+                        <div class="font-medium">Geospatial Data Services</div>
+                        <div class="text-sm text-gray-500">GIS analysis, map digitization</div>
+                      </div>
+                    </label>
+                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
+                      <input type="radio" name="service" value="electronics" class="mr-3">
+                      <div>
+                        <div class="font-medium">Electronics Data Solutions</div>
+                        <div class="text-sm text-gray-500">Component data, BOM optimization</div>
+                      </div>
+                    </label>
+                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
+                      <input type="radio" name="service" value="ai-workflows" class="mr-3">
+                      <div>
+                        <div class="font-medium">AI-Driven Workflows</div>
+                        <div class="text-sm text-gray-500">Process automation, intelligent solutions</div>
+                      </div>
+                    </label>
+                    <label class="flex items-center p-3 border rounded-lg cursor-pointer hover:bg-gray-50">
+                      <input type="radio" name="service" value="multiple" class="mr-3">
+                      <div>
+                        <div class="font-medium">Multiple Services</div>
+                        <div class="text-sm text-gray-500">I need help with several services</div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
+                
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">
+                    Project Timeline
+                  </label>
+                  <select name="timeline" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent">
+                    <option value="">Select timeline</option>
+                    <option value="immediate">Immediate (Within a week)</option>
+                    <option value="month">Within a month</option>
+                    <option value="quarter">Within 3 months</option>
+                    <option value="planning">Just planning</option>
+                  </select>
+                </div>
+
+                <button type="button" onclick="nextStep(2)" class="w-full bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition">
+                  Next: Project Details →
+                </button>
+              </div>
             </div>
 
-            <div>
-              <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
-                Phone Number
-              </label>
-              <input 
-                type="tel" 
-                id="phone" 
-                name="phone" 
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
-                placeholder="+91 98765 43210"
-              />
+            <!-- Step 2: Project Details -->
+            <div id="step2" class="step-content hidden">
+              <div class="space-y-4">
+                <div>
+                  <label for="company" class="block text-sm font-medium text-gray-700 mb-1">
+                    Company Name
+                  </label>
+                  <input 
+                    type="text" 
+                    id="company" 
+                    name="company" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                    placeholder="Your Company Name"
+                  />
+                </div>
+
+                <div>
+                  <label for="project-size" class="block text-sm font-medium text-gray-700 mb-1">
+                    Estimated Project Size
+                  </label>
+                  <select 
+                    id="project-size" 
+                    name="projectSize" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                  >
+                    <option value="">Select project size</option>
+                    <option value="small">Small (< 1 month)</option>
+                    <option value="medium">Medium (1-3 months)</option>
+                    <option value="large">Large (3-6 months)</option>
+                    <option value="ongoing">Ongoing/Long-term</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="message" class="block text-sm font-medium text-gray-700 mb-1">
+                    Project Description <span class="text-red-500">*</span>
+                  </label>
+                  <textarea 
+                    id="message" 
+                    name="message" 
+                    rows="4" 
+                    required 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                    placeholder="Tell us about your project requirements, goals, and any specific needs..."
+                  ></textarea>
+                </div>
+
+                <div>
+                  <label for="attachment" class="block text-sm font-medium text-gray-700 mb-1">
+                    Attachment (Optional)
+                  </label>
+                  <input 
+                    type="file" 
+                    id="attachment" 
+                    name="attachment" 
+                    accept=".pdf,.doc,.docx,.xls,.xlsx,.zip"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                  />
+                  <p class="text-xs text-gray-500 mt-1">PDF, DOC, DOCX, XLS, XLSX, ZIP (Max 10MB)</p>
+                </div>
+
+                <div class="flex gap-3">
+                  <button type="button" onclick="previousStep(1)" class="flex-1 bg-gray-200 text-gray-700 font-semibold py-3 px-6 rounded-lg hover:bg-gray-300 transition">
+                    ← Back
+                  </button>
+                  <button type="button" onclick="nextStep(3)" class="flex-1 bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition">
+                    Next: Contact Info →
+                  </button>
+                </div>
+              </div>
             </div>
 
-            <div>
-              <label for="company" class="block text-sm font-medium text-gray-700 mb-1">
-                Company
-              </label>
-              <input 
-                type="text" 
-                id="company" 
-                name="company" 
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
-                placeholder="Your Company Name"
-              />
-            </div>
+            <!-- Step 3: Contact Information -->
+            <div id="step3" class="step-content hidden">
+              <div class="space-y-4">
+                <div class="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">
+                      First Name <span class="text-red-500">*</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      id="firstName" 
+                      name="firstName" 
+                      required 
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                      placeholder="John"
+                    />
+                  </div>
+                  <div>
+                    <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">
+                      Last Name <span class="text-red-500">*</span>
+                    </label>
+                    <input 
+                      type="text" 
+                      id="lastName" 
+                      name="lastName" 
+                      required 
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                      placeholder="Doe"
+                    />
+                  </div>
+                </div>
 
-            <div>
-              <label for="service" class="block text-sm font-medium text-gray-700 mb-1">
-                Service Interested In <span class="text-red-500">*</span>
-              </label>
-              <select 
-                id="service" 
-                name="service" 
-                required 
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
-              >
-                <option value="">Select a service</option>
-                <optgroup label="Ritesource Infosystems">
-                  <option value="healthcare-qa">Healthcare Documentation QA</option>
-                  <option value="software-testing">Software Testing Services</option>
-                </optgroup>
-                <optgroup label="eExperts Data Solutions">
-                  <option value="geospatial">Geospatial Data Services</option>
-                  <option value="electronics">Electronics Data Solutions</option>
-                  <option value="ai-workflows">AI-Driven Workflows</option>
-                </optgroup>
-                <option value="other">Other / Multiple Services</option>
-              </select>
-            </div>
+                <div>
+                  <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+                    Email Address <span class="text-red-500">*</span>
+                  </label>
+                  <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                    placeholder="john@example.com"
+                  />
+                </div>
 
-            <div>
-              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">
-                Message <span class="text-red-500">*</span>
-              </label>
-              <textarea 
-                id="message" 
-                name="message" 
-                rows="4" 
-                required 
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
-                placeholder="Tell us about your project requirements..."
-              ></textarea>
-            </div>
+                <div>
+                  <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">
+                    Phone Number
+                  </label>
+                  <input 
+                    type="tel" 
+                    id="phone" 
+                    name="phone" 
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
+                    placeholder="+91 98765 43210"
+                  />
+                </div>
 
-            <div>
-              <label for="attachment" class="block text-sm font-medium text-gray-700 mb-1">
-                Attachment (Optional)
-              </label>
-              <input 
-                type="file" 
-                id="attachment" 
-                name="attachment" 
-                accept=".pdf,.doc,.docx,.xls,.xlsx,.zip"
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent"
-              />
-              <p class="text-xs text-gray-500 mt-1">Accepted formats: PDF, DOC, DOCX, XLS, XLSX, ZIP (Max 10MB)</p>
-            </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1">
+                    Preferred Contact Method
+                  </label>
+                  <div class="flex gap-4">
+                    <label class="flex items-center">
+                      <input type="radio" name="contactMethod" value="email" checked class="mr-2">
+                      <span>Email</span>
+                    </label>
+                    <label class="flex items-center">
+                      <input type="radio" name="contactMethod" value="phone" class="mr-2">
+                      <span>Phone</span>
+                    </label>
+                    <label class="flex items-center">
+                      <input type="radio" name="contactMethod" value="whatsapp" class="mr-2">
+                      <span>WhatsApp</span>
+                    </label>
+                  </div>
+                </div>
 
-            <!-- Honeypot field for spam protection (hidden from users) -->
-            <div style="position: absolute; left: -5000px;" aria-hidden="true">
-              <input type="text" name="website" tabindex="-1" autocomplete="off" />
-            </div>
+                <!-- Honeypot field for spam protection -->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                  <input type="text" name="website" tabindex="-1" autocomplete="off" />
+                </div>
 
-            <button 
-              type="submit" 
-              class="w-full bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition"
-            >
-              Send Message
-            </button>
+                <div class="flex gap-3">
+                  <button type="button" onclick="previousStep(2)" class="flex-1 bg-gray-200 text-gray-700 font-semibold py-3 px-6 rounded-lg hover:bg-gray-300 transition">
+                    ← Back
+                  </button>
+                  <button 
+                    type="submit" 
+                    id="submit-btn"
+                    class="flex-1 bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition flex items-center justify-center"
+                  >
+                    <span id="submit-text">Send Message</span>
+                    <svg id="submit-spinner" class="hidden animate-spin ml-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
           </form>
 
-          <!-- Success Message (hidden by default) -->
+          <!-- Success Message -->
           <div id="success-message" class="hidden mt-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
-            Thank you for your message! We'll get back to you within 24 hours.
+            <div class="flex items-center">
+              <span class="text-2xl mr-2">✅</span>
+              <div>
+                <div class="font-semibold">Thank you for your message!</div>
+                <div class="text-sm">We'll get back to you within 24 hours.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Error Message -->
+          <div id="error-message" class="hidden mt-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+            <div class="flex items-center">
+              <span class="text-2xl mr-2">⚠️</span>
+              <div>
+                <div class="font-semibold">Oops! Something went wrong.</div>
+                <div class="text-sm">Please try again or contact us directly.</div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Contact Information -->
-        <div class="space-y-8">
-          <!-- Ahmedabad Office -->
-          <div class="bg-white rounded-lg shadow-lg p-8">
-            <h3 class="text-xl font-bold mb-4 text-primary">Ahmedabad Office</h3>
+        <!-- Contact Information & Quick Actions -->
+        <div class="space-y-6">
+          <!-- Quick Contact Options -->
+          <div class="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg p-6">
+            <h3 class="text-xl font-bold mb-4">Quick Contact Options</h3>
             <div class="space-y-3">
-              <div class="flex items-start">
-                <span class="text-2xl mr-3">📍</span>
-                <div>
-                  <p>D-607 Ganesh Glory-11,</p>
-                  <p>Jagatpur road, off SG Highway,</p>
-                  <p>Ahmedabad - 382470</p>
-                  <p>Gujarat, India</p>
+              <!-- WhatsApp Button -->
+              <a 
+                href="https://wa.me/919876543210?text=Hi,%20I'm%20interested%20in%20your%20services" 
+                target="_blank"
+                class="flex items-center justify-between bg-green-500 text-white p-4 rounded-lg hover:bg-green-600 transition"
+              >
+                <div class="flex items-center">
+                  <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+                  </svg>
+                  <span class="font-semibold">Chat on WhatsApp</span>
+                </div>
+                <span class="text-sm">Quick Response</span>
+              </a>
+
+              <!-- Schedule Call Button -->
+              <button 
+                onclick="openCalendly()"
+                class="w-full flex items-center justify-between bg-blue-500 text-white p-4 rounded-lg hover:bg-blue-600 transition"
+              >
+                <div class="flex items-center">
+                  <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                  </svg>
+                  <span class="font-semibold">Schedule a Call</span>
+                </div>
+                <span class="text-sm">Book Time Slot</span>
+              </button>
+
+              <!-- Request Callback -->
+              <button 
+                onclick="requestCallback()"
+                class="w-full flex items-center justify-between bg-purple-500 text-white p-4 rounded-lg hover:bg-purple-600 transition"
+              >
+                <div class="flex items-center">
+                  <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                  </svg>
+                  <span class="font-semibold">Request Callback</span>
+                </div>
+                <span class="text-sm">We'll Call You</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Office Locations -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-bold mb-4">Our Offices</h3>
+            
+            <!-- Ahmedabad Office -->
+            <div class="mb-6 pb-6 border-b">
+              <h4 class="font-semibold text-primary mb-2">Ahmedabad Office</h4>
+              <div class="text-gray-600 text-sm space-y-1">
+                <p>D-607 Ganesh Glory-11</p>
+                <p>Jagatpur road, off SG Highway</p>
+                <p>Ahmedabad - 382470, Gujarat</p>
+              </div>
+            </div>
+
+            <!-- Valsad Office -->
+            <div class="mb-6">
+              <h4 class="font-semibold text-secondary mb-2">Valsad Office</h4>
+              <div class="text-gray-600 text-sm space-y-1">
+                <p>506, 5th floor, Millennium Empire</p>
+                <p>Near D-Mart</p>
+                <p>Valsad - 396001, Gujarat</p>
+              </div>
+            </div>
+
+            <!-- Business Hours -->
+            <div class="bg-gray-50 rounded-lg p-4">
+              <h4 class="font-semibold mb-3">Business Hours (IST)</h4>
+              <div class="text-sm space-y-1">
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Mon - Fri:</span>
+                  <span class="font-medium">9:00 AM - 6:00 PM</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Saturday:</span>
+                  <span class="font-medium">9:00 AM - 1:00 PM</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-gray-600">Sunday:</span>
+                  <span class="font-medium text-red-500">Closed</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Valsad Office -->
-          <div class="bg-white rounded-lg shadow-lg p-8">
-            <h3 class="text-xl font-bold mb-4 text-secondary">Valsad Office</h3>
-            <div class="space-y-3">
-              <div class="flex items-start">
-                <span class="text-2xl mr-3">📍</span>
-                <div>
-                  <p>506, 5th floor, Millennium Empire,</p>
-                  <p>Near D-Mart, Valsad - 396001</p>
-                  <p>Gujarat, India</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Email Addresses with Anti-Spam Protection -->
-          <div class="bg-white rounded-lg shadow-lg p-8">
+          <!-- Email Section with Protection -->
+          <div class="bg-white rounded-lg shadow-lg p-6">
             <h3 class="text-xl font-bold mb-4">Email Us</h3>
             <div class="space-y-3">
               <div class="flex items-center">
                 <span class="text-2xl mr-3">✉️</span>
                 <span 
-                  class="email-protected text-primary hover:text-secondary transition cursor-pointer select-all"
+                  class="email-protected text-primary hover:text-secondary transition cursor-pointer"
                   data-user="info"
                   data-domain="ritesource.com"
+                  onclick="revealEmail(this)"
                 >
-                  <span class="email-text">Click to reveal email</span>
+                  <span class="email-text">Click to reveal</span>
                 </span>
               </div>
               <div class="flex items-center">
                 <span class="text-2xl mr-3">✉️</span>
                 <span 
-                  class="email-protected text-primary hover:text-secondary transition cursor-pointer select-all"
+                  class="email-protected text-primary hover:text-secondary transition cursor-pointer"
                   data-user="info"
                   data-domain="eexperts.info"
+                  onclick="revealEmail(this)"
                 >
-                  <span class="email-text">Click to reveal email</span>
+                  <span class="email-text">Click to reveal</span>
                 </span>
               </div>
-              <p class="text-xs text-gray-500 mt-3 italic">
-                Click on the email addresses above to reveal them
+              <p class="text-xs text-gray-500 italic">
+                Click to reveal and copy email address
               </p>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="bg-gray-50 py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+          {faqs.map((faq, index) => (
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <button
+                onclick={`toggleFAQ(${index})`}
+                class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition"
+              >
+                <span class="font-semibold text-gray-800">{faq.question}</span>
+                <svg 
+                  id={`faq-icon-${index}`}
+                  class="w-5 h-5 text-gray-500 transform transition-transform duration-200" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </button>
+              <div 
+                id={`faq-answer-${index}`}
+                class="hidden px-6 pb-4"
+              >
+                <p class="text-gray-600">{faq.answer}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -247,107 +637,285 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </div>
   </section>
+
+  <!-- Floating WhatsApp Button -->
+  <a 
+    href="https://wa.me/919876543210?text=Hi,%20I'm%20interested%20in%20your%20services" 
+    target="_blank"
+    class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition z-50 flex items-center justify-center"
+    aria-label="Chat on WhatsApp"
+  >
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.149-.67.149-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 22c-5.514 0-10-4.486-10-10S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/>
+    </svg>
+  </a>
 </BaseLayout>
 
 <style>
-  /* CSS to help protect emails from basic scrapers */
+  /* Email protection styles */
   .email-protected::before {
     content: attr(data-user);
   }
-  .email-protected::after {
+  .email-protected.revealed::after {
     content: "@" attr(data-domain);
   }
-  .email-protected .email-text {
-    display: none;
+  .email-protected:not(.revealed) .email-text {
+    display: inline;
   }
   .email-protected.revealed .email-text {
     display: none;
   }
+  
+  /* Step form animations */
+  .step-content {
+    animation: fadeIn 0.3s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Custom scrollbar for form */
+  #contact-form::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  #contact-form::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+  
+  #contact-form::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+  }
+  
+  #contact-form::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 </style>
 
 <script>
-  // Form handling with spam protection
-  const form = document.getElementById('contact-form') as HTMLFormElement;
+  // Business hours status
+  function updateBusinessStatus() {
+    const now = new Date();
+    const istTime = new Date(now.toLocaleString("en-US", {timeZone: "Asia/Kolkata"}));
+    const day = istTime.getDay();
+    const hours = istTime.getHours();
+    const minutes = istTime.getMinutes();
+    const currentTime = hours * 60 + minutes;
+    
+    const statusDot = document.getElementById('status-dot');
+    const statusText = document.getElementById('status-text');
+    
+    let isOpen = false;
+    let nextOpenTime = '';
+    
+    // Check if currently open
+    if (day >= 1 && day <= 5) { // Monday to Friday
+      if (currentTime >= 540 && currentTime < 1080) { // 9:00 AM to 6:00 PM
+        isOpen = true;
+      } else if (currentTime < 540) {
+        nextOpenTime = 'Opens at 9:00 AM';
+      } else {
+        nextOpenTime = 'Opens tomorrow at 9:00 AM';
+      }
+    } else if (day === 6) { // Saturday
+      if (currentTime >= 540 && currentTime < 780) { // 9:00 AM to 1:00 PM
+        isOpen = true;
+      } else if (currentTime < 540) {
+        nextOpenTime = 'Opens at 9:00 AM';
+      } else {
+        nextOpenTime = 'Opens Monday at 9:00 AM';
+      }
+    } else { // Sunday
+      nextOpenTime = 'Opens Monday at 9:00 AM';
+    }
+    
+    if (isOpen) {
+      statusDot.className = 'w-3 h-3 rounded-full bg-green-400 animate-pulse';
+      statusText.textContent = 'We\'re Open';
+    } else {
+      statusDot.className = 'w-3 h-3 rounded-full bg-red-400';
+      statusText.textContent = `We're Closed - ${nextOpenTime}`;
+    }
+  }
+  
+  // Update status on load and every minute
+  updateBusinessStatus();
+  setInterval(updateBusinessStatus, 60000);
+  
+  // Multi-step form navigation
+  let currentStep = 1;
+  const totalSteps = 3;
+  
+  function showStep(step) {
+    // Hide all steps
+    for (let i = 1; i <= totalSteps; i++) {
+      const stepElement = document.getElementById(`step${i}`);
+      const circleElement = document.getElementById(`step${i}-circle`);
+      
+      if (stepElement) {
+        stepElement.classList.add('hidden');
+      }
+      
+      if (circleElement) {
+        if (i < step) {
+          circleElement.className = 'w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center font-bold';
+        } else if (i === step) {
+          circleElement.className = 'w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold';
+        } else {
+          circleElement.className = 'w-10 h-10 bg-gray-300 text-white rounded-full flex items-center justify-center font-bold';
+        }
+      }
+    }
+    
+    // Show current step
+    const currentStepElement = document.getElementById(`step${step}`);
+    if (currentStepElement) {
+      currentStepElement.classList.remove('hidden');
+    }
+    
+    currentStep = step;
+  }
+  
+  function nextStep(step) {
+    // Basic validation before moving to next step
+    if (currentStep === 1) {
+      const serviceSelected = document.querySelector('input[name="service"]:checked');
+      if (!serviceSelected) {
+        alert('Please select a service');
+        return;
+      }
+    }
+    
+    showStep(step);
+  }
+  
+  function previousStep(step) {
+    showStep(step);
+  }
+  
+  // FAQ Toggle
+  function toggleFAQ(index) {
+    const answer = document.getElementById(`faq-answer-${index}`);
+    const icon = document.getElementById(`faq-icon-${index}`);
+    
+    if (answer.classList.contains('hidden')) {
+      answer.classList.remove('hidden');
+      icon.style.transform = 'rotate(180deg)';
+    } else {
+      answer.classList.add('hidden');
+      icon.style.transform = 'rotate(0deg)';
+    }
+  }
+  
+  // Email reveal function
+  function revealEmail(element) {
+    const user = element.getAttribute('data-user');
+    const domain = element.getAttribute('data-domain');
+    const email = user + '@' + domain;
+    
+    // Copy to clipboard
+    navigator.clipboard.writeText(email).then(() => {
+      element.classList.add('revealed');
+      
+      // Show tooltip
+      const tooltip = document.createElement('span');
+      tooltip.className = 'absolute -top-8 left-0 bg-gray-800 text-white text-xs px-2 py-1 rounded';
+      tooltip.textContent = 'Email copied!';
+      element.style.position = 'relative';
+      element.appendChild(tooltip);
+      
+      setTimeout(() => {
+        tooltip.remove();
+      }, 2000);
+    });
+  }
+  
+  // Schedule call (placeholder - integrate with Calendly or similar)
+  function openCalendly() {
+    alert('Calendly integration coming soon! For now, please use the contact form or WhatsApp.');
+    // In production, integrate with Calendly:
+    // window.open('https://calendly.com/your-link', '_blank');
+  }
+  
+  // Request callback
+  function requestCallback() {
+    const phone = prompt('Please enter your phone number for callback:');
+    if (phone) {
+      alert(`Thank you! We'll call you at ${phone} within 2 hours during business hours.`);
+      // In production, send this to your backend
+    }
+  }
+  
+  // Form submission with rate limiting
+  const formSubmissions = {
+    count: 0,
+    resetTime: Date.now() + 3600000 // 1 hour
+  };
+  
+  // Form handling
+  const form = document.getElementById('contact-form');
   const successMessage = document.getElementById('success-message');
-
+  const errorMessage = document.getElementById('error-message');
+  const submitBtn = document.getElementById('submit-btn');
+  const submitText = document.getElementById('submit-text');
+  const submitSpinner = document.getElementById('submit-spinner');
+  
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
     
-    // Check honeypot field (if filled, it's likely a bot)
-    const honeypot = (form.querySelector('input[name="website"]') as HTMLInputElement)?.value;
+    // Check rate limiting
+    if (Date.now() > formSubmissions.resetTime) {
+      formSubmissions.count = 0;
+      formSubmissions.resetTime = Date.now() + 3600000;
+    }
+    
+    if (formSubmissions.count >= 3) {
+      alert('Too many submissions. Please try again later or use WhatsApp.');
+      return;
+    }
+    
+    // Check honeypot
+    const honeypot = form.querySelector('input[name="website"]')?.value;
     if (honeypot) {
       console.log('Spam detected');
       return;
     }
     
-    // For now, just show success message
-    // Later this will send to Cloudflare Workers
-    successMessage?.classList.remove('hidden');
-    form.reset();
+    // Show loading state
+    submitText.textContent = 'Sending...';
+    submitSpinner.classList.remove('hidden');
+    submitBtn.disabled = true;
     
-    // Scroll to success message
-    successMessage?.scrollIntoView({ behavior: 'smooth' });
-    
-    // Hide message after 5 seconds
+    // Simulate form submission (replace with actual API call)
     setTimeout(() => {
-      successMessage?.classList.add('hidden');
-    }, 5000);
-  });
-
-  // Email protection - reveal on click
-  document.addEventListener('DOMContentLoaded', () => {
-    const protectedEmails = document.querySelectorAll('.email-protected');
-    
-    protectedEmails.forEach(element => {
-      element.addEventListener('click', function() {
-        const user = this.getAttribute('data-user');
-        const domain = this.getAttribute('data-domain');
-        const email = user + '@' + domain;
-        
-        // Create a temporary input to copy the email
-        const tempInput = document.createElement('input');
-        tempInput.value = email;
-        document.body.appendChild(tempInput);
-        tempInput.select();
-        
-        try {
-          // Copy to clipboard
-          document.execCommand('copy');
-          
-          // Update the display
-          const textSpan = this.querySelector('.email-text');
-          if (textSpan) {
-            textSpan.textContent = email;
-            textSpan.style.display = 'inline';
-          }
-          this.classList.add('revealed');
-          
-          // Show a tooltip
-          const tooltip = document.createElement('span');
-          tooltip.className = 'absolute -top-8 left-0 bg-gray-800 text-white text-xs px-2 py-1 rounded';
-          tooltip.textContent = 'Email copied!';
-          this.style.position = 'relative';
-          this.appendChild(tooltip);
-          
-          setTimeout(() => {
-            tooltip.remove();
-          }, 2000);
-          
-        } catch (err) {
-          // Fallback: just show the email
-          const textSpan = this.querySelector('.email-text');
-          if (textSpan) {
-            textSpan.textContent = email;
-            textSpan.style.display = 'inline';
-          }
-          this.classList.add('revealed');
-        }
-        
-        document.body.removeChild(tempInput);
-      });
+      formSubmissions.count++;
       
-      // Change cursor on hover
-      element.style.cursor = 'pointer';
-    });
+      // Hide form and show success
+      form.style.display = 'none';
+      successMessage.classList.remove('hidden');
+      
+      // Reset form
+      form.reset();
+      showStep(1);
+      
+      // Reset button state
+      submitText.textContent = 'Send Message';
+      submitSpinner.classList.add('hidden');
+      submitBtn.disabled = false;
+      
+      // Scroll to success message
+      successMessage.scrollIntoView({ behavior: 'smooth' });
+      
+      // Reset after 5 seconds
+      setTimeout(() => {
+        form.style.display = 'block';
+        successMessage.classList.add('hidden');
+      }, 5000);
+    }, 1500);
   });
 </script>
