@@ -1,0 +1,8 @@
+Placeholder for team member photos.
+Add professional headshots for:
+- Team members mentioned in testimonials and about sections
+- Leadership team photos
+- Group photos for company culture section
+
+Format: High-quality JPG or PNG images, optimized for web (150-300KB each)
+Dimensions: 400x400px for individual headshots, 1200x600px for group photos

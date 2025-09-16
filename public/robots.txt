@@ -1,0 +1,41 @@
+# Robots.txt for eExperts & Ritesource
+# Last Updated: 2025-09-16 09:19:50 IST
+
+User-agent: *
+Allow: /
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.well-known/
+Disallow: /api/
+
+# Disallow common spam targets
+Disallow: /wp-admin/
+Disallow: /wp-login/
+Disallow: /wordpress/
+Disallow: /administrator/
+
+# Allow important files
+Allow: /favicon.svg
+Allow: /robots.txt
+Allow: /sitemap.xml
+
+# Sitemap location
+Sitemap: https://eexperts.info/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

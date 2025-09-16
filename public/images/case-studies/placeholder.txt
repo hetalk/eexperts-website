@@ -1,0 +1,9 @@
+Placeholder for case study images.
+Add relevant images for:
+- Project screenshots and deliverables
+- Before/after comparisons
+- Process flow diagrams
+- Data visualization examples
+
+Format: High-quality JPG or PNG images, optimized for web
+Dimensions: 800x600px for featured images, 400x300px for thumbnails

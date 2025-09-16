@@ -1,0 +1,9 @@
+Placeholder for service-related images.
+Add relevant images for:
+- Service illustrations and icons
+- Technology stack visualizations
+- Process workflow diagrams
+- Industry-specific imagery
+
+Format: High-quality JPG or PNG images, optimized for web
+Dimensions: 600x400px for service banners, 100x100px for icons

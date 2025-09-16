@@ -1,0 +1,8 @@
+Placeholder for client testimonial photos.
+Add professional photos for:
+- Client testimonials and case studies
+- Company logos of clients (with permission)
+- Project screenshots or before/after examples
+
+Format: High-quality JPG or PNG images, optimized for web
+Dimensions: 100x100px for avatars, 200x100px for logos

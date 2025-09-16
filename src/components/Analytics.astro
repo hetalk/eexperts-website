@@ -1,7 +1,7 @@
 ---
 /*
  * Analytics Component
- * Last Updated: 2025-09-16 08:19:10 IST
+ * Last Updated: 2025-09-16 09:19:50 IST
  *
  * Features:
  * - Plausible Analytics integration
@@ -9,6 +9,8 @@
  * - Goal conversion tracking
  * - Privacy-compliant analytics
  * - Performance monitoring
+ * - Error tracking and reporting
+ * - Real-time monitoring
  */
 
 export interface Props {
@@ -111,6 +113,34 @@ if (enableOutboundLinks) {
         if (value) goalData.revenue = { currency: 'USD', amount: value };
         window.plausible('Goal', goalData);
       }
+    },
+
+    // Track errors
+    trackError: function(errorType, errorMessage, stack = null) {
+      this.trackEvent('JavaScript Error', {
+        'Error Type': errorType,
+        'Error Message': errorMessage.substring(0, 100), // Limit length
+        'User Agent': navigator.userAgent.substring(0, 100),
+        'Page': window.location.pathname
+      });
+    },
+
+    // Track API errors
+    trackApiError: function(endpoint, statusCode, errorMessage) {
+      this.trackEvent('API Error', {
+        'Endpoint': endpoint,
+        'Status Code': statusCode.toString(),
+        'Error Message': errorMessage.substring(0, 100)
+      });
+    },
+
+    // Track form validation errors
+    trackFormError: function(formType, fieldName, errorType) {
+      this.trackEvent('Form Validation Error', {
+        'Form Type': formType,
+        'Field': fieldName,
+        'Error Type': errorType
+      });
     }
   };
 
@@ -259,6 +289,75 @@ if (enableOutboundLinks) {
       window.analytics.trackEngagement('Page Visible', window.location.pathname);
     }
   });
+
+  // Global error handling
+  window.addEventListener('error', function(event) {
+    window.analytics.trackError(
+      'JavaScript Error',
+      event.message,
+      event.filename + ':' + event.lineno
+    );
+  });
+
+  // Handle unhandled promise rejections
+  window.addEventListener('unhandledrejection', function(event) {
+    window.analytics.trackError(
+      'Unhandled Promise Rejection',
+      event.reason?.message || 'Unknown promise rejection',
+      event.reason?.stack || 'No stack trace'
+    );
+  });
+
+  // Track console errors (in production only)
+  if (!window.location.hostname.includes('localhost')) {
+    const originalConsoleError = console.error;
+    console.error = function(...args) {
+      window.analytics.trackError(
+        'Console Error',
+        args.join(' ').substring(0, 200)
+      );
+      originalConsoleError.apply(console, args);
+    };
+  }
+
+  // Monitor performance issues
+  if ('PerformanceObserver' in window) {
+    // Long task monitoring
+    try {
+      const longTaskObserver = new PerformanceObserver(function(list) {
+        list.getEntries().forEach(function(entry) {
+          if (entry.duration > 50) { // Tasks longer than 50ms
+            window.analytics.trackEvent('Performance Issue', {
+              'Type': 'Long Task',
+              'Duration': Math.round(entry.duration) + 'ms',
+              'Start Time': Math.round(entry.startTime) + 'ms'
+            });
+          }
+        });
+      });
+      longTaskObserver.observe({ entryTypes: ['longtask'] });
+    } catch (e) {
+      // Long task monitoring not supported
+    }
+
+    // Largest Contentful Paint monitoring
+    try {
+      const lcpObserver = new PerformanceObserver(function(list) {
+        const entries = list.getEntries();
+        const lastEntry = entries[entries.length - 1];
+
+        if (lastEntry.startTime > 2500) { // LCP > 2.5s is concerning
+          window.analytics.trackEvent('Performance Issue', {
+            'Type': 'Slow LCP',
+            'LCP Time': Math.round(lastEntry.startTime) + 'ms'
+          });
+        }
+      });
+      lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+    } catch (e) {
+      // LCP monitoring not supported
+    }
+  }
 </script>
 
 <!-- Goal definitions for reference -->
