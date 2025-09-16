@@ -141,6 +141,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <p class="text-xs text-gray-500 mt-1">Accepted formats: PDF, DOC, DOCX, XLS, XLSX, ZIP (Max 10MB)</p>
             </div>
 
+            <!-- Honeypot field for spam protection (hidden from users) -->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <input type="text" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
             <button 
               type="submit" 
               class="w-full bg-gradient-to-r from-primary to-secondary text-white font-semibold py-3 px-6 rounded-lg hover:opacity-90 transition"
@@ -188,18 +193,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
           </div>
 
-          <!-- Email Addresses -->
+          <!-- Email Addresses with Anti-Spam Protection -->
           <div class="bg-white rounded-lg shadow-lg p-8">
             <h3 class="text-xl font-bold mb-4">Email Us</h3>
-            <div class="space-y-2">
-              <a href="mailto:info@ritesource.com" class="flex items-center text-primary hover:text-secondary transition">
+            <div class="space-y-3">
+              <div class="flex items-center">
                 <span class="text-2xl mr-3">✉️</span>
-                info@ritesource.com
-              </a>
-              <a href="mailto:info@eexperts.info" class="flex items-center text-primary hover:text-secondary transition">
+                <span 
+                  class="email-protected text-primary hover:text-secondary transition cursor-pointer select-all"
+                  data-user="info"
+                  data-domain="ritesource.com"
+                >
+                  <span class="email-text">Click to reveal email</span>
+                </span>
+              </div>
+              <div class="flex items-center">
                 <span class="text-2xl mr-3">✉️</span>
-                info@eexperts.info
-              </a>
+                <span 
+                  class="email-protected text-primary hover:text-secondary transition cursor-pointer select-all"
+                  data-user="info"
+                  data-domain="eexperts.info"
+                >
+                  <span class="email-text">Click to reveal email</span>
+                </span>
+              </div>
+              <p class="text-xs text-gray-500 mt-3 italic">
+                Click on the email addresses above to reveal them
+              </p>
             </div>
           </div>
         </div>
@@ -229,13 +249,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 </BaseLayout>
 
+<style>
+  /* CSS to help protect emails from basic scrapers */
+  .email-protected::before {
+    content: attr(data-user);
+  }
+  .email-protected::after {
+    content: "@" attr(data-domain);
+  }
+  .email-protected .email-text {
+    display: none;
+  }
+  .email-protected.revealed .email-text {
+    display: none;
+  }
+</style>
+
 <script>
-  // Simple form handling (will be replaced with Cloudflare Workers later)
+  // Form handling with spam protection
   const form = document.getElementById('contact-form') as HTMLFormElement;
   const successMessage = document.getElementById('success-message');
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
+    
+    // Check honeypot field (if filled, it's likely a bot)
+    const honeypot = (form.querySelector('input[name="website"]') as HTMLInputElement)?.value;
+    if (honeypot) {
+      console.log('Spam detected');
+      return;
+    }
     
     // For now, just show success message
     // Later this will send to Cloudflare Workers
@@ -249,5 +292,62 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     setTimeout(() => {
       successMessage?.classList.add('hidden');
     }, 5000);
+  });
+
+  // Email protection - reveal on click
+  document.addEventListener('DOMContentLoaded', () => {
+    const protectedEmails = document.querySelectorAll('.email-protected');
+    
+    protectedEmails.forEach(element => {
+      element.addEventListener('click', function() {
+        const user = this.getAttribute('data-user');
+        const domain = this.getAttribute('data-domain');
+        const email = user + '@' + domain;
+        
+        // Create a temporary input to copy the email
+        const tempInput = document.createElement('input');
+        tempInput.value = email;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        
+        try {
+          // Copy to clipboard
+          document.execCommand('copy');
+          
+          // Update the display
+          const textSpan = this.querySelector('.email-text');
+          if (textSpan) {
+            textSpan.textContent = email;
+            textSpan.style.display = 'inline';
+          }
+          this.classList.add('revealed');
+          
+          // Show a tooltip
+          const tooltip = document.createElement('span');
+          tooltip.className = 'absolute -top-8 left-0 bg-gray-800 text-white text-xs px-2 py-1 rounded';
+          tooltip.textContent = 'Email copied!';
+          this.style.position = 'relative';
+          this.appendChild(tooltip);
+          
+          setTimeout(() => {
+            tooltip.remove();
+          }, 2000);
+          
+        } catch (err) {
+          // Fallback: just show the email
+          const textSpan = this.querySelector('.email-text');
+          if (textSpan) {
+            textSpan.textContent = email;
+            textSpan.style.display = 'inline';
+          }
+          this.classList.add('revealed');
+        }
+        
+        document.body.removeChild(tempInput);
+      });
+      
+      // Change cursor on hover
+      element.style.cursor = 'pointer';
+    });
   });
 </script>
