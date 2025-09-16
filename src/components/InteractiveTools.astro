@@ -1,0 +1,605 @@
+---
+/*
+ * Interactive Tools Component
+ * Last Updated: 2025-09-16 08:56:10 IST
+ *
+ * Features:
+ * - Cost Calculator
+ * - Service Matcher
+ * - ROI Calculator
+ * - Project Timeline Estimator
+ * - Lead qualification
+ */
+---
+
+<section class="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+  <div class="container mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        Interactive <span class="text-primary">Tools</span>
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Get instant estimates and find the perfect services for your needs with our interactive calculators and tools.
+      </p>
+    </div>
+
+    <!-- Tools Grid -->
+    <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+      <!-- Cost Calculator -->
+      <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+        <div class="flex items-center mb-6">
+          <div class="w-12 h-12 bg-primary text-white rounded-lg flex items-center justify-center mr-4">
+            <span class="text-xl">💰</span>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900">Cost Calculator</h3>
+            <p class="text-gray-600">Get instant pricing estimates</p>
+          </div>
+        </div>
+
+        <form id="cost-calculator" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Service Type</label>
+            <select id="service-type" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+              <option value="">Select a service</option>
+              <option value="healthcare-qa" data-base-rate="50">Healthcare Documentation QA</option>
+              <option value="software-testing" data-base-rate="75">Software Testing</option>
+              <option value="geospatial" data-base-rate="60">Geospatial Data Services</option>
+              <option value="electronics" data-base-rate="65">Electronics Data Solutions</option>
+              <option value="ai-workflows" data-base-rate="85">AI-Driven Workflows</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Project Size</label>
+            <select id="project-size" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+              <option value="1">Small (< 100 hours)</option>
+              <option value="1.5">Medium (100-500 hours)</option>
+              <option value="2">Large (500-1000 hours)</option>
+              <option value="2.5">Enterprise (1000+ hours)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Timeline</label>
+            <select id="timeline" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+              <option value="1">Standard (4+ weeks)</option>
+              <option value="1.25">Expedited (2-4 weeks)</option>
+              <option value="1.5">Rush (< 2 weeks)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Estimated Hours</label>
+            <input type="range" id="hours-slider" min="10" max="1000" value="100" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer slider">
+            <div class="flex justify-between text-sm text-gray-500 mt-1">
+              <span>10h</span>
+              <span id="hours-display" class="font-medium">100h</span>
+              <span>1000h</span>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg p-4 mt-6">
+            <div class="text-center">
+              <div class="text-sm text-gray-600 mb-1">Estimated Cost</div>
+              <div id="cost-estimate" class="text-3xl font-bold text-primary">$0</div>
+              <div class="text-sm text-gray-600 mt-2">
+                * Actual costs may vary based on specific requirements
+              </div>
+            </div>
+          </div>
+
+          <button type="button" onclick="requestDetailedQuote()" class="w-full bg-primary text-white font-semibold py-3 px-6 rounded-lg hover:bg-primary/90 transition">
+            Get Detailed Quote
+          </button>
+        </form>
+      </div>
+
+      <!-- Service Matcher -->
+      <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+        <div class="flex items-center mb-6">
+          <div class="w-12 h-12 bg-secondary text-white rounded-lg flex items-center justify-center mr-4">
+            <span class="text-xl">🎯</span>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900">Service Matcher</h3>
+            <p class="text-gray-600">Find your perfect service</p>
+          </div>
+        </div>
+
+        <form id="service-matcher" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-3">What industry are you in?</label>
+            <div class="grid grid-cols-2 gap-2">
+              <label class="flex items-center p-2 border rounded cursor-pointer hover:bg-gray-50">
+                <input type="radio" name="industry" value="healthcare" class="mr-2">
+                <span class="text-sm">Healthcare</span>
+              </label>
+              <label class="flex items-center p-2 border rounded cursor-pointer hover:bg-gray-50">
+                <input type="radio" name="industry" value="technology" class="mr-2">
+                <span class="text-sm">Technology</span>
+              </label>
+              <label class="flex items-center p-2 border rounded cursor-pointer hover:bg-gray-50">
+                <input type="radio" name="industry" value="manufacturing" class="mr-2">
+                <span class="text-sm">Manufacturing</span>
+              </label>
+              <label class="flex items-center p-2 border rounded cursor-pointer hover:bg-gray-50">
+                <input type="radio" name="industry" value="other" class="mr-2">
+                <span class="text-sm">Other</span>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-3">What's your main challenge?</label>
+            <div class="space-y-2">
+              <label class="flex items-center p-2 border rounded cursor-pointer hover:bg-gray-50">
+                <input type="radio" name="challenge" value="quality" class="mr-2">
+                <span class="text-sm">Quality & Accuracy Issues</span>
+              </label>
+              <label class="flex items-center p-2 border rounded cursor-pointer hover:bg-gray-50">
+                <input type="radio" name="challenge" value="speed" class="mr-2">
+                <span class="text-sm">Slow Turnaround Times</span>
+              </label>
+              <label class="flex items-center p-2 border rounded cursor-pointer hover:bg-gray-50">
+                <input type="radio" name="challenge" value="capacity" class="mr-2">
+                <span class="text-sm">Lack of Capacity</span>
+              </label>
+              <label class="flex items-center p-2 border rounded cursor-pointer hover:bg-gray-50">
+                <input type="radio" name="challenge" value="expertise" class="mr-2">
+                <span class="text-sm">Missing Expertise</span>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-3">Team size?</label>
+            <select id="team-size" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent">
+              <option value="small">Small (1-10 people)</option>
+              <option value="medium">Medium (11-50 people)</option>
+              <option value="large">Large (51-200 people)</option>
+              <option value="enterprise">Enterprise (200+ people)</option>
+            </select>
+          </div>
+
+          <div id="service-recommendation" class="hidden bg-gradient-to-r from-secondary/10 to-primary/10 rounded-lg p-4 mt-6">
+            <div class="font-semibold text-gray-800 mb-2">Recommended Service:</div>
+            <div id="recommended-service" class="text-lg font-bold text-secondary mb-2"></div>
+            <div id="recommendation-reason" class="text-sm text-gray-600 mb-3"></div>
+            <button type="button" onclick="learnMoreAboutService()" class="bg-secondary text-white px-4 py-2 rounded font-medium hover:bg-secondary/90 transition">
+              Learn More
+            </button>
+          </div>
+
+          <button type="button" onclick="findMyService()" class="w-full bg-secondary text-white font-semibold py-3 px-6 rounded-lg hover:bg-secondary/90 transition">
+            Find My Perfect Service
+          </button>
+        </form>
+      </div>
+
+      <!-- ROI Calculator -->
+      <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+        <div class="flex items-center mb-6">
+          <div class="w-12 h-12 bg-green-600 text-white rounded-lg flex items-center justify-center mr-4">
+            <span class="text-xl">📈</span>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900">ROI Calculator</h3>
+            <p class="text-gray-600">Calculate your return on investment</p>
+          </div>
+        </div>
+
+        <form id="roi-calculator" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Current Monthly Cost (Internal)</label>
+            <div class="relative">
+              <span class="absolute left-3 top-3 text-gray-500">$</span>
+              <input type="number" id="current-cost" placeholder="5000" class="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Current Accuracy Rate (%)</label>
+            <input type="range" id="current-accuracy" min="70" max="98" value="85" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+            <div class="flex justify-between text-sm text-gray-500 mt-1">
+              <span>70%</span>
+              <span id="accuracy-display">85%</span>
+              <span>98%</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Hours Spent on Quality Issues (Monthly)</label>
+            <input type="number" id="quality-hours" placeholder="40" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-transparent">
+          </div>
+
+          <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+            <h4 class="font-semibold text-green-800 mb-3">Projected Savings with Our Services</h4>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+              <div>
+                <div class="text-green-600">Monthly Savings</div>
+                <div id="monthly-savings" class="text-xl font-bold text-green-800">$0</div>
+              </div>
+              <div>
+                <div class="text-green-600">Annual ROI</div>
+                <div id="annual-roi" class="text-xl font-bold text-green-800">0%</div>
+              </div>
+            </div>
+          </div>
+
+          <button type="button" onclick="scheduleROIDiscussion()" class="w-full bg-green-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-green-700 transition">
+            Schedule ROI Discussion
+          </button>
+        </form>
+      </div>
+
+      <!-- Project Timeline -->
+      <div class="bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+        <div class="flex items-center mb-6">
+          <div class="w-12 h-12 bg-purple-600 text-white rounded-lg flex items-center justify-center mr-4">
+            <span class="text-xl">⏱️</span>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold text-gray-900">Timeline Estimator</h3>
+            <p class="text-gray-600">Estimate project duration</p>
+          </div>
+        </div>
+
+        <form id="timeline-estimator" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Project Type</label>
+            <select id="project-type" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+              <option value="documentation">Documentation Review</option>
+              <option value="testing">Software Testing</option>
+              <option value="data-processing">Data Processing</option>
+              <option value="integration">System Integration</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Volume/Scope</label>
+            <select id="project-volume" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent">
+              <option value="small">Small (< 100 items)</option>
+              <option value="medium">Medium (100-1000 items)</option>
+              <option value="large">Large (1000-10000 items)</option>
+              <option value="massive">Massive (10000+ items)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Complexity Level</label>
+            <div class="grid grid-cols-3 gap-2">
+              <label class="flex items-center justify-center p-2 border rounded cursor-pointer hover:bg-gray-50">
+                <input type="radio" name="complexity" value="low" class="mr-2">
+                <span class="text-sm">Low</span>
+              </label>
+              <label class="flex items-center justify-center p-2 border rounded cursor-pointer hover:bg-gray-50">
+                <input type="radio" name="complexity" value="medium" class="mr-2" checked>
+                <span class="text-sm">Medium</span>
+              </label>
+              <label class="flex items-center justify-center p-2 border rounded cursor-pointer hover:bg-gray-50">
+                <input type="radio" name="complexity" value="high" class="mr-2">
+                <span class="text-sm">High</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="bg-purple-50 border border-purple-200 rounded-lg p-4">
+            <h4 class="font-semibold text-purple-800 mb-3">Estimated Timeline</h4>
+            <div class="text-center">
+              <div id="estimated-timeline" class="text-2xl font-bold text-purple-800 mb-2">2-4 weeks</div>
+              <div class="text-sm text-purple-600">Based on similar projects</div>
+            </div>
+          </div>
+
+          <button type="button" onclick="discussTimeline()" class="w-full bg-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-purple-700 transition">
+            Discuss My Timeline
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  class InteractiveTools {
+    constructor() {
+      this.initCostCalculator();
+      this.initServiceMatcher();
+      this.initROICalculator();
+      this.initTimelineEstimator();
+    }
+
+    initCostCalculator() {
+      const hoursSlider = document.getElementById('hours-slider');
+      const hoursDisplay = document.getElementById('hours-display');
+      const costEstimate = document.getElementById('cost-estimate');
+
+      const updateCost = () => {
+        const serviceType = document.getElementById('service-type');
+        const projectSize = document.getElementById('project-size');
+        const timeline = document.getElementById('timeline');
+        const hours = parseInt(hoursSlider.value);
+
+        hoursDisplay.textContent = `${hours}h`;
+
+        if (serviceType.value) {
+          const baseRate = parseInt(serviceType.selectedOptions[0].dataset.baseRate) || 50;
+          const sizeMultiplier = parseFloat(projectSize.value) || 1;
+          const timelineMultiplier = parseFloat(timeline.value) || 1;
+
+          const totalCost = Math.round(hours * baseRate * sizeMultiplier * timelineMultiplier);
+          costEstimate.textContent = `$${totalCost.toLocaleString()}`;
+        } else {
+          costEstimate.textContent = '$0';
+        }
+      };
+
+      hoursSlider.addEventListener('input', updateCost);
+      document.getElementById('service-type').addEventListener('change', updateCost);
+      document.getElementById('project-size').addEventListener('change', updateCost);
+      document.getElementById('timeline').addEventListener('change', updateCost);
+    }
+
+    initServiceMatcher() {
+      // Service matching logic handled by global function
+    }
+
+    initROICalculator() {
+      const currentAccuracy = document.getElementById('current-accuracy');
+      const accuracyDisplay = document.getElementById('accuracy-display');
+
+      const updateROI = () => {
+        const currentCost = parseFloat(document.getElementById('current-cost').value) || 0;
+        const accuracy = parseInt(currentAccuracy.value);
+        const qualityHours = parseFloat(document.getElementById('quality-hours').value) || 0;
+
+        accuracyDisplay.textContent = `${accuracy}%`;
+
+        // Calculate savings (simplified model)
+        const accuracyImprovement = (99.5 - accuracy) / 100;
+        const qualitySavings = qualityHours * 50; // $50/hour saved
+        const efficiencySavings = currentCost * 0.25; // 25% efficiency gain
+
+        const monthlySavings = Math.round(qualitySavings + efficiencySavings);
+        const annualROI = currentCost > 0 ? Math.round((monthlySavings * 12 / currentCost) * 100) : 0;
+
+        document.getElementById('monthly-savings').textContent = `$${monthlySavings.toLocaleString()}`;
+        document.getElementById('annual-roi').textContent = `${annualROI}%`;
+      };
+
+      currentAccuracy.addEventListener('input', updateROI);
+      document.getElementById('current-cost').addEventListener('input', updateROI);
+      document.getElementById('quality-hours').addEventListener('input', updateROI);
+    }
+
+    initTimelineEstimator() {
+      const updateTimeline = () => {
+        const projectType = document.getElementById('project-type').value;
+        const volume = document.getElementById('project-volume').value;
+        const complexity = document.querySelector('input[name="complexity"]:checked')?.value || 'medium';
+
+        // Timeline estimation logic
+        const baseWeeks = {
+          documentation: 2,
+          testing: 3,
+          'data-processing': 2,
+          integration: 4
+        };
+
+        const volumeMultiplier = {
+          small: 1,
+          medium: 1.5,
+          large: 2.5,
+          massive: 4
+        };
+
+        const complexityMultiplier = {
+          low: 0.8,
+          medium: 1,
+          high: 1.4
+        };
+
+        const weeks = Math.round(
+          baseWeeks[projectType] *
+          volumeMultiplier[volume] *
+          complexityMultiplier[complexity]
+        );
+
+        const timelineText = weeks <= 1 ? '1 week' :
+                           weeks <= 2 ? '1-2 weeks' :
+                           weeks <= 4 ? `2-${weeks} weeks` :
+                           `${Math.floor(weeks/4)}-${Math.ceil(weeks/4)} months`;
+
+        document.getElementById('estimated-timeline').textContent = timelineText;
+      };
+
+      document.getElementById('project-type').addEventListener('change', updateTimeline);
+      document.getElementById('project-volume').addEventListener('change', updateTimeline);
+      document.querySelectorAll('input[name="complexity"]').forEach(radio => {
+        radio.addEventListener('change', updateTimeline);
+      });
+
+      updateTimeline(); // Initial calculation
+    }
+  }
+
+  // Global functions for button actions
+  function requestDetailedQuote() {
+    const serviceType = document.getElementById('service-type').value;
+    const hours = document.getElementById('hours-slider').value;
+
+    if (window.analytics) {
+      window.analytics.trackGoal('Quote Request');
+      window.analytics.trackServiceInterest(serviceType, 'Cost Calculator');
+    }
+
+    window.location.href = `/contact?service=${serviceType}&hours=${hours}&source=calculator`;
+  }
+
+  function findMyService() {
+    const industry = document.querySelector('input[name="industry"]:checked')?.value;
+    const challenge = document.querySelector('input[name="challenge"]:checked')?.value;
+    const teamSize = document.getElementById('team-size').value;
+
+    if (!industry || !challenge) {
+      alert('Please answer all questions to get your recommendation.');
+      return;
+    }
+
+    // Service matching logic
+    const recommendations = {
+      'healthcare-quality': 'Healthcare Documentation QA',
+      'healthcare-speed': 'Healthcare Documentation QA',
+      'technology-quality': 'Software Testing Services',
+      'technology-speed': 'AI-Driven Workflows',
+      'manufacturing-capacity': 'Electronics Data Solutions',
+      'other-expertise': 'Geospatial Data Services'
+    };
+
+    const key = `${industry}-${challenge}`;
+    const service = recommendations[key] || 'Multiple Services';
+
+    const reasons = {
+      'Healthcare Documentation QA': 'Perfect for healthcare organizations needing HIPAA-compliant quality assurance.',
+      'Software Testing Services': 'Ideal for technology companies requiring comprehensive testing solutions.',
+      'AI-Driven Workflows': 'Great for organizations looking to automate and accelerate their processes.',
+      'Electronics Data Solutions': 'Excellent for manufacturing companies needing component data management.',
+      'Geospatial Data Services': 'Perfect for organizations working with location-based data and mapping.',
+      'Multiple Services': 'Your needs span multiple areas - let\'s discuss a comprehensive solution.'
+    };
+
+    document.getElementById('recommended-service').textContent = service;
+    document.getElementById('recommendation-reason').textContent = reasons[service];
+    document.getElementById('service-recommendation').classList.remove('hidden');
+
+    if (window.analytics) {
+      window.analytics.trackEvent('Service Matched', {
+        'Industry': industry,
+        'Challenge': challenge,
+        'Team Size': teamSize,
+        'Recommendation': service
+      });
+    }
+  }
+
+  function learnMoreAboutService() {
+    const service = document.getElementById('recommended-service').textContent;
+    const servicePages = {
+      'Healthcare Documentation QA': '/services/healthcare-qa',
+      'Software Testing Services': '/services',
+      'AI-Driven Workflows': '/services',
+      'Electronics Data Solutions': '/services',
+      'Geospatial Data Services': '/services',
+      'Multiple Services': '/services'
+    };
+
+    window.location.href = servicePages[service] || '/services';
+  }
+
+  function scheduleROIDiscussion() {
+    const currentCost = document.getElementById('current-cost').value;
+    const monthlySavings = document.getElementById('monthly-savings').textContent;
+
+    if (window.analytics) {
+      window.analytics.trackGoal('ROI Discussion Request');
+      window.analytics.trackEvent('ROI Calculator Used', {
+        'Current Cost': currentCost,
+        'Projected Savings': monthlySavings
+      });
+    }
+
+    window.location.href = `/contact?service=roi-discussion&current-cost=${currentCost}&source=roi-calculator`;
+  }
+
+  function discussTimeline() {
+    const timeline = document.getElementById('estimated-timeline').textContent;
+    const projectType = document.getElementById('project-type').value;
+
+    if (window.analytics) {
+      window.analytics.trackEvent('Timeline Discussion Request', {
+        'Project Type': projectType,
+        'Estimated Timeline': timeline
+      });
+    }
+
+    window.location.href = `/contact?service=timeline-discussion&project-type=${projectType}&source=timeline-estimator`;
+  }
+
+  // Initialize when DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    new InteractiveTools();
+
+    // Track tools usage
+    if (window.analytics) {
+      window.analytics.trackEvent('Interactive Tools Viewed', {
+        'Tools Available': 4,
+        'Page': 'Interactive Tools Section'
+      });
+    }
+  });
+</script>
+
+<style>
+  /* Custom slider styling */
+  .slider {
+    -webkit-appearance: none;
+    appearance: none;
+    background: linear-gradient(to right, #1e3a5f 0%, #4db8c4 100%);
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+
+  .slider:hover {
+    opacity: 1;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #1e3a5f;
+    cursor: pointer;
+  }
+
+  .slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #1e3a5f;
+    cursor: pointer;
+    border: none;
+  }
+
+  /* Form enhancements */
+  input[type="radio"]:checked + span {
+    color: #1e3a5f;
+    font-weight: 500;
+  }
+
+  input[type="radio"]:checked {
+    accent-color: #1e3a5f;
+  }
+
+  /* Animation for recommendations */
+  #service-recommendation {
+    animation: slideIn 0.3s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

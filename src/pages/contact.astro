@@ -1,4 +1,5 @@
 ---
+// Last Updated: 2025-09-16 08:19:10 IST
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 // Business hours configuration (IST)
@@ -835,11 +836,29 @@ const faqs = [
     });
   }
   
-  // Schedule call (placeholder - integrate with Calendly or similar)
+  // Schedule call with Calendly
   function openCalendly() {
-    alert('Calendly integration coming soon! For now, please use the contact form or WhatsApp.');
-    // In production, integrate with Calendly:
-    // window.open('https://calendly.com/your-link', '_blank');
+    // Track analytics
+    if (window.analytics) {
+      window.analytics.trackContactMethod('Calendly', 'Contact Page');
+    }
+
+    // Open Calendly popup or redirect
+    const calendlyUrl = 'https://calendly.com/ritesource-eexperts/consultation';
+
+    // Try to use Calendly widget if available
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: calendlyUrl,
+        prefill: {
+          name: document.getElementById('firstName')?.value + ' ' + document.getElementById('lastName')?.value,
+          email: document.getElementById('email')?.value
+        }
+      });
+    } else {
+      // Fallback to opening in new tab
+      window.open(calendlyUrl, '_blank');
+    }
   }
   
   // Request callback
@@ -891,31 +910,85 @@ const faqs = [
     submitSpinner.classList.remove('hidden');
     submitBtn.disabled = true;
     
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-      formSubmissions.count++;
-      
-      // Hide form and show success
-      form.style.display = 'none';
-      successMessage.classList.remove('hidden');
-      
-      // Reset form
-      form.reset();
-      showStep(1);
-      
-      // Reset button state
-      submitText.textContent = 'Send Message';
-      submitSpinner.classList.add('hidden');
-      submitBtn.disabled = false;
-      
-      // Scroll to success message
-      successMessage.scrollIntoView({ behavior: 'smooth' });
-      
-      // Reset after 5 seconds
+    // Submit form to API endpoint
+    try {
+      const formData = new FormData(form);
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        // Hide form and show success
+        form.style.display = 'none';
+        successMessage.classList.remove('hidden');
+
+        // Update success message with response
+        const successDiv = successMessage.querySelector('div:last-child');
+        if (successDiv) {
+          successDiv.innerHTML = `
+            <div class="font-semibold">Thank you for your message!</div>
+            <div class="text-sm">${result.message || "We'll get back to you within 24 hours."}</div>
+          `;
+        }
+
+        // Reset form
+        form.reset();
+        showStep(1);
+
+        // Scroll to success message
+        successMessage.scrollIntoView({ behavior: 'smooth' });
+
+        // Reset after 10 seconds
+        setTimeout(() => {
+          form.style.display = 'block';
+          successMessage.classList.add('hidden');
+        }, 10000);
+
+        formSubmissions.count++;
+
+      } else {
+        // Show error message
+        errorMessage.classList.remove('hidden');
+        const errorDiv = errorMessage.querySelector('div:last-child');
+        if (errorDiv) {
+          errorDiv.innerHTML = `
+            <div class="font-semibold">Oops! Something went wrong.</div>
+            <div class="text-sm">${result.error || "Please try again or contact us directly."}</div>
+          `;
+        }
+
+        // Hide error after 5 seconds
+        setTimeout(() => {
+          errorMessage.classList.add('hidden');
+        }, 5000);
+      }
+
+    } catch (error) {
+      console.error('Form submission error:', error);
+
+      // Show error message
+      errorMessage.classList.remove('hidden');
+      const errorDiv = errorMessage.querySelector('div:last-child');
+      if (errorDiv) {
+        errorDiv.innerHTML = `
+          <div class="font-semibold">Network Error</div>
+          <div class="text-sm">Please check your connection and try again, or contact us directly.</div>
+        `;
+      }
+
+      // Hide error after 5 seconds
       setTimeout(() => {
-        form.style.display = 'block';
-        successMessage.classList.add('hidden');
+        errorMessage.classList.add('hidden');
       }, 5000);
-    }, 1500);
+    }
+
+    // Reset button state
+    submitText.textContent = 'Send Message';
+    submitSpinner.classList.add('hidden');
+    submitBtn.disabled = false;
   });
 </script>

@@ -1,0 +1,290 @@
+---
+/*
+ * Testimonials Section Component
+ * Last Updated: 2025-09-16 08:19:10 IST
+ *
+ * Features:
+ * - Client testimonials carousel
+ * - Company logos
+ * - Star ratings
+ * - Responsive design
+ * - Auto-playing slideshow
+ */
+
+import OptimizedImage from './OptimizedImage.astro';
+
+const testimonials = [
+  {
+    id: 1,
+    name: "Dr. Sarah Johnson",
+    title: "Medical Director",
+    company: "HealthCare Associates",
+    logo: "/images/testimonials/healthcare-logo.png",
+    rating: 5,
+    text: "Ritesource has been invaluable for our medical transcription quality assurance. Their HIPAA-compliant processes and 99.5% accuracy rate have significantly improved our documentation workflow. The team understands healthcare nuances perfectly.",
+    service: "Healthcare Documentation QA",
+    location: "Boston, MA"
+  },
+  {
+    id: 2,
+    name: "Marcus Chen",
+    title: "CTO",
+    company: "TechFlow Solutions",
+    logo: "/images/testimonials/techflow-logo.png",
+    rating: 5,
+    text: "Working with Ritesource on our software testing has been exceptional. They caught critical bugs that our internal team missed and their automated testing framework saved us months of development time. Highly professional and detail-oriented.",
+    service: "Software Testing Services",
+    location: "San Francisco, CA"
+  },
+  {
+    id: 3,
+    name: "Dr. Priya Sharma",
+    title: "GIS Manager",
+    company: "Urban Planning Corp",
+    logo: "/images/testimonials/urban-logo.png",
+    rating: 5,
+    text: "eExperts processed over 500 miles of our geospatial data with incredible precision. Their map digitization and GIS analysis helped us complete our urban development project ahead of schedule. Outstanding technical expertise.",
+    service: "Geospatial Data Services",
+    location: "Toronto, Canada"
+  },
+  {
+    id: 4,
+    name: "James Wilson",
+    title: "Engineering Director",
+    company: "ElectroTech Industries",
+    logo: "/images/testimonials/electrotech-logo.png",
+    rating: 5,
+    text: "The electronics data services from eExperts transformed our component management. They optimized our BOMs, processed over 100K component specifications, and their AI-driven workflows reduced our design cycle time by 40%.",
+    service: "Electronics Data Solutions",
+    location: "Austin, TX"
+  },
+  {
+    id: 5,
+    name: "Lisa Rodriguez",
+    title: "Operations Manager",
+    company: "DataVision Analytics",
+    logo: "/images/testimonials/datavision-logo.png",
+    rating: 5,
+    text: "Both Ritesource and eExperts have been game-changers for our data operations. From quality assurance to AI-driven analytics, they deliver consistently high-quality results. Their 24-hour turnaround time is impressive.",
+    service: "Multiple Services",
+    location: "New York, NY"
+  },
+  {
+    id: 6,
+    name: "David Kim",
+    title: "Head of Quality",
+    company: "MedDevice Pro",
+    logo: "/images/testimonials/meddevice-logo.png",
+    rating: 5,
+    text: "As a medical device company, compliance is everything. Ritesource's HIPAA-compliant processes and attention to regulatory details have been crucial for our FDA submissions. They're an extension of our quality team.",
+    service: "Healthcare Documentation QA",
+    location: "Chicago, IL"
+  }
+];
+
+const stats = [
+  { number: "17+", label: "Years of Excellence" },
+  { number: "65+", label: "Team Members" },
+  { number: "200+", label: "Happy Clients" },
+  { number: "99.5%", label: "Accuracy Rate" }
+];
+---
+
+<section class="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+  <div class="container mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        What Our <span class="text-primary">Clients</span> Say
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        From healthcare to technology, our clients trust us with their most critical quality assurance and data challenges.
+      </p>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+      {stats.map((stat) => (
+        <div class="text-center">
+          <div class="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.number}</div>
+          <div class="text-gray-600">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Testimonials Carousel -->
+    <div class="relative max-w-6xl mx-auto">
+      <div id="testimonials-container" class="overflow-hidden">
+        <div id="testimonials-track" class="flex transition-transform duration-500 ease-in-out">
+          {testimonials.map((testimonial, index) => (
+            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+              <div class="bg-white rounded-xl shadow-lg p-8 h-full border border-gray-100 hover:shadow-xl transition-shadow">
+                <!-- Rating -->
+                <div class="flex items-center mb-4">
+                  {Array.from({ length: testimonial.rating }, (_, i) => (
+                    <svg key={i} class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                  ))}
+                  <span class="ml-2 text-sm text-gray-600">{testimonial.rating}.0</span>
+                </div>
+
+                <!-- Testimonial Text -->
+                <blockquote class="text-gray-700 mb-6 leading-relaxed">
+                  "{testimonial.text}"
+                </blockquote>
+
+                <!-- Service Badge -->
+                <div class="mb-4">
+                  <span class="inline-block bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm font-medium">
+                    {testimonial.service}
+                  </span>
+                </div>
+
+                <!-- Client Info -->
+                <div class="flex items-center">
+                  <div class="flex-1">
+                    <div class="font-semibold text-gray-900">{testimonial.name}</div>
+                    <div class="text-sm text-gray-600">{testimonial.title}</div>
+                    <div class="text-sm font-medium text-primary">{testimonial.company}</div>
+                    <div class="text-xs text-gray-500">{testimonial.location}</div>
+                  </div>
+                  <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+                    <div class="text-2xl font-bold text-primary">
+                      {testimonial.name.split(' ').map(n => n[0]).join('')}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button
+        id="prev-testimonial"
+        class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors"
+        aria-label="Previous testimonial"
+      >
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+
+      <button
+        id="next-testimonial"
+        class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors"
+        aria-label="Next testimonial"
+      >
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Dots Indicator -->
+    <div class="flex justify-center mt-8 space-x-2">
+      {Array.from({ length: Math.ceil(testimonials.length / 3) }, (_, i) => (
+        <button
+          class="w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-colors testimonial-dot"
+          data-slide={i}
+          aria-label={`Go to slide ${i + 1}`}
+        ></button>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12">
+      <p class="text-lg text-gray-600 mb-6">
+        Ready to join our satisfied clients?
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition"
+      >
+        Start Your Project Today
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  class TestimonialsCarousel {
+    constructor() {
+      this.container = document.getElementById('testimonials-track');
+      this.prevBtn = document.getElementById('prev-testimonial');
+      this.nextBtn = document.getElementById('next-testimonial');
+      this.dots = document.querySelectorAll('.testimonial-dot');
+
+      this.currentSlide = 0;
+      this.itemsPerView = this.getItemsPerView();
+      this.maxSlides = Math.ceil(6 / this.itemsPerView) - 1; // 6 testimonials
+
+      this.init();
+    }
+
+    getItemsPerView() {
+      if (window.innerWidth >= 1024) return 3; // lg
+      if (window.innerWidth >= 768) return 2;  // md
+      return 1; // sm
+    }
+
+    init() {
+      this.prevBtn?.addEventListener('click', () => this.prevSlide());
+      this.nextBtn?.addEventListener('click', () => this.nextSlide());
+
+      this.dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => this.goToSlide(index));
+      });
+
+      // Auto-play every 5 seconds
+      setInterval(() => {
+        this.nextSlide();
+      }, 5000);
+
+      // Update on resize
+      window.addEventListener('resize', () => {
+        this.itemsPerView = this.getItemsPerView();
+        this.maxSlides = Math.ceil(6 / this.itemsPerView) - 1;
+        this.updateSlide();
+      });
+
+      this.updateSlide();
+    }
+
+    prevSlide() {
+      this.currentSlide = this.currentSlide <= 0 ? this.maxSlides : this.currentSlide - 1;
+      this.updateSlide();
+    }
+
+    nextSlide() {
+      this.currentSlide = this.currentSlide >= this.maxSlides ? 0 : this.currentSlide + 1;
+      this.updateSlide();
+    }
+
+    goToSlide(index) {
+      this.currentSlide = Math.min(index, this.maxSlides);
+      this.updateSlide();
+    }
+
+    updateSlide() {
+      const translateX = -(this.currentSlide * (100 / this.itemsPerView));
+      this.container.style.transform = `translateX(${translateX}%)`;
+
+      // Update dots
+      this.dots.forEach((dot, index) => {
+        dot.classList.toggle('bg-primary', index === this.currentSlide);
+        dot.classList.toggle('bg-gray-300', index !== this.currentSlide);
+      });
+    }
+  }
+
+  // Initialize carousel when DOM is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    new TestimonialsCarousel();
+  });
+</script>

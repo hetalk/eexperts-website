@@ -1,5 +1,9 @@
 ---
+// Last Updated: 2025-09-16 08:19:10 IST
 import BaseLayout from '../layouts/BaseLayout.astro';
+import TestimonialsSection from '../components/TestimonialsSection.astro';
+import CaseStudiesSection from '../components/CaseStudiesSection.astro';
+import InteractiveTools from '../components/InteractiveTools.astro';
 ---
 
 <BaseLayout title="Home">
@@ -148,6 +152,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </div>
   </section>
+
+  <!-- Case Studies Section -->
+  <CaseStudiesSection />
+
+  <!-- Testimonials Section -->
+  <TestimonialsSection />
+
+  <!-- Interactive Tools Section -->
+  <InteractiveTools />
 
   <!-- CTA Section -->
   <section class="bg-gradient-to-r from-secondary to-primary text-white py-16">

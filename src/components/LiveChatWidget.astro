@@ -1,0 +1,516 @@
+---
+/*
+ * Live Chat Widget Component
+ * Last Updated: 2025-09-16 08:56:10 IST
+ *
+ * Features:
+ * - Intelligent chat widget
+ * - Business hours awareness
+ * - WhatsApp integration
+ * - Quick replies
+ * - Offline message handling
+ * - Analytics tracking
+ */
+
+export interface Props {
+  whatsappNumber?: string;
+  position?: 'bottom-right' | 'bottom-left';
+  showOnMobile?: boolean;
+}
+
+const {
+  whatsappNumber = '919876543210',
+  position = 'bottom-right',
+  showOnMobile = true
+} = Astro.props;
+
+const businessHours = {
+  monday: { open: '09:00', close: '18:00' },
+  tuesday: { open: '09:00', close: '18:00' },
+  wednesday: { open: '09:00', close: '18:00' },
+  thursday: { open: '09:00', close: '18:00' },
+  friday: { open: '09:00', close: '18:00' },
+  saturday: { open: '09:00', close: '13:00' },
+  sunday: { open: 'closed', close: 'closed' }
+};
+
+const quickReplies = [
+  {
+    id: 'healthcare-qa',
+    text: 'Healthcare Documentation QA',
+    message: 'Hi! I\'m interested in Healthcare Documentation QA services. Can you provide more information?'
+  },
+  {
+    id: 'software-testing',
+    text: 'Software Testing',
+    message: 'Hello! I\'d like to know more about your Software Testing services.'
+  },
+  {
+    id: 'geospatial',
+    text: 'Geospatial Services',
+    message: 'Hi! I\'m interested in your Geospatial Data Services. Can we discuss my project?'
+  },
+  {
+    id: 'electronics',
+    text: 'Electronics Data',
+    message: 'Hello! I need help with Electronics Data Solutions. Can you assist?'
+  },
+  {
+    id: 'pricing',
+    text: 'Get Pricing',
+    message: 'Hi! Could you please provide pricing information for your services?'
+  },
+  {
+    id: 'consultation',
+    text: 'Free Consultation',
+    message: 'Hello! I\'d like to schedule a free consultation to discuss my requirements.'
+  }
+];
+
+const positionClasses = {
+  'bottom-right': 'bottom-6 right-6',
+  'bottom-left': 'bottom-6 left-6'
+};
+---
+
+<!-- Chat Widget -->
+<div
+  id="live-chat-widget"
+  class={`fixed ${positionClasses[position]} z-50 ${!showOnMobile ? 'hidden md:block' : ''}`}
+>
+  <!-- Chat Button -->
+  <button
+    id="chat-trigger"
+    class="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+    aria-label="Open live chat"
+  >
+    <svg id="chat-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-3.582 8-8 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 3.582-8 8-8s8 3.582 8 8z"></path>
+    </svg>
+    <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+
+    <!-- Notification Dot -->
+    <div id="notification-dot" class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse hidden"></div>
+  </button>
+
+  <!-- Chat Panel -->
+  <div
+    id="chat-panel"
+    class="absolute bottom-16 right-0 w-80 bg-white rounded-lg shadow-xl border border-gray-200 hidden"
+    style="max-height: 500px;"
+  >
+    <!-- Chat Header -->
+    <div class="bg-gradient-to-r from-primary to-secondary text-white p-4 rounded-t-lg">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-3">
+            <span class="text-primary font-bold text-sm">R&E</span>
+          </div>
+          <div>
+            <h3 class="font-semibold">Ritesource & eExperts</h3>
+            <p id="chat-status" class="text-xs opacity-90">We're online</p>
+          </div>
+        </div>
+        <button id="chat-minimize" class="text-white hover:text-gray-200">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Chat Content -->
+    <div class="h-80 overflow-y-auto">
+      <!-- Welcome Message -->
+      <div id="chat-messages" class="p-4 space-y-3">
+        <div class="flex items-start">
+          <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-2 flex-shrink-0">
+            <span class="text-white text-xs font-bold">R&E</span>
+          </div>
+          <div class="bg-gray-100 rounded-lg p-3 max-w-xs">
+            <p class="text-sm text-gray-800">
+              👋 Hi there! How can we help you today?
+            </p>
+            <p class="text-xs text-gray-600 mt-1" id="welcome-time"></p>
+          </div>
+        </div>
+
+        <!-- Business Hours Message -->
+        <div id="business-hours-message" class="hidden">
+          <div class="flex items-start">
+            <div class="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center mr-2 flex-shrink-0">
+              <span class="text-white text-xs">⏰</span>
+            </div>
+            <div class="bg-orange-50 border border-orange-200 rounded-lg p-3 max-w-xs">
+              <p class="text-sm text-orange-800">
+                We're currently offline. Our business hours are:
+              </p>
+              <p class="text-xs text-orange-600 mt-1">
+                Mon-Fri: 9:00 AM - 6:00 PM IST<br>
+                Sat: 9:00 AM - 1:00 PM IST<br>
+                Sun: Closed
+              </p>
+              <p class="text-xs text-orange-600 mt-2">
+                Send us a message and we'll get back to you!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Replies -->
+      <div class="border-t border-gray-100 p-4">
+        <p class="text-xs text-gray-600 mb-3">Quick questions:</p>
+        <div class="space-y-2">
+          {quickReplies.map((reply) => (
+            <button
+              class="quick-reply-btn w-full text-left bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg p-2 text-sm transition-colors"
+              data-message={reply.message}
+              data-service={reply.id}
+            >
+              {reply.text}
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Input -->
+    <div class="border-t border-gray-100 p-4">
+      <div class="flex items-center space-x-2">
+        <input
+          type="text"
+          id="chat-input"
+          placeholder="Type your message..."
+          class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          maxlength="500"
+        />
+        <button
+          id="send-message"
+          class="bg-primary hover:bg-primary/90 text-white rounded-lg p-2 transition-colors"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+          </svg>
+        </button>
+      </div>
+      <p class="text-xs text-gray-500 mt-2">
+        Powered by WhatsApp • We'll respond within 2 hours
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Floating Notification -->
+<div
+  id="chat-notification"
+  class={`fixed ${positionClasses[position]} mb-20 bg-white rounded-lg shadow-lg border border-gray-200 p-3 hidden max-w-xs z-40`}
+>
+  <div class="flex items-start">
+    <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+      <span class="text-white text-xs font-bold">R&E</span>
+    </div>
+    <div class="flex-1">
+      <p class="text-sm font-medium text-gray-800">Need help?</p>
+      <p class="text-xs text-gray-600">Chat with our team for quick answers!</p>
+    </div>
+    <button id="close-notification" class="text-gray-400 hover:text-gray-600 ml-2">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script define:vars={{ whatsappNumber, businessHours, quickReplies }}>
+  class LiveChatWidget {
+    constructor() {
+      this.isOpen = false;
+      this.hasInteracted = false;
+      this.whatsappNumber = whatsappNumber;
+      this.businessHours = businessHours;
+
+      this.initElements();
+      this.checkBusinessHours();
+      this.attachEventListeners();
+      this.showWelcomeTime();
+      this.startNotificationCycle();
+    }
+
+    initElements() {
+      this.chatTrigger = document.getElementById('chat-trigger');
+      this.chatPanel = document.getElementById('chat-panel');
+      this.chatIcon = document.getElementById('chat-icon');
+      this.closeIcon = document.getElementById('close-icon');
+      this.chatInput = document.getElementById('chat-input');
+      this.sendButton = document.getElementById('send-message');
+      this.chatMessages = document.getElementById('chat-messages');
+      this.notification = document.getElementById('chat-notification');
+      this.notificationDot = document.getElementById('notification-dot');
+    }
+
+    checkBusinessHours() {
+      const now = new Date();
+      const istTime = new Date(now.toLocaleString("en-US", {timeZone: "Asia/Kolkata"}));
+      const day = istTime.getDay();
+      const hours = istTime.getHours();
+      const minutes = istTime.getMinutes();
+      const currentTime = hours * 60 + minutes;
+
+      let isOpen = false;
+      const dayNames = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+      const daySchedule = this.businessHours[dayNames[day]];
+
+      if (daySchedule && daySchedule.open !== 'closed') {
+        const openTime = this.timeToMinutes(daySchedule.open);
+        const closeTime = this.timeToMinutes(daySchedule.close);
+        isOpen = currentTime >= openTime && currentTime < closeTime;
+      }
+
+      const statusElement = document.getElementById('chat-status');
+      const businessHoursMessage = document.getElementById('business-hours-message');
+
+      if (isOpen) {
+        statusElement.textContent = "We're online";
+        statusElement.className = 'text-xs opacity-90';
+      } else {
+        statusElement.textContent = "Currently offline";
+        statusElement.className = 'text-xs opacity-90';
+        businessHoursMessage?.classList.remove('hidden');
+      }
+
+      return isOpen;
+    }
+
+    timeToMinutes(timeString) {
+      const [hours, minutes] = timeString.split(':').map(Number);
+      return hours * 60 + minutes;
+    }
+
+    attachEventListeners() {
+      // Toggle chat
+      this.chatTrigger?.addEventListener('click', () => this.toggleChat());
+
+      // Minimize chat
+      document.getElementById('chat-minimize')?.addEventListener('click', () => this.closeChat());
+
+      // Send message
+      this.sendButton?.addEventListener('click', () => this.sendMessage());
+      this.chatInput?.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') this.sendMessage();
+      });
+
+      // Quick replies
+      document.querySelectorAll('.quick-reply-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const message = e.target.dataset.message;
+          const service = e.target.dataset.service;
+          this.sendQuickReply(message, service);
+        });
+      });
+
+      // Close notification
+      document.getElementById('close-notification')?.addEventListener('click', () => {
+        this.notification?.classList.add('hidden');
+        localStorage.setItem('chatNotificationClosed', Date.now().toString());
+      });
+
+      // Click notification to open chat
+      this.notification?.addEventListener('click', () => {
+        this.notification.classList.add('hidden');
+        this.openChat();
+      });
+    }
+
+    toggleChat() {
+      if (this.isOpen) {
+        this.closeChat();
+      } else {
+        this.openChat();
+      }
+    }
+
+    openChat() {
+      this.isOpen = true;
+      this.hasInteracted = true;
+      this.chatPanel?.classList.remove('hidden');
+      this.chatIcon?.classList.add('hidden');
+      this.closeIcon?.classList.remove('hidden');
+      this.notification?.classList.add('hidden');
+      this.notificationDot?.classList.add('hidden');
+      this.chatInput?.focus();
+
+      // Track analytics
+      if (window.analytics) {
+        window.analytics.trackContactMethod('Live Chat', 'Chat Widget');
+        window.analytics.trackEngagement('Chat Opened', 'Live Chat Widget');
+      }
+    }
+
+    closeChat() {
+      this.isOpen = false;
+      this.chatPanel?.classList.add('hidden');
+      this.chatIcon?.classList.remove('hidden');
+      this.closeIcon?.classList.add('hidden');
+    }
+
+    sendMessage() {
+      const message = this.chatInput?.value.trim();
+      if (!message) return;
+
+      this.sendToWhatsApp(message);
+      this.chatInput.value = '';
+    }
+
+    sendQuickReply(message, service) {
+      this.sendToWhatsApp(message);
+
+      // Track service interest
+      if (window.analytics) {
+        window.analytics.trackServiceInterest(service, 'Live Chat');
+      }
+    }
+
+    sendToWhatsApp(message) {
+      const whatsappUrl = `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+
+      // Track analytics
+      if (window.analytics) {
+        window.analytics.trackContactMethod('WhatsApp', 'Live Chat Widget');
+        window.analytics.trackGoal('Chat Message Sent');
+      }
+
+      // Show confirmation in chat
+      this.addChatMessage('You', message, 'user');
+      setTimeout(() => {
+        this.addChatMessage('System', 'Redirecting to WhatsApp...', 'system');
+      }, 500);
+    }
+
+    addChatMessage(sender, message, type) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = 'flex items-start mb-3';
+
+      if (type === 'user') {
+        messageDiv.innerHTML = `
+          <div class="flex items-start justify-end w-full">
+            <div class="bg-primary text-white rounded-lg p-3 max-w-xs mr-2">
+              <p class="text-sm">${message}</p>
+              <p class="text-xs opacity-75 mt-1">${new Date().toLocaleTimeString()}</p>
+            </div>
+            <div class="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center flex-shrink-0">
+              <span class="text-gray-600 text-xs font-bold">You</span>
+            </div>
+          </div>
+        `;
+      } else {
+        messageDiv.innerHTML = `
+          <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center mr-2 flex-shrink-0">
+            <span class="text-white text-xs font-bold">R&E</span>
+          </div>
+          <div class="bg-gray-100 rounded-lg p-3 max-w-xs">
+            <p class="text-sm text-gray-800">${message}</p>
+            <p class="text-xs text-gray-600 mt-1">${new Date().toLocaleTimeString()}</p>
+          </div>
+        `;
+      }
+
+      this.chatMessages?.appendChild(messageDiv);
+      this.chatMessages?.scrollTop = this.chatMessages.scrollHeight;
+    }
+
+    showWelcomeTime() {
+      const welcomeTimeElement = document.getElementById('welcome-time');
+      if (welcomeTimeElement) {
+        welcomeTimeElement.textContent = new Date().toLocaleTimeString();
+      }
+    }
+
+    startNotificationCycle() {
+      // Don't show notifications if user has interacted or recently closed
+      const lastClosed = localStorage.getItem('chatNotificationClosed');
+      if (lastClosed && Date.now() - parseInt(lastClosed) < 3600000) return; // 1 hour
+
+      // Show notification after 30 seconds
+      setTimeout(() => {
+        if (!this.hasInteracted && !this.isOpen) {
+          this.notification?.classList.remove('hidden');
+          this.notificationDot?.classList.remove('hidden');
+        }
+      }, 30000);
+
+      // Hide notification after 10 seconds
+      setTimeout(() => {
+        this.notification?.classList.add('hidden');
+      }, 40000);
+
+      // Show periodic notifications
+      setInterval(() => {
+        if (!this.hasInteracted && !this.isOpen) {
+          this.notificationDot?.classList.remove('hidden');
+        }
+      }, 120000); // Every 2 minutes
+    }
+  }
+
+  // Initialize chat widget when DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    new LiveChatWidget();
+  });
+</script>
+
+<style>
+  /* Chat widget animations */
+  #chat-panel {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  #chat-notification {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Hover effects */
+  .quick-reply-btn:hover {
+    transform: translateX(2px);
+  }
+
+  /* Chat messages scrollbar */
+  #chat-messages::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  #chat-messages::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  #chat-messages::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 2px;
+  }
+
+  #chat-messages::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 640px) {
+    #chat-panel {
+      width: 90vw;
+      right: 5vw;
+    }
+  }
+</style>

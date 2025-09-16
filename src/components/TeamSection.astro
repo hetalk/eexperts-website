@@ -1,0 +1,365 @@
+---
+/*
+ * Team & Leadership Section Component
+ * Last Updated: 2025-09-16 08:56:10 IST
+ *
+ * Features:
+ * - Leadership team profiles
+ * - Skill highlights
+ * - Company culture
+ * - Team statistics
+ * - Social links
+ */
+
+import OptimizedImage from './OptimizedImage.astro';
+
+const teamMembers = [
+  {
+    id: 1,
+    name: "Hetal Khandwala",
+    title: "Co-Founder & CEO",
+    company: "Ritesource & eExperts",
+    bio: "With 17+ years in quality assurance and business development, Hetal leads our strategic vision and client relationships. Expert in healthcare compliance, process optimization, and team scaling.",
+    image: "/images/team/hetal-khandwala.jpg",
+    skills: ["Quality Assurance", "HIPAA Compliance", "Business Strategy", "Client Relations"],
+    experience: "17+ years",
+    specialties: ["Healthcare QA", "Process Design", "Team Leadership"],
+    education: "MBA, Engineering Background",
+    social: {
+      linkedin: "https://linkedin.com/in/hetalkhandwala",
+      email: "hetal@ritesource.com"
+    },
+    achievements: [
+      "Built 65+ member QA team",
+      "HIPAA compliance expert",
+      "Served 200+ clients globally"
+    ]
+  },
+  {
+    id: 2,
+    name: "Mital Desai",
+    title: "Co-Founder & CTO",
+    company: "Ritesource & eExperts",
+    bio: "Technology visionary with deep expertise in geospatial systems, AI workflows, and data processing. Drives our technical innovation and advanced analytics capabilities.",
+    image: "/images/team/mital-desai.jpg",
+    skills: ["Geospatial Analysis", "AI/ML", "Data Architecture", "Technical Strategy"],
+    experience: "15+ years",
+    specialties: ["GIS Systems", "Data Science", "Technology Integration"],
+    education: "MS Computer Science, GIS Certification",
+    social: {
+      linkedin: "https://linkedin.com/in/mitaldesai",
+      email: "mital@eexperts.info"
+    },
+    achievements: [
+      "Processed 2000+ miles of geospatial data",
+      "AI workflow automation expert",
+      "Technical architecture for Fortune 500"
+    ]
+  },
+  {
+    id: 3,
+    name: "Dr. Priya Sharma",
+    title: "VP of Healthcare Quality",
+    company: "Ritesource",
+    bio: "Board-certified physician turned quality assurance expert. Ensures clinical accuracy and regulatory compliance across all healthcare documentation projects.",
+    image: "/images/team/priya-sharma.jpg",
+    skills: ["Clinical Review", "Medical Coding", "Regulatory Compliance", "Quality Systems"],
+    experience: "12+ years",
+    specialties: ["Medical Review", "ICD-10/CPT", "FDA Compliance"],
+    education: "MD, Healthcare Quality Certification",
+    social: {
+      linkedin: "https://linkedin.com/in/drpriyasharma"
+    },
+    achievements: [
+      "99.8% clinical accuracy rate",
+      "Led 50+ HIPAA audits",
+      "FDA submission expert"
+    ]
+  },
+  {
+    id: 4,
+    name: "Raj Patel",
+    title: "Director of Technology",
+    company: "eExperts",
+    bio: "Full-stack developer and DevOps expert leading our technical delivery and automation initiatives. Specializes in scalable systems and AI integration.",
+    image: "/images/team/raj-patel.jpg",
+    skills: ["Software Development", "DevOps", "System Architecture", "AI Integration"],
+    experience: "10+ years",
+    specialties: ["Cloud Systems", "Automation", "API Development"],
+    education: "MS Software Engineering",
+    social: {
+      linkedin: "https://linkedin.com/in/rajpateltech"
+    },
+    achievements: [
+      "Built scalable automation systems",
+      "Led 100+ software projects",
+      "Cloud architecture expert"
+    ]
+  },
+  {
+    id: 5,
+    name: "Sarah Chen",
+    title: "VP of Client Success",
+    company: "Ritesource & eExperts",
+    bio: "Client relationship expert ensuring exceptional service delivery and long-term partnerships. Manages global accounts and business development.",
+    image: "/images/team/sarah-chen.jpg",
+    skills: ["Client Management", "Business Development", "Project Management", "Global Operations"],
+    experience: "8+ years",
+    specialties: ["Account Management", "International Business", "Service Excellence"],
+    education: "MBA International Business",
+    social: {
+      linkedin: "https://linkedin.com/in/sarahchen"
+    },
+    achievements: [
+      "98% client retention rate",
+      "Expanded to 15+ countries",
+      "Built global delivery model"
+    ]
+  },
+  {
+    id: 6,
+    name: "Dr. James Wilson",
+    title: "Senior GIS Analyst",
+    company: "eExperts",
+    bio: "Geospatial expert with PhD in Geography and 15+ years in GIS analysis. Leads complex mapping projects and spatial data processing initiatives.",
+    image: "/images/team/james-wilson.jpg",
+    skills: ["GIS Analysis", "Remote Sensing", "Spatial Modeling", "Data Visualization"],
+    experience: "15+ years",
+    specialties: ["Urban Planning", "Environmental Analysis", "Smart Cities"],
+    education: "PhD Geography, GIS Professional Certification",
+    social: {
+      linkedin: "https://linkedin.com/in/drjameswilson"
+    },
+    achievements: [
+      "500+ miles of infrastructure mapped",
+      "Smart city project leader",
+      "Published GIS researcher"
+    ]
+  }
+];
+
+const companyStats = [
+  { number: "17+", label: "Years of Excellence", icon: "🏢" },
+  { number: "65+", label: "Team Members", icon: "👥" },
+  { number: "200+", label: "Happy Clients", icon: "🤝" },
+  { number: "15+", label: "Countries Served", icon: "🌍" },
+  { number: "99.5%", label: "Quality Score", icon: "⭐" },
+  { number: "24/7", label: "Support Available", icon: "🚀" }
+];
+
+const cultureValues = [
+  {
+    title: "Excellence in Everything",
+    description: "We don't just meet standards—we set them. Every project reflects our commitment to exceptional quality.",
+    icon: "🎯"
+  },
+  {
+    title: "Continuous Learning",
+    description: "Technology evolves, and so do we. Our team invests in ongoing education and industry certifications.",
+    icon: "📚"
+  },
+  {
+    title: "Client-First Mindset",
+    description: "Your success is our success. We understand your business and deliver solutions that drive real results.",
+    icon: "💡"
+  },
+  {
+    title: "Integrity & Transparency",
+    description: "Clear communication, honest feedback, and ethical practices in every client interaction.",
+    icon: "🤝"
+  }
+];
+---
+
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        Meet Our <span class="text-primary">Leadership</span> Team
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Experienced professionals dedicated to delivering exceptional quality assurance and data solutions across industries.
+      </p>
+    </div>
+
+    <!-- Company Statistics -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-16">
+      {companyStats.map((stat) => (
+        <div class="text-center">
+          <div class="text-3xl mb-2">{stat.icon}</div>
+          <div class="text-2xl md:text-3xl font-bold text-primary mb-1">{stat.number}</div>
+          <div class="text-sm text-gray-600">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Leadership Team -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      {teamMembers.map((member) => (
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow border border-gray-100">
+          <!-- Profile Image -->
+          <div class="relative h-64 bg-gradient-to-br from-primary/10 to-secondary/10">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-32 h-32 bg-white rounded-full flex items-center justify-center shadow-lg">
+                <div class="text-4xl font-bold text-primary">
+                  {member.name.split(' ').map(n => n[0]).join('')}
+                </div>
+              </div>
+            </div>
+            <div class="absolute top-4 right-4 bg-white rounded-full px-3 py-1 text-sm font-medium text-primary">
+              {member.experience}
+            </div>
+          </div>
+
+          <!-- Profile Content -->
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-1 text-gray-900">{member.name}</h3>
+            <p class="text-primary font-semibold mb-1">{member.title}</p>
+            <p class="text-gray-600 text-sm mb-4">{member.company}</p>
+
+            <!-- Bio -->
+            <p class="text-gray-600 text-sm mb-4 leading-relaxed">{member.bio}</p>
+
+            <!-- Skills -->
+            <div class="mb-4">
+              <h4 class="font-semibold text-gray-800 mb-2">Expertise</h4>
+              <div class="flex flex-wrap gap-2">
+                {member.skills.slice(0, 3).map((skill) => (
+                  <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-medium">
+                    {skill}
+                  </span>
+                ))}
+                {member.skills.length > 3 && (
+                  <span class="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
+                    +{member.skills.length - 3}
+                  </span>
+                )}
+              </div>
+            </div>
+
+            <!-- Key Achievements -->
+            <div class="mb-4">
+              <h4 class="font-semibold text-gray-800 mb-2">Key Achievements</h4>
+              <ul class="text-xs text-gray-600 space-y-1">
+                {member.achievements.slice(0, 2).map((achievement) => (
+                  <li class="flex items-start">
+                    <span class="text-secondary mr-1">•</span>
+                    <span>{achievement}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex items-center justify-between">
+              <div class="text-xs text-gray-500">
+                {member.education}
+              </div>
+              <div class="flex space-x-2">
+                {member.social.linkedin && (
+                  <a
+                    href={member.social.linkedin}
+                    target="_blank"
+                    class="text-blue-600 hover:text-blue-700 transition"
+                    aria-label={`${member.name} LinkedIn`}
+                  >
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path>
+                    </svg>
+                  </a>
+                )}
+                {member.social.email && (
+                  <a
+                    href={`mailto:${member.social.email}`}
+                    class="text-gray-600 hover:text-primary transition"
+                    aria-label={`Email ${member.name}`}
+                  >
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Company Culture -->
+    <div class="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8 mb-16">
+      <div class="text-center mb-12">
+        <h3 class="text-2xl md:text-3xl font-bold mb-4">Our Culture & Values</h3>
+        <p class="text-xl text-gray-600">
+          The principles that guide everything we do
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        {cultureValues.map((value) => (
+          <div class="flex items-start">
+            <div class="text-3xl mr-4 mt-1">{value.icon}</div>
+            <div>
+              <h4 class="text-lg font-semibold mb-2 text-primary">{value.title}</h4>
+              <p class="text-gray-600">{value.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Join Our Team CTA -->
+    <div class="text-center bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+      <h3 class="text-2xl font-bold mb-4">Join Our Growing Team</h3>
+      <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+        We're always looking for talented professionals who share our passion for quality and innovation.
+        Join us in delivering exceptional solutions to clients worldwide.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition"
+          onclick="window.analytics?.trackServiceInterest('Career Opportunities', 'Team Section')"
+        >
+          Explore Careers
+        </a>
+        <a
+          href="mailto:careers@ritesource.com"
+          class="border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition"
+        >
+          Send Your Resume
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Track team section engagement
+  document.addEventListener('DOMContentLoaded', function() {
+    if (window.analytics) {
+      // Track when team section comes into view
+      const teamSection = document.querySelector('.team-section');
+      if (teamSection) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              window.analytics.trackEngagement('Team Section Viewed', 'About Page');
+              observer.unobserve(entry.target);
+            }
+          });
+        });
+        observer.observe(teamSection);
+      }
+
+      // Track social link clicks
+      document.querySelectorAll('a[href*="linkedin"], a[href*="mailto"]').forEach(link => {
+        link.addEventListener('click', function() {
+          const type = this.href.includes('linkedin') ? 'LinkedIn' : 'Email';
+          window.analytics.trackContactMethod(type, 'Team Section');
+        });
+      });
+    }
+  });
+</script>

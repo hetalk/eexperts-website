@@ -1,6 +1,9 @@
 ---
+// Last Updated: 2025-09-16 08:19:10 IST
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
+import LiveChatWidget from '../components/LiveChatWidget.astro';
 
 export interface Props {
   title: string;
@@ -193,6 +196,80 @@ const fullOgImage = `${siteUrl}${ogImage}`;
           "reviewCount": "45"
         }
       }
+    </script>
+
+    <!-- Analytics -->
+    <Analytics />
+
+    <!-- Live Chat Widget -->
+    <LiveChatWidget />
+
+    <!-- Service Worker Registration -->
+    <script is:inline>
+      // Register service worker for offline functionality
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', async function() {
+          try {
+            const registration = await navigator.serviceWorker.register('/sw.js');
+            console.log('Service Worker registered successfully:', registration.scope);
+
+            // Handle service worker updates
+            registration.addEventListener('updatefound', () => {
+              const newWorker = registration.installing;
+              if (newWorker) {
+                newWorker.addEventListener('statechange', () => {
+                  if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                    // New content is available, prompt user to refresh
+                    if (confirm('New content is available! Would you like to refresh to get the latest version?')) {
+                      newWorker.postMessage({ type: 'SKIP_WAITING' });
+                      window.location.reload();
+                    }
+                  }
+                });
+              }
+            });
+
+            // Track service worker analytics
+            if (window.analytics) {
+              window.analytics.trackEvent('Service Worker', {
+                'Status': 'Registered',
+                'Scope': registration.scope
+              });
+            }
+
+          } catch (error) {
+            console.error('Service Worker registration failed:', error);
+
+            // Track service worker errors
+            if (window.analytics) {
+              window.analytics.trackEvent('Service Worker', {
+                'Status': 'Failed',
+                'Error': error.message
+              });
+            }
+          }
+        });
+
+        // Listen for service worker messages
+        navigator.serviceWorker.addEventListener('message', (event) => {
+          if (event.data && event.data.type === 'CACHE_UPDATED') {
+            console.log('Cache updated:', event.data.payload);
+          }
+        });
+      }
+
+      // Network status monitoring
+      function handleNetworkChange() {
+        if (window.analytics) {
+          window.analytics.trackEvent('Network Status', {
+            'Status': navigator.onLine ? 'Online' : 'Offline',
+            'Timestamp': new Date().toISOString()
+          });
+        }
+      }
+
+      window.addEventListener('online', handleNetworkChange);
+      window.addEventListener('offline', handleNetworkChange);
     </script>
   </body>
 </html>

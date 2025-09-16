@@ -1,0 +1,149 @@
+---
+/*
+ * Offline Page
+ * Last Updated: 2025-09-16 08:56:10 IST
+ *
+ * Shown when user is offline and requests a page not in cache
+ */
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="You're Offline">
+  <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-blue-50 px-4">
+    <div class="max-w-md mx-auto text-center">
+      <!-- Offline Icon -->
+      <div class="mb-8">
+        <div class="w-24 h-24 mx-auto bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
+          <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-12.728 12.728m0-12.728l12.728 12.728M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <h1 class="text-3xl font-bold text-gray-900 mb-4">You're Offline</h1>
+      <p class="text-lg text-gray-600 mb-8">
+        It looks like you've lost your internet connection. Don't worry, some content is still available!
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="space-y-4">
+        <button
+          onclick="window.location.reload()"
+          class="w-full bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition"
+        >
+          Try Again
+        </button>
+
+        <button
+          onclick="goToHomePage()"
+          class="w-full border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition"
+        >
+          Go to Home Page
+        </button>
+      </div>
+
+      <!-- Cached Pages -->
+      <div class="mt-12 p-6 bg-white rounded-lg shadow border border-gray-100">
+        <h2 class="text-lg font-semibold mb-4 text-gray-900">Available Offline</h2>
+        <div class="space-y-2 text-left">
+          <a href="/" class="block text-primary hover:text-secondary transition">🏠 Home Page</a>
+          <a href="/about" class="block text-primary hover:text-secondary transition">👥 About Us</a>
+          <a href="/services" class="block text-primary hover:text-secondary transition">⚙️ Services</a>
+          <a href="/resources" class="block text-primary hover:text-secondary transition">📚 Resources</a>
+          <a href="/contact" class="block text-primary hover:text-secondary transition">📞 Contact</a>
+        </div>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+        <h3 class="font-semibold text-blue-900 mb-2">Need Immediate Help?</h3>
+        <p class="text-blue-700 text-sm mb-2">
+          You can still reach us even while offline:
+        </p>
+        <div class="space-y-1 text-sm">
+          <div class="text-blue-700">📞 +91 79 4895 5466</div>
+          <div class="text-blue-700">✉️ info@ritesource.com</div>
+          <div class="text-blue-700">✉️ info@eexperts.info</div>
+        </div>
+      </div>
+
+      <!-- Network Status -->
+      <div class="mt-6">
+        <div id="network-status" class="text-sm text-gray-500">
+          Checking connection...
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  function goToHomePage() {
+    try {
+      window.location.href = '/';
+    } catch (error) {
+      console.error('Navigation error:', error);
+    }
+  }
+
+  // Network status monitoring
+  function updateNetworkStatus() {
+    const statusElement = document.getElementById('network-status');
+
+    if (navigator.onLine) {
+      statusElement.textContent = '✅ You\'re back online!';
+      statusElement.className = 'text-sm text-green-600 font-medium';
+
+      // Auto-reload after 2 seconds when back online
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+    } else {
+      statusElement.textContent = '❌ You\'re offline';
+      statusElement.className = 'text-sm text-red-600';
+    }
+  }
+
+  // Check network status on load
+  updateNetworkStatus();
+
+  // Listen for network changes
+  window.addEventListener('online', updateNetworkStatus);
+  window.addEventListener('offline', updateNetworkStatus);
+
+  // Check connection periodically
+  setInterval(() => {
+    updateNetworkStatus();
+  }, 5000);
+
+  // Track offline page analytics (when back online)
+  if (window.analytics && navigator.onLine) {
+    window.analytics.trackEvent('Offline Page View', {
+      'User Agent': navigator.userAgent,
+      'Timestamp': new Date().toISOString()
+    });
+  }
+</script>
+
+<style>
+  /* Prevent layout shift while offline */
+  body {
+    min-height: 100vh;
+  }
+
+  /* Offline-specific animations */
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .offline-pulse {
+    animation: pulse 2s infinite;
+  }
+</style>

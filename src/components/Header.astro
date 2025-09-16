@@ -21,6 +21,7 @@ const currentPath = Astro.url.pathname;
         <a href="/" class={`hover:text-secondary transition ${currentPath === '/' ? 'text-secondary font-semibold' : 'text-gray-700 dark:text-gray-300'}`}>Home</a>
         <a href="/about" class={`hover:text-secondary transition ${currentPath === '/about/' ? 'text-secondary font-semibold' : 'text-gray-700 dark:text-gray-300'}`}>About Us</a>
         <a href="/services" class={`hover:text-secondary transition ${currentPath === '/services/' ? 'text-secondary font-semibold' : 'text-gray-700 dark:text-gray-300'}`}>Services</a>
+        <a href="/resources" class={`hover:text-secondary transition ${currentPath === '/resources/' ? 'text-secondary font-semibold' : 'text-gray-700 dark:text-gray-300'}`}>Resources</a>
         <a href="/contact" class={`hover:text-secondary transition ${currentPath === '/contact/' ? 'text-secondary font-semibold' : 'text-gray-700 dark:text-gray-300'}`}>Contact</a>
         
         <!-- Dark Mode Toggle -->
@@ -70,6 +71,7 @@ const currentPath = Astro.url.pathname;
       <a href="/" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-secondary transition">Home</a>
       <a href="/about" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-secondary transition">About Us</a>
       <a href="/services" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-secondary transition">Services</a>
+      <a href="/resources" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-secondary transition">Resources</a>
       <a href="/contact" class="block py-2 text-gray-700 dark:text-gray-300 hover:text-secondary transition">Contact</a>
     </nav>
   </div>

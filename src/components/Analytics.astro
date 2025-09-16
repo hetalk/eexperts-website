@@ -1,0 +1,296 @@
+---
+/*
+ * Analytics Component
+ * Last Updated: 2025-09-16 08:19:10 IST
+ *
+ * Features:
+ * - Plausible Analytics integration
+ * - Custom event tracking
+ * - Goal conversion tracking
+ * - Privacy-compliant analytics
+ * - Performance monitoring
+ */
+
+export interface Props {
+  domain?: string;
+  trackLocalhost?: boolean;
+  enableHash?: boolean;
+  enableOutboundLinks?: boolean;
+}
+
+const {
+  domain = 'eexperts.info',
+  trackLocalhost = false,
+  enableHash = false,
+  enableOutboundLinks = true
+} = Astro.props;
+
+const isDev = import.meta.env.DEV;
+const shouldTrack = !isDev || trackLocalhost;
+
+// Build script attributes
+const scriptAttrs: Record<string, any> = {
+  'data-domain': domain,
+  src: 'https://plausible.io/js/script.js',
+  defer: true
+};
+
+if (enableHash) {
+  scriptAttrs.src = 'https://plausible.io/js/script.hash.js';
+}
+
+if (enableOutboundLinks) {
+  scriptAttrs.src = enableHash
+    ? 'https://plausible.io/js/script.hash.outbound-links.js'
+    : 'https://plausible.io/js/script.outbound-links.js';
+}
+---
+
+{shouldTrack && (
+  <script
+    {...scriptAttrs}
+    is:inline
+  ></script>
+)}
+
+<!-- Custom Analytics Functions -->
+<script is:inline define:vars={{ shouldTrack, domain }}>
+  // Analytics utilities
+  window.analytics = {
+    // Track custom events
+    trackEvent: function(eventName, props = {}) {
+      if (shouldTrack && window.plausible) {
+        window.plausible(eventName, { props });
+      }
+    },
+
+    // Track form submissions
+    trackFormSubmission: function(formType, success = true) {
+      this.trackEvent(success ? 'Form Submitted' : 'Form Error', {
+        'Form Type': formType,
+        'Status': success ? 'Success' : 'Error'
+      });
+    },
+
+    // Track file downloads
+    trackDownload: function(fileName, fileType) {
+      this.trackEvent('File Download', {
+        'File Name': fileName,
+        'File Type': fileType
+      });
+    },
+
+    // Track service interest
+    trackServiceInterest: function(serviceName, source = 'unknown') {
+      this.trackEvent('Service Interest', {
+        'Service': serviceName,
+        'Source': source
+      });
+    },
+
+    // Track contact method usage
+    trackContactMethod: function(method, location = 'unknown') {
+      this.trackEvent('Contact Method Used', {
+        'Method': method,
+        'Location': location
+      });
+    },
+
+    // Track page engagement
+    trackEngagement: function(action, element) {
+      this.trackEvent('Page Engagement', {
+        'Action': action,
+        'Element': element
+      });
+    },
+
+    // Track business goals
+    trackGoal: function(goalName, value = null) {
+      if (shouldTrack && window.plausible) {
+        const goalData = { goal: goalName };
+        if (value) goalData.revenue = { currency: 'USD', amount: value };
+        window.plausible('Goal', goalData);
+      }
+    }
+  };
+
+  // Auto-track common interactions when DOM is ready
+  document.addEventListener('DOMContentLoaded', function() {
+    if (!shouldTrack) return;
+
+    // Track email reveals
+    document.querySelectorAll('.email-protected').forEach(function(element) {
+      element.addEventListener('click', function() {
+        window.analytics.trackContactMethod('Email Reveal', 'Contact Page');
+      });
+    });
+
+    // Track WhatsApp clicks
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function(element) {
+      element.addEventListener('click', function() {
+        window.analytics.trackContactMethod('WhatsApp', element.closest('section')?.id || 'Unknown');
+      });
+    });
+
+    // Track service card clicks
+    document.querySelectorAll('[data-service]').forEach(function(element) {
+      element.addEventListener('click', function() {
+        const service = element.dataset.service;
+        window.analytics.trackServiceInterest(service, 'Service Card');
+      });
+    });
+
+    // Track FAQ interactions
+    document.querySelectorAll('[onclick*="toggleFAQ"]').forEach(function(element) {
+      element.addEventListener('click', function() {
+        window.analytics.trackEngagement('FAQ Toggle', 'Contact Page');
+      });
+    });
+
+    // Track testimonial interactions
+    document.querySelectorAll('.testimonial-dot, #next-testimonial, #prev-testimonial').forEach(function(element) {
+      element.addEventListener('click', function() {
+        window.analytics.trackEngagement('Testimonial Navigation', 'Home Page');
+      });
+    });
+
+    // Track case study interactions
+    document.querySelectorAll('.view-details-btn, .filter-btn').forEach(function(element) {
+      element.addEventListener('click', function() {
+        const action = element.classList.contains('filter-btn') ? 'Filter Case Studies' : 'View Case Study Details';
+        window.analytics.trackEngagement(action, 'Home Page');
+      });
+    });
+
+    // Track navigation menu usage
+    document.querySelectorAll('nav a').forEach(function(element) {
+      element.addEventListener('click', function() {
+        window.analytics.trackEngagement('Navigation Click', element.textContent.trim());
+      });
+    });
+
+    // Track dark mode toggle
+    document.querySelectorAll('[onclick*="toggleDarkMode"]').forEach(function(element) {
+      element.addEventListener('click', function() {
+        const isDark = document.documentElement.classList.contains('dark');
+        window.analytics.trackEngagement('Dark Mode Toggle', isDark ? 'Light Mode' : 'Dark Mode');
+      });
+    });
+
+    // Track scroll depth
+    let maxScroll = 0;
+    let scrollTimeout;
+
+    window.addEventListener('scroll', function() {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(function() {
+        const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+
+        if (scrollPercent > maxScroll) {
+          maxScroll = scrollPercent;
+
+          // Track milestone scroll depths
+          if (scrollPercent >= 25 && maxScroll < 25) {
+            window.analytics.trackEngagement('Scroll Depth', '25%');
+          } else if (scrollPercent >= 50 && maxScroll < 50) {
+            window.analytics.trackEngagement('Scroll Depth', '50%');
+          } else if (scrollPercent >= 75 && maxScroll < 75) {
+            window.analytics.trackEngagement('Scroll Depth', '75%');
+          } else if (scrollPercent >= 90 && maxScroll < 90) {
+            window.analytics.trackEngagement('Scroll Depth', '90%');
+          }
+        }
+      }, 500);
+    });
+
+    // Track time on page (simplified)
+    let timeOnPage = 0;
+    const timeTracker = setInterval(function() {
+      timeOnPage += 10;
+
+      // Track time milestones
+      if (timeOnPage === 30) {
+        window.analytics.trackEngagement('Time on Page', '30 seconds');
+      } else if (timeOnPage === 60) {
+        window.analytics.trackEngagement('Time on Page', '1 minute');
+      } else if (timeOnPage === 180) {
+        window.analytics.trackEngagement('Time on Page', '3 minutes');
+      } else if (timeOnPage === 300) {
+        window.analytics.trackEngagement('Time on Page', '5 minutes');
+        clearInterval(timeTracker);
+      }
+    }, 10000); // Every 10 seconds
+
+    // Clear interval when user leaves
+    window.addEventListener('beforeunload', function() {
+      clearInterval(timeTracker);
+    });
+
+    // Track performance metrics
+    if (window.performance && window.performance.getEntriesByType) {
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const navigationEntry = window.performance.getEntriesByType('navigation')[0];
+
+          if (navigationEntry) {
+            const loadTime = Math.round(navigationEntry.loadEventEnd - navigationEntry.loadEventStart);
+            const domContentLoaded = Math.round(navigationEntry.domContentLoadedEventEnd - navigationEntry.domContentLoadedEventStart);
+
+            // Track performance goals
+            if (loadTime < 3000) {
+              window.analytics.trackGoal('Fast Page Load');
+            }
+
+            window.analytics.trackEvent('Page Performance', {
+              'Load Time': Math.round(loadTime / 100) * 100 + 'ms', // Round to nearest 100ms
+              'DOM Content Loaded': Math.round(domContentLoaded / 100) * 100 + 'ms'
+            });
+          }
+        }, 1000);
+      });
+    }
+  });
+
+  // Track page visibility for better engagement metrics
+  document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'hidden') {
+      window.analytics.trackEngagement('Page Hidden', window.location.pathname);
+    } else {
+      window.analytics.trackEngagement('Page Visible', window.location.pathname);
+    }
+  });
+</script>
+
+<!-- Goal definitions for reference -->
+<!--
+Plausible Goals to set up in dashboard:
+1. Form Submitted - Contact form completions
+2. Service Interest - Service page visits or clicks
+3. Contact Method Used - WhatsApp, email, or phone interactions
+4. Fast Page Load - Pages loading under 3 seconds
+5. High Engagement - Users scrolling 75%+ or staying 3+ minutes
+6. Download - File downloads
+7. Quote Request - Quote/consultation requests
+-->
+
+<style>
+  /* Hide analytics in development */
+  :global(.dev-analytics-notice) {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #f97316;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    z-index: 1000;
+    opacity: 0.8;
+  }
+</style>
+
+{!shouldTrack && (
+  <div class="dev-analytics-notice">
+    Analytics disabled (dev mode)
+  </div>
+)}

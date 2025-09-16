@@ -1,0 +1,430 @@
+---
+/*
+ * Case Studies Section Component
+ * Last Updated: 2025-09-16 08:19:10 IST
+ *
+ * Features:
+ * - Interactive case study cards
+ * - Filter by service type
+ * - Detailed results and metrics
+ * - Industry-specific examples
+ * - Before/after comparisons
+ */
+
+import OptimizedImage from './OptimizedImage.astro';
+
+const caseStudies = [
+  {
+    id: 1,
+    title: "Major Healthcare Network Documentation QA",
+    client: "Regional Healthcare Network",
+    industry: "Healthcare",
+    service: "Healthcare Documentation QA",
+    duration: "6 months",
+    teamSize: "12 specialists",
+    image: "/images/case-studies/healthcare-network.jpg",
+    challenge: "A 15-hospital network needed to improve their medical transcription accuracy and reduce documentation errors that were affecting patient care and compliance.",
+    solution: "Implemented comprehensive QA processes with HIPAA-compliant workflows, multi-level review systems, and automated quality checks for all medical transcriptions.",
+    results: {
+      accuracy: "99.7%",
+      timeReduction: "40%",
+      costSavings: "$500K annually",
+      errorReduction: "85%"
+    },
+    metrics: [
+      { label: "Documents Processed", value: "150K+" },
+      { label: "Accuracy Improvement", value: "15%" },
+      { label: "Processing Time", value: "-40%" },
+      { label: "Cost Reduction", value: "$500K" }
+    ],
+    testimonial: "Ritesource transformed our documentation workflow. The accuracy improvements have directly impacted patient care quality.",
+    tags: ["HIPAA Compliance", "Medical Transcription", "Quality Assurance", "Workflow Automation"]
+  },
+  {
+    id: 2,
+    title: "Fintech Application Testing & QA",
+    client: "Leading Payment Processor",
+    industry: "Financial Technology",
+    service: "Software Testing Services",
+    duration: "4 months",
+    teamSize: "8 engineers",
+    image: "/images/case-studies/fintech-app.jpg",
+    challenge: "A fast-growing fintech company needed comprehensive testing for their mobile payment application before launching in new markets with strict regulatory requirements.",
+    solution: "Deployed automated testing frameworks, security vulnerability assessments, performance testing, and regulatory compliance validation across multiple platforms.",
+    results: {
+      bugsFound: "200+",
+      timeToMarket: "-30%",
+      securityScore: "A+",
+      testCoverage: "95%"
+    },
+    metrics: [
+      { label: "Critical Bugs Found", value: "47" },
+      { label: "Test Cases Executed", value: "5,000+" },
+      { label: "Platforms Tested", value: "15" },
+      { label: "Test Coverage", value: "95%" }
+    ],
+    testimonial: "Their testing expertise helped us launch confidently in 3 new markets. The security testing was particularly thorough.",
+    tags: ["Mobile Testing", "Security Testing", "Automated Testing", "Compliance", "API Testing"]
+  },
+  {
+    id: 3,
+    title: "Smart City GIS Data Processing",
+    client: "Metropolitan Planning Authority",
+    industry: "Urban Planning",
+    service: "Geospatial Data Services",
+    duration: "8 months",
+    teamSize: "15 GIS specialists",
+    image: "/images/case-studies/smart-city.jpg",
+    challenge: "A major city needed to digitize and analyze 1,200 miles of infrastructure data for their smart city initiative, including roads, utilities, and public facilities.",
+    solution: "Utilized advanced GIS tools, satellite imagery analysis, and AI-powered digitization to create comprehensive digital maps with real-time data integration capabilities.",
+    results: {
+      milesProcessed: "1,200+",
+      accuracyRate: "99.8%",
+      timeframe: "8 months",
+      dataPoints: "2M+"
+    },
+    metrics: [
+      { label: "Miles Digitized", value: "1,200+" },
+      { label: "Data Points Created", value: "2M+" },
+      { label: "Map Accuracy", value: "99.8%" },
+      { label: "Processing Speed", value: "150 miles/month" }
+    ],
+    testimonial: "eExperts delivered beyond expectations. The data quality and insights are driving our entire smart city strategy.",
+    tags: ["GIS Analysis", "Map Digitization", "Smart City", "Satellite Imagery", "Data Integration"]
+  },
+  {
+    id: 4,
+    title: "Electronics Manufacturer BOM Optimization",
+    client: "Global Electronics Company",
+    industry: "Electronics Manufacturing",
+    service: "Electronics Data Solutions",
+    duration: "5 months",
+    teamSize: "10 engineers",
+    image: "/images/case-studies/electronics-bom.jpg",
+    challenge: "An electronics manufacturer with 50+ product lines needed to optimize their component management, reduce costs, and improve supply chain efficiency.",
+    solution: "Implemented AI-driven BOM analysis, component standardization, supplier optimization, and automated procurement workflows with real-time pricing integration.",
+    results: {
+      costReduction: "25%",
+      components: "100K+",
+      supplierOptimization: "40%",
+      cycleTime: "-35%"
+    },
+    metrics: [
+      { label: "Components Analyzed", value: "100K+" },
+      { label: "Cost Reduction", value: "25%" },
+      { label: "Supplier Optimization", value: "40%" },
+      { label: "Design Cycle Time", value: "-35%" }
+    ],
+    testimonial: "The BOM optimization saved us millions and streamlined our entire product development process.",
+    tags: ["BOM Optimization", "Component Analysis", "Supply Chain", "Cost Reduction", "Automation"]
+  },
+  {
+    id: 5,
+    title: "Multi-Service Digital Transformation",
+    client: "Fortune 500 Manufacturing",
+    industry: "Manufacturing",
+    service: "Multiple Services",
+    duration: "12 months",
+    teamSize: "25 specialists",
+    image: "/images/case-studies/digital-transformation.jpg",
+    challenge: "A large manufacturer needed comprehensive digital transformation including quality processes, geospatial facility mapping, and AI-driven workflow automation.",
+    solution: "Deployed integrated solutions across quality assurance, geospatial data processing, and AI automation to create a unified digital operations platform.",
+    results: {
+      efficiencyGain: "45%",
+      facilities: "50+",
+      processes: "200+",
+      roi: "300%"
+    },
+    metrics: [
+      { label: "Efficiency Improvement", value: "45%" },
+      { label: "Facilities Mapped", value: "50+" },
+      { label: "Processes Automated", value: "200+" },
+      { label: "ROI Achieved", value: "300%" }
+    ],
+    testimonial: "Working with both Ritesource and eExperts gave us end-to-end transformation capabilities. Exceptional results.",
+    tags: ["Digital Transformation", "Process Automation", "Facility Mapping", "Quality Systems", "AI Integration"]
+  }
+];
+
+const serviceFilters = [
+  { id: 'all', label: 'All Services', count: caseStudies.length },
+  { id: 'healthcare', label: 'Healthcare QA', count: caseStudies.filter(cs => cs.service.includes('Healthcare')).length },
+  { id: 'software', label: 'Software Testing', count: caseStudies.filter(cs => cs.service.includes('Software')).length },
+  { id: 'geospatial', label: 'Geospatial Services', count: caseStudies.filter(cs => cs.service.includes('Geospatial')).length },
+  { id: 'electronics', label: 'Electronics Data', count: caseStudies.filter(cs => cs.service.includes('Electronics')).length },
+  { id: 'multiple', label: 'Multiple Services', count: caseStudies.filter(cs => cs.service.includes('Multiple')).length }
+];
+---
+
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        <span class="text-primary">Success</span> Stories
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Real results from real clients. See how we've helped businesses across industries achieve their quality and data goals.
+      </p>
+    </div>
+
+    <!-- Service Filters -->
+    <div class="flex flex-wrap justify-center gap-3 mb-12">
+      {serviceFilters.map((filter) => (
+        <button
+          class="filter-btn px-4 py-2 rounded-full border-2 border-gray-200 text-gray-600 hover:border-primary hover:text-primary transition-colors"
+          data-filter={filter.id}
+        >
+          {filter.label}
+          <span class="ml-1 text-sm">({filter.count})</span>
+        </button>
+      ))}
+    </div>
+
+    <!-- Case Studies Grid -->
+    <div class="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+      {caseStudies.map((study) => (
+        <div
+          class="case-study-card bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer border border-gray-100"
+          data-service={study.service.toLowerCase()}
+        >
+          <!-- Image Header -->
+          <div class="relative h-48 bg-gradient-to-r from-primary/10 to-secondary/10">
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center">
+                <div class="text-4xl font-bold text-primary mb-2">{study.industry}</div>
+                <div class="text-lg text-gray-600">{study.service}</div>
+              </div>
+            </div>
+            <div class="absolute top-4 right-4 bg-white rounded-full px-3 py-1 text-sm font-medium text-primary">
+              {study.duration}
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="p-6">
+            <h3 class="text-xl font-bold mb-2 text-gray-900">{study.title}</h3>
+            <p class="text-gray-600 mb-4">{study.client}</p>
+
+            <!-- Challenge -->
+            <div class="mb-4">
+              <h4 class="font-semibold text-primary mb-2">Challenge</h4>
+              <p class="text-gray-600 text-sm leading-relaxed">{study.challenge}</p>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="grid grid-cols-2 gap-3 mb-4">
+              {study.metrics.slice(0, 4).map((metric) => (
+                <div class="text-center bg-gray-50 rounded-lg p-3">
+                  <div class="text-lg font-bold text-secondary">{metric.value}</div>
+                  <div class="text-xs text-gray-600">{metric.label}</div>
+                </div>
+              ))}
+            </div>
+
+            <!-- Tags -->
+            <div class="flex flex-wrap gap-2 mb-4">
+              {study.tags.slice(0, 3).map((tag) => (
+                <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs font-medium">
+                  {tag}
+                </span>
+              ))}
+              {study.tags.length > 3 && (
+                <span class="bg-gray-100 text-gray-600 px-2 py-1 rounded text-xs">
+                  +{study.tags.length - 3} more
+                </span>
+              )}
+            </div>
+
+            <!-- Testimonial -->
+            <blockquote class="text-sm text-gray-700 italic border-l-4 border-secondary pl-4 mb-4">
+              "{study.testimonial}"
+            </blockquote>
+
+            <!-- Team Info -->
+            <div class="flex justify-between items-center text-sm text-gray-500">
+              <span>Team: {study.teamSize}</span>
+              <button class="view-details-btn text-primary hover:text-secondary font-medium flex items-center">
+                View Details
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Load More Button -->
+    <div class="text-center mt-12">
+      <button class="bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition">
+        View More Case Studies
+      </button>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="mt-16 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl p-8 text-center">
+      <h3 class="text-2xl font-bold mb-4">Ready to Create Your Success Story?</h3>
+      <p class="text-gray-600 mb-6 max-w-2xl mx-auto">
+        Let's discuss how we can help you achieve similar results with our quality assurance and data solutions.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contact"
+          class="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition"
+        >
+          Start Your Project
+        </a>
+        <a
+          href="/services"
+          class="border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition"
+        >
+          Explore Services
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Case Study Modal -->
+<div id="case-study-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+  <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+    <div id="modal-content" class="p-6">
+      <!-- Content will be populated by JavaScript -->
+    </div>
+    <button
+      id="close-modal"
+      class="absolute top-4 right-4 bg-gray-100 rounded-full p-2 hover:bg-gray-200 transition"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script define:vars={{ caseStudies }}>
+  class CaseStudiesManager {
+    constructor() {
+      this.studies = caseStudies;
+      this.filteredStudies = this.studies;
+      this.modal = document.getElementById('case-study-modal');
+      this.modalContent = document.getElementById('modal-content');
+
+      this.init();
+    }
+
+    init() {
+      // Filter buttons
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => this.filterStudies(e.target.dataset.filter));
+      });
+
+      // View details buttons
+      document.querySelectorAll('.view-details-btn').forEach((btn, index) => {
+        btn.addEventListener('click', () => this.showModal(this.studies[index]));
+      });
+
+      // Close modal
+      document.getElementById('close-modal')?.addEventListener('click', () => this.hideModal());
+      this.modal?.addEventListener('click', (e) => {
+        if (e.target === this.modal) this.hideModal();
+      });
+
+      // Set initial filter
+      this.filterStudies('all');
+    }
+
+    filterStudies(filter) {
+      // Update button states
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('bg-primary', 'text-white', 'border-primary');
+        btn.classList.add('border-gray-200', 'text-gray-600');
+      });
+
+      document.querySelector(`[data-filter="${filter}"]`).classList.add('bg-primary', 'text-white', 'border-primary');
+      document.querySelector(`[data-filter="${filter}"]`).classList.remove('border-gray-200', 'text-gray-600');
+
+      // Filter and show/hide cards
+      document.querySelectorAll('.case-study-card').forEach(card => {
+        const service = card.dataset.service;
+        const shouldShow = filter === 'all' || service.includes(filter);
+
+        card.style.display = shouldShow ? 'block' : 'none';
+      });
+    }
+
+    showModal(study) {
+      this.modalContent.innerHTML = `
+        <div class="mb-6">
+          <h2 class="text-2xl font-bold mb-2">${study.title}</h2>
+          <div class="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
+            <span><strong>Client:</strong> ${study.client}</span>
+            <span><strong>Industry:</strong> ${study.industry}</span>
+            <span><strong>Duration:</strong> ${study.duration}</span>
+            <span><strong>Team Size:</strong> ${study.teamSize}</span>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <h3 class="text-lg font-semibold mb-3 text-primary">Challenge</h3>
+            <p class="text-gray-600 mb-4">${study.challenge}</p>
+
+            <h3 class="text-lg font-semibold mb-3 text-secondary">Solution</h3>
+            <p class="text-gray-600">${study.solution}</p>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold mb-3 text-primary">Key Results</h3>
+            <div class="grid grid-cols-2 gap-3 mb-4">
+              ${study.metrics.map(metric => `
+                <div class="bg-gray-50 rounded-lg p-3 text-center">
+                  <div class="text-lg font-bold text-secondary">${metric.value}</div>
+                  <div class="text-xs text-gray-600">${metric.label}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <h3 class="text-lg font-semibold mb-3 text-primary">Technologies & Approaches</h3>
+          <div class="flex flex-wrap gap-2">
+            ${study.tags.map(tag => `
+              <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">${tag}</span>
+            `).join('')}
+          </div>
+        </div>
+
+        <blockquote class="bg-gray-50 border-l-4 border-secondary p-4 rounded">
+          <p class="text-gray-700 italic mb-2">"${study.testimonial}"</p>
+          <cite class="text-sm text-gray-600">— ${study.client}</cite>
+        </blockquote>
+
+        <div class="mt-6 flex gap-4">
+          <a href="/contact" class="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary/90 transition">
+            Start Similar Project
+          </a>
+          <a href="/services" class="border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition">
+            Explore Services
+          </a>
+        </div>
+      `;
+
+      this.modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    hideModal() {
+      this.modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+  }
+
+  // Initialize when DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    new CaseStudiesManager();
+  });
+</script>
