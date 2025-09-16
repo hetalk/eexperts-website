@@ -1,4 +1,14 @@
 ---
+/*
+ * Enhanced Header Component with Company Logos
+ * Last Updated: 2025-09-16 16:55:42 IST
+ *
+ * Features:
+ * - Company logos integration
+ * - Brand colors from logo analysis
+ * - Enhanced visual identity
+ */
+
 const currentPath = Astro.url.pathname;
 ---
 
@@ -6,12 +16,39 @@ const currentPath = Astro.url.pathname;
   <div class="container mx-auto px-4">
     <div class="flex justify-between items-center py-4">
       <!-- Logo Section -->
-      <div class="flex items-center space-x-2">
-        <a href="/" class="flex items-center space-x-3">
-          <div class="text-2xl font-bold">
-            <span class="text-primary">Ritesource</span>
+      <div class="flex items-center space-x-4">
+        <a href="/" class="flex items-center space-x-4">
+          <!-- Company Logos -->
+          <div class="flex items-center space-x-3">
+            <!-- Ritesource Logo -->
+            <div class="flex items-center space-x-2">
+              <img
+                src="/images/Ritesource_Logo.png"
+                alt="Ritesource Infosystems"
+                class="h-10 w-auto"
+                loading="eager"
+              />
+            </div>
+
+            <!-- Separator -->
+            <div class="text-2xl font-bold text-gray-600 dark:text-gray-400">&</div>
+
+            <!-- eExperts Logo -->
+            <div class="flex items-center space-x-2">
+              <img
+                src="/images/eExperts_Logo.png"
+                alt="Efficiency Experts Data Solutions"
+                class="h-10 w-auto"
+                loading="eager"
+              />
+            </div>
+          </div>
+
+          <!-- Text Fallback for smaller screens -->
+          <div class="hidden sm:block text-lg font-semibold">
+            <span class="text-text-primary">Ritesource</span>
             <span class="text-gray-700 dark:text-gray-300 mx-1">&</span>
-            <span class="text-secondary">eExperts</span>
+            <span class="text-text-secondary">eExperts</span>
           </div>
         </a>
       </div>

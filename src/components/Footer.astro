@@ -1,61 +1,118 @@
 ---
+/*
+ * Enhanced Footer Component with Brand Colors
+ * Last Updated: 2025-09-16 21:18:38 IST
+ *
+ * Features:
+ * - Company logos integration
+ * - Brand colors from logo analysis
+ * - Enhanced contact information
+ */
 ---
 
-<footer class="bg-dark text-white py-12">
-  <div class="container mx-auto px-4">
+<footer class="bg-dark bg-gradient-to-r from-dark via-primary-dark to-dark text-white py-12 relative overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-10 left-10 w-20 h-20 bg-accent rounded-full"></div>
+    <div class="absolute top-32 right-16 w-16 h-16 bg-secondary rounded-full"></div>
+    <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-purple rounded-full"></div>
+    <div class="absolute bottom-16 right-10 w-24 h-24 bg-accent-light rounded-full"></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
     <div class="grid md:grid-cols-4 gap-8">
-      <!-- Company Info -->
+      <!-- Company Info with Logos -->
       <div class="md:col-span-1">
+        <div class="flex items-center space-x-3 mb-4">
+          <img src="/images/Ritesource_Logo.png" alt="Ritesource" class="h-8 w-auto" />
+          <span class="text-accent-light font-bold text-xl">&</span>
+          <img src="/images/eExperts_Logo.png" alt="eExperts" class="h-8 w-auto" />
+        </div>
         <h3 class="text-xl font-bold mb-4">
-          <span class="text-white">Ritesource</span>
-          <span class="text-secondary mx-1">&</span>
-          <span class="text-secondary">eExperts</span>
+          <span class="text-text-accent">Ritesource</span>
+          <span class="text-gray-300 mx-1">&</span>
+          <span class="text-text-secondary">eExperts</span>
         </h3>
         <p class="text-gray-300">
           Sister companies delivering excellence in quality assurance and data solutions since 2008.
         </p>
+        <div class="mt-4 flex space-x-4">
+          <div class="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+          <div class="w-3 h-3 bg-secondary rounded-full animate-pulse delay-100"></div>
+          <div class="w-3 h-3 bg-accent rounded-full animate-pulse delay-200"></div>
+        </div>
       </div>
 
       <!-- Quick Links -->
       <div>
-        <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+        <h4 class="text-lg font-semibold mb-4 text-accent-light">Quick Links</h4>
         <ul class="space-y-2">
-          <li><a href="/" class="text-gray-300 hover:text-secondary transition">Home</a></li>
-          <li><a href="/about" class="text-gray-300 hover:text-secondary transition">About Us</a></li>
-          <li><a href="/services" class="text-gray-300 hover:text-secondary transition">Services</a></li>
-          <li><a href="/contact" class="text-gray-300 hover:text-secondary transition">Contact</a></li>
+          <li><a href="/" class="text-gray-300 hover:text-accent transition-colors">Home</a></li>
+          <li><a href="/about" class="text-gray-300 hover:text-accent transition-colors">About Us</a></li>
+          <li><a href="/services" class="text-gray-300 hover:text-accent transition-colors">Services</a></li>
+          <li><a href="/resources" class="text-gray-300 hover:text-accent transition-colors">Resources</a></li>
+          <li><a href="/contact" class="text-gray-300 hover:text-accent transition-colors">Contact</a></li>
         </ul>
       </div>
 
       <!-- Ahmedabad Office -->
       <div>
-        <h4 class="text-lg font-semibold mb-4">Ahmedabad Office</h4>
-        <p class="text-gray-300">
-          D-607 Ganesh Glory-11,<br>
-          Jagatpur road, off SG Highway,<br>
-          Ahmedabad - 382470<br>
-          Gujarat, India
-        </p>
+        <h4 class="text-lg font-semibold mb-4 text-secondary-light">Ahmedabad Office</h4>
+        <div class="text-gray-300 space-y-1">
+          <p class="flex items-start">
+            <span class="text-accent-light mr-2">📍</span>
+            D-607 Ganesh Glory-11,<br>
+            <span class="ml-6">Jagatpur road, off SG Highway,</span><br>
+            <span class="ml-6">Ahmedabad - 382470</span><br>
+            <span class="ml-6">Gujarat, India</span>
+          </p>
+          <p class="flex items-center mt-3">
+            <span class="text-accent-light mr-2">📞</span>
+            <a href="tel:+917948955466" class="hover:text-accent transition-colors">+91 79 4895 5466</a>
+          </p>
+        </div>
       </div>
 
-      <!-- Valsad Office -->
+      <!-- Valsad Office & Contact -->
       <div>
-        <h4 class="text-lg font-semibold mb-4">Valsad Office</h4>
-        <p class="text-gray-300">
-          506, 5th floor, Millennium Empire,<br>
-          Near D-Mart, Valsad - 396001<br>
-          Gujarat, India
-        </p>
-        <div class="mt-4">
-          <p class="text-gray-300">✉️ info@eexperts.info</p>
-          <p class="text-gray-300">✉️ info@ritesource.com</p>
+        <h4 class="text-lg font-semibold mb-4 text-white">Valsad Office</h4>
+        <div class="text-gray-300 space-y-1">
+          <p class="flex items-start">
+            <span class="text-accent-light mr-2">📍</span>
+            506, 5th floor, Millennium Empire,<br>
+            <span class="ml-6">Near D-Mart, Valsad - 396001</span><br>
+            <span class="ml-6">Gujarat, India</span>
+          </p>
+          <div class="mt-4 space-y-2">
+            <p class="flex items-center">
+              <span class="text-accent-light mr-2">✉️</span>
+              <a href="mailto:info@eexperts.info" class="hover:text-secondary transition-colors">info@eexperts.info</a>
+            </p>
+            <p class="flex items-center">
+              <span class="text-accent-light mr-2">✉️</span>
+              <a href="mailto:info@ritesource.com" class="hover:text-secondary transition-colors">info@ritesource.com</a>
+            </p>
+            <p class="flex items-center">
+              <span class="text-accent-light mr-2">💬</span>
+              <a href="https://wa.me/917948955466" target="_blank" class="hover:text-purple transition-colors">WhatsApp Support</a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+    <div class="border-t border-accent/30 mt-8 pt-8 text-center">
+      <div class="flex justify-center items-center space-x-4 mb-4">
+        <div class="w-2 h-2 bg-primary rounded-full"></div>
+        <div class="w-2 h-2 bg-secondary rounded-full"></div>
+        <div class="w-2 h-2 bg-accent rounded-full"></div>
+        <div class="w-2 h-2 bg-purple rounded-full"></div>
+      </div>
       <p class="text-gray-400">
-        © 2025 Ritesource Infosystems LLP & Efficiency Experts Data Solutions LLP. All rights reserved.
+        © 2025 <span class="text-text-accent">Ritesource Infosystems LLP</span> & <span class="text-text-secondary">Efficiency Experts Data Solutions LLP</span>. All rights reserved.
+      </p>
+      <p class="text-gray-500 text-sm mt-2">
+        Crafted with precision • Delivering excellence since 2008
       </p>
     </div>
   </div>

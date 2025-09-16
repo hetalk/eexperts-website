@@ -1,5 +1,6 @@
 ---
-// Last Updated: 2025-09-16 08:19:10 IST
+// Last Updated: 2025-09-16 21:18:38 IST
+// Enhanced with brand colors from company logos
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TestimonialsSection from '../components/TestimonialsSection.astro';
 import CaseStudiesSection from '../components/CaseStudiesSection.astro';
@@ -7,83 +8,124 @@ import InteractiveTools from '../components/InteractiveTools.astro';
 ---
 
 <BaseLayout title="Home">
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-primary to-secondary text-white py-20">
-    <div class="container mx-auto px-4">
+  <!-- Hero Section with Brand Colors -->
+  <section class="bg-primary-dark bg-gradient-to-br from-primary via-primary-dark to-secondary text-white py-20 relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-10 left-10 w-20 h-20 bg-accent rounded-full"></div>
+      <div class="absolute top-32 right-16 w-16 h-16 bg-secondary-light rounded-full"></div>
+      <div class="absolute bottom-20 left-1/4 w-12 h-12 bg-purple rounded-full"></div>
+      <div class="absolute bottom-16 right-10 w-24 h-24 bg-accent-light rounded-full"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
       <div class="text-center">
+        <!-- Company Logos Display -->
+        <div class="flex justify-center items-center space-x-8 mb-8">
+          <div class="bg-white rounded-lg p-4 shadow-lg">
+            <img src="/images/Ritesource_Logo.png" alt="Ritesource Infosystems" class="h-16 w-auto" />
+          </div>
+          <div class="text-3xl font-bold text-accent-light">+</div>
+          <div class="bg-white rounded-lg p-4 shadow-lg">
+            <img src="/images/eExperts_Logo.png" alt="eExperts Data Solutions" class="h-16 w-auto" />
+          </div>
+        </div>
+
         <h1 class="text-4xl md:text-6xl font-bold mb-6">
-          Two Companies, One Vision
+          <span class="text-white">Two Companies,</span><br>
+          <span class="text-white">One Vision</span>
         </h1>
-        <p class="text-xl md:text-2xl mb-8">
+        <p class="text-xl md:text-2xl mb-8 text-white">
           Excellence in Quality Assurance and Data Solutions
         </p>
-        <p class="text-lg max-w-3xl mx-auto mb-8">
+        <p class="text-lg max-w-3xl mx-auto mb-8 text-gray-100">
           Ritesource Infosystems LLP and Efficiency Experts Data Solutions LLP partner with businesses worldwide to deliver precision, adaptability, and speed in technical solutions.
         </p>
-        <div class="space-x-4">
-          <a href="/services" class="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition inline-block">
-            Our Services
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <a href="/services" class="bg-accent text-white px-8 py-4 rounded-lg font-semibold hover:bg-accent-light transition-all transform hover:scale-105 shadow-lg">
+            Explore Our Services
           </a>
-          <a href="/contact" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition inline-block">
-            Get in Touch
+          <a href="/contact" class="border-2 border-accent text-accent bg-white px-8 py-4 rounded-lg font-semibold hover:bg-accent hover:text-white transition-all transform hover:scale-105 shadow-lg">
+            Start Your Project
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Companies Overview -->
-  <section class="py-16">
+  <!-- Companies Overview with Enhanced Brand Styling -->
+  <section class="py-16 bg-gradient-to-r from-gray-50 to-light">
     <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          <span class="text-text-primary">Our</span> <span class="text-text-secondary">Companies</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Two specialized companies working together to deliver comprehensive solutions
+        </p>
+      </div>
+
       <div class="grid md:grid-cols-2 gap-12">
         <!-- Ritesource -->
-        <div class="bg-white rounded-lg shadow-lg p-8">
-          <h2 class="text-3xl font-bold text-primary mb-4">Ritesource Infosystems LLP</h2>
+        <div class="bg-white rounded-xl shadow-xl p-8 border-l-4 border-primary hover:shadow-2xl transition-all duration-300">
+          <div class="flex items-center mb-6">
+            <img src="/images/Ritesource_Logo.png" alt="Ritesource" class="h-12 w-auto mr-4" />
+            <div>
+              <h3 class="text-2xl font-bold text-text-primary">Ritesource Infosystems LLP</h3>
+              <p class="text-text-accent font-semibold">Since 2008</p>
+            </div>
+          </div>
           <p class="text-gray-600 mb-6">
             Established in 2008, evolved from PCB engineering to become a leader in quality assurance services.
           </p>
           <ul class="space-y-3">
             <li class="flex items-start">
-              <span class="text-secondary mr-2">✓</span>
-              <span>Healthcare Documentation QA</span>
+              <span class="text-text-accent text-lg mr-3">✓</span>
+              <span class="text-gray-700">Healthcare Documentation QA</span>
             </li>
             <li class="flex items-start">
-              <span class="text-secondary mr-2">✓</span>
-              <span>Medical Transcription Review</span>
+              <span class="text-text-accent text-lg mr-3">✓</span>
+              <span class="text-gray-700">Medical Transcription Review</span>
             </li>
             <li class="flex items-start">
-              <span class="text-secondary mr-2">✓</span>
-              <span>Software Testing Services</span>
+              <span class="text-text-accent text-lg mr-3">✓</span>
+              <span class="text-gray-700">Software Testing Services</span>
             </li>
             <li class="flex items-start">
-              <span class="text-secondary mr-2">✓</span>
-              <span>HIPAA Compliant Processes</span>
+              <span class="text-text-accent text-lg mr-3">✓</span>
+              <span class="text-gray-700">HIPAA Compliant Processes</span>
             </li>
           </ul>
         </div>
 
         <!-- eExperts -->
-        <div class="bg-white rounded-lg shadow-lg p-8">
-          <h2 class="text-3xl font-bold text-secondary mb-4">Efficiency Experts Data Solutions LLP</h2>
+        <div class="bg-white rounded-xl shadow-xl p-8 border-l-4 border-secondary hover:shadow-2xl transition-all duration-300">
+          <div class="flex items-center mb-6">
+            <img src="/images/eExperts_Logo.png" alt="eExperts" class="h-12 w-auto mr-4" />
+            <div>
+              <h3 class="text-2xl font-bold text-text-secondary">Efficiency Experts Data Solutions LLP</h3>
+              <p class="text-purple font-semibold">Since 2023</p>
+            </div>
+          </div>
           <p class="text-gray-600 mb-6">
             Launched in 2023 to address the growing demand for specialized data services and technical solutions.
           </p>
           <ul class="space-y-3">
             <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Geospatial Data Analysis</span>
+              <span class="text-purple text-lg mr-3">✓</span>
+              <span class="text-gray-700">Geospatial Data Analysis</span>
             </li>
             <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Electronics Component Data</span>
+              <span class="text-purple text-lg mr-3">✓</span>
+              <span class="text-gray-700">Electronics Component Data</span>
             </li>
             <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>AI-Driven Workflows</span>
+              <span class="text-purple text-lg mr-3">✓</span>
+              <span class="text-gray-700">AI-Driven Workflows</span>
             </li>
             <li class="flex items-start">
-              <span class="text-primary mr-2">✓</span>
-              <span>Map Digitization Services</span>
+              <span class="text-purple text-lg mr-3">✓</span>
+              <span class="text-gray-700">Map Digitization Services</span>
             </li>
           </ul>
         </div>
@@ -96,19 +138,19 @@ import InteractiveTools from '../components/InteractiveTools.astro';
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div>
-          <div class="text-4xl font-bold text-primary">17+</div>
+          <div class="text-4xl font-bold text-text-primary">17+</div>
           <div class="text-gray-600 mt-2">Years of Excellence</div>
         </div>
         <div>
-          <div class="text-4xl font-bold text-secondary">65+</div>
+          <div class="text-4xl font-bold text-text-secondary">65+</div>
           <div class="text-gray-600 mt-2">Team Members</div>
         </div>
         <div>
-          <div class="text-4xl font-bold text-primary">2000+</div>
+          <div class="text-4xl font-bold text-text-primary">2000+</div>
           <div class="text-gray-600 mt-2">Miles Data Processed</div>
         </div>
         <div>
-          <div class="text-4xl font-bold text-secondary">99.5%</div>
+          <div class="text-4xl font-bold text-text-secondary">99.5%</div>
           <div class="text-gray-600 mt-2">Accuracy Rate</div>
         </div>
       </div>
@@ -119,7 +161,7 @@ import InteractiveTools from '../components/InteractiveTools.astro';
   <section class="py-16">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
-        Why <span class="text-primary">Choose</span> <span class="text-secondary">Us?</span>
+        Why <span class="text-text-primary">Choose</span> <span class="text-text-secondary">Us?</span>
       </h2>
       <div class="grid md:grid-cols-3 gap-8">
         <div class="text-center">
@@ -163,7 +205,7 @@ import InteractiveTools from '../components/InteractiveTools.astro';
   <InteractiveTools />
 
   <!-- CTA Section -->
-  <section class="bg-gradient-to-r from-secondary to-primary text-white py-16">
+  <section class="bg-secondary bg-gradient-to-r from-secondary to-primary text-white py-16">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-6">
         Ready to Transform Your Business?
