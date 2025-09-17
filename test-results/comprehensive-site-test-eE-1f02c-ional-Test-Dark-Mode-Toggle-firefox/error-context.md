@@ -1,0 +1,734 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "Ritesource Infosystems & Efficiency Experts Data Solutions Ritesource & eExperts" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e7] [cursor=pointer]:
+          - img "Ritesource Infosystems" [ref=e9] [cursor=pointer]
+          - generic [ref=e10] [cursor=pointer]: "&"
+          - img "Efficiency Experts Data Solutions" [ref=e12] [cursor=pointer]
+        - generic [ref=e13] [cursor=pointer]:
+          - generic [ref=e14] [cursor=pointer]: Ritesource
+          - generic [ref=e15] [cursor=pointer]: "&"
+          - generic [ref=e16] [cursor=pointer]: eExperts
+      - navigation [ref=e17]:
+        - link "Home" [ref=e18] [cursor=pointer]:
+          - /url: /
+        - link "About Us" [ref=e19] [cursor=pointer]:
+          - /url: /about
+        - link "Services" [ref=e20] [cursor=pointer]:
+          - /url: /services
+        - link "Resources" [ref=e21] [cursor=pointer]:
+          - /url: /resources
+        - link "Contact" [ref=e22] [cursor=pointer]:
+          - /url: /contact
+        - button "Toggle dark mode" [ref=e23] [cursor=pointer]:
+          - img [ref=e24] [cursor=pointer]
+  - main [ref=e26]:
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - img "Ritesource Infosystems" [ref=e37]
+        - generic [ref=e38]: +
+        - img "eExperts Data Solutions" [ref=e40]
+      - heading "Two Companies, One Vision" [level=1] [ref=e41]:
+        - generic [ref=e42]: Two Companies,
+        - generic [ref=e43]: One Vision
+      - paragraph [ref=e44]: Excellence in Quality Assurance and Data Solutions
+      - paragraph [ref=e45]: Ritesource Infosystems LLP and Efficiency Experts Data Solutions LLP partner with businesses worldwide to deliver precision, adaptability, and speed in technical solutions.
+      - generic [ref=e46]:
+        - link "Explore Our Services" [ref=e47] [cursor=pointer]:
+          - /url: /services
+        - link "Start Your Project" [ref=e48] [cursor=pointer]:
+          - /url: /contact
+    - generic [ref=e50]:
+      - generic [ref=e51]:
+        - heading "Our Companies" [level=2] [ref=e52]:
+          - generic [ref=e53]: Our
+          - generic [ref=e54]: Companies
+        - paragraph [ref=e55]: Two specialized companies working together to deliver comprehensive solutions
+      - generic [ref=e56]:
+        - generic [ref=e57]:
+          - generic [ref=e58]:
+            - img "Ritesource" [ref=e59]
+            - generic [ref=e60]:
+              - heading "Ritesource Infosystems LLP" [level=3] [ref=e61]
+              - paragraph [ref=e62]: Since 2008
+          - paragraph [ref=e63]: Established in 2008, evolved from PCB engineering to become a leader in quality assurance services.
+          - list [ref=e64]:
+            - listitem [ref=e65]:
+              - generic [ref=e66]: ✓
+              - generic [ref=e67]: Healthcare Documentation QA
+            - listitem [ref=e68]:
+              - generic [ref=e69]: ✓
+              - generic [ref=e70]: Medical Transcription Review
+            - listitem [ref=e71]:
+              - generic [ref=e72]: ✓
+              - generic [ref=e73]: Software Testing Services
+            - listitem [ref=e74]:
+              - generic [ref=e75]: ✓
+              - generic [ref=e76]: HIPAA Compliant Processes
+        - generic [ref=e77]:
+          - generic [ref=e78]:
+            - img "eExperts" [ref=e79]
+            - generic [ref=e80]:
+              - heading "Efficiency Experts Data Solutions LLP" [level=3] [ref=e81]
+              - paragraph [ref=e82]: Since 2023
+          - paragraph [ref=e83]: Launched in 2023 to address the growing demand for specialized data services and technical solutions.
+          - list [ref=e84]:
+            - listitem [ref=e85]:
+              - generic [ref=e86]: ✓
+              - generic [ref=e87]: Geospatial Data Analysis
+            - listitem [ref=e88]:
+              - generic [ref=e89]: ✓
+              - generic [ref=e90]: Electronics Component Data
+            - listitem [ref=e91]:
+              - generic [ref=e92]: ✓
+              - generic [ref=e93]: AI-Driven Workflows
+            - listitem [ref=e94]:
+              - generic [ref=e95]: ✓
+              - generic [ref=e96]: Map Digitization Services
+    - generic [ref=e99]:
+      - generic [ref=e100]:
+        - generic [ref=e101]: 17+
+        - generic [ref=e102]: Years of Excellence
+      - generic [ref=e103]:
+        - generic [ref=e104]: 65+
+        - generic [ref=e105]: Team Members
+      - generic [ref=e106]:
+        - generic [ref=e107]: 2000+
+        - generic [ref=e108]: Miles Data Processed
+      - generic [ref=e109]:
+        - generic [ref=e110]: 99.5%
+        - generic [ref=e111]: Accuracy Rate
+    - generic [ref=e113]:
+      - heading "Why Choose Us?" [level=2] [ref=e114]:
+        - text: Why
+        - generic [ref=e115]: Choose
+        - generic [ref=e116]: Us?
+      - generic [ref=e117]:
+        - generic [ref=e118]:
+          - generic [ref=e120]: 🎯
+          - heading "Detail-Driven" [level=3] [ref=e121]
+          - paragraph [ref=e122]: We understand the "why" behind your requests and help solve the bigger picture.
+        - generic [ref=e123]:
+          - generic [ref=e125]: ⚡
+          - heading "Fast & Reliable" [level=3] [ref=e126]
+          - paragraph [ref=e127]: Quick turnarounds without compromising quality, backed by proven processes.
+        - generic [ref=e128]:
+          - generic [ref=e130]: 🔒
+          - heading "Data Security" [level=3] [ref=e131]
+          - paragraph [ref=e132]: HIPAA-compliant processes with strict confidentiality protocols.
+    - generic [ref=e134]:
+      - generic [ref=e135]:
+        - heading "Success Stories" [level=2] [ref=e136]:
+          - generic [ref=e137]: Success
+          - text: Stories
+        - paragraph [ref=e138]: Real results from real clients. See how we've helped businesses across industries achieve their quality and data goals.
+      - generic [ref=e139]:
+        - button "All Services (5)" [ref=e140] [cursor=pointer]:
+          - text: All Services
+          - generic [ref=e141] [cursor=pointer]: (5)
+        - button "Healthcare QA (1)" [ref=e142] [cursor=pointer]:
+          - text: Healthcare QA
+          - generic [ref=e143] [cursor=pointer]: (1)
+        - button "Software Testing (1)" [ref=e144] [cursor=pointer]:
+          - text: Software Testing
+          - generic [ref=e145] [cursor=pointer]: (1)
+        - button "Geospatial Services (1)" [ref=e146] [cursor=pointer]:
+          - text: Geospatial Services
+          - generic [ref=e147] [cursor=pointer]: (1)
+        - button "Electronics Data (1)" [ref=e148] [cursor=pointer]:
+          - text: Electronics Data
+          - generic [ref=e149] [cursor=pointer]: (1)
+        - button "Multiple Services (1)" [ref=e150] [cursor=pointer]:
+          - text: Multiple Services
+          - generic [ref=e151] [cursor=pointer]: (1)
+      - generic [ref=e152]:
+        - generic [ref=e153] [cursor=pointer]:
+          - generic [ref=e154] [cursor=pointer]:
+            - generic [ref=e156] [cursor=pointer]:
+              - generic [ref=e157] [cursor=pointer]: Healthcare
+              - generic [ref=e158] [cursor=pointer]: Healthcare Documentation QA
+            - generic [ref=e159] [cursor=pointer]: 6 months
+          - generic [ref=e160] [cursor=pointer]:
+            - heading "Major Healthcare Network Documentation QA" [level=3] [ref=e161] [cursor=pointer]
+            - paragraph [ref=e162] [cursor=pointer]: Regional Healthcare Network
+            - generic [ref=e163] [cursor=pointer]:
+              - heading "Challenge" [level=4] [ref=e164] [cursor=pointer]
+              - paragraph [ref=e165] [cursor=pointer]: A 15-hospital network needed to improve their medical transcription accuracy and reduce documentation errors that were affecting patient care and compliance.
+            - generic [ref=e166] [cursor=pointer]:
+              - generic [ref=e167] [cursor=pointer]:
+                - generic [ref=e168] [cursor=pointer]: 150K+
+                - generic [ref=e169] [cursor=pointer]: Documents Processed
+              - generic [ref=e170] [cursor=pointer]:
+                - generic [ref=e171] [cursor=pointer]: 15%
+                - generic [ref=e172] [cursor=pointer]: Accuracy Improvement
+              - generic [ref=e173] [cursor=pointer]:
+                - generic [ref=e174] [cursor=pointer]: "-40%"
+                - generic [ref=e175] [cursor=pointer]: Processing Time
+              - generic [ref=e176] [cursor=pointer]:
+                - generic [ref=e177] [cursor=pointer]: $500K
+                - generic [ref=e178] [cursor=pointer]: Cost Reduction
+            - generic [ref=e179] [cursor=pointer]:
+              - generic [ref=e180] [cursor=pointer]: HIPAA Compliance
+              - generic [ref=e181] [cursor=pointer]: Medical Transcription
+              - generic [ref=e182] [cursor=pointer]: Quality Assurance
+              - generic [ref=e183] [cursor=pointer]: +1 more
+            - blockquote [ref=e184] [cursor=pointer]: "\"Ritesource transformed our documentation workflow. The accuracy improvements have directly impacted patient care quality.\""
+            - generic [ref=e185] [cursor=pointer]:
+              - generic [ref=e186] [cursor=pointer]: "Team: 12 specialists"
+              - button "View Details" [ref=e187] [cursor=pointer]:
+                - text: View Details
+                - img [ref=e188] [cursor=pointer]
+        - generic [ref=e190] [cursor=pointer]:
+          - generic [ref=e191] [cursor=pointer]:
+            - generic [ref=e193] [cursor=pointer]:
+              - generic [ref=e194] [cursor=pointer]: Financial Technology
+              - generic [ref=e195] [cursor=pointer]: Software Testing Services
+            - generic [ref=e196] [cursor=pointer]: 4 months
+          - generic [ref=e197] [cursor=pointer]:
+            - heading "Fintech Application Testing & QA" [level=3] [ref=e198] [cursor=pointer]
+            - paragraph [ref=e199] [cursor=pointer]: Leading Payment Processor
+            - generic [ref=e200] [cursor=pointer]:
+              - heading "Challenge" [level=4] [ref=e201] [cursor=pointer]
+              - paragraph [ref=e202] [cursor=pointer]: A fast-growing fintech company needed comprehensive testing for their mobile payment application before launching in new markets with strict regulatory requirements.
+            - generic [ref=e203] [cursor=pointer]:
+              - generic [ref=e204] [cursor=pointer]:
+                - generic [ref=e205] [cursor=pointer]: "47"
+                - generic [ref=e206] [cursor=pointer]: Critical Bugs Found
+              - generic [ref=e207] [cursor=pointer]:
+                - generic [ref=e208] [cursor=pointer]: 5,000+
+                - generic [ref=e209] [cursor=pointer]: Test Cases Executed
+              - generic [ref=e210] [cursor=pointer]:
+                - generic [ref=e211] [cursor=pointer]: "15"
+                - generic [ref=e212] [cursor=pointer]: Platforms Tested
+              - generic [ref=e213] [cursor=pointer]:
+                - generic [ref=e214] [cursor=pointer]: 95%
+                - generic [ref=e215] [cursor=pointer]: Test Coverage
+            - generic [ref=e216] [cursor=pointer]:
+              - generic [ref=e217] [cursor=pointer]: Mobile Testing
+              - generic [ref=e218] [cursor=pointer]: Security Testing
+              - generic [ref=e219] [cursor=pointer]: Automated Testing
+              - generic [ref=e220] [cursor=pointer]: +2 more
+            - blockquote [ref=e221] [cursor=pointer]: "\"Their testing expertise helped us launch confidently in 3 new markets. The security testing was particularly thorough.\""
+            - generic [ref=e222] [cursor=pointer]:
+              - generic [ref=e223] [cursor=pointer]: "Team: 8 engineers"
+              - button "View Details" [ref=e224] [cursor=pointer]:
+                - text: View Details
+                - img [ref=e225] [cursor=pointer]
+        - generic [ref=e227] [cursor=pointer]:
+          - generic [ref=e228] [cursor=pointer]:
+            - generic [ref=e230] [cursor=pointer]:
+              - generic [ref=e231] [cursor=pointer]: Urban Planning
+              - generic [ref=e232] [cursor=pointer]: Geospatial Data Services
+            - generic [ref=e233] [cursor=pointer]: 8 months
+          - generic [ref=e234] [cursor=pointer]:
+            - heading "Smart City GIS Data Processing" [level=3] [ref=e235] [cursor=pointer]
+            - paragraph [ref=e236] [cursor=pointer]: Metropolitan Planning Authority
+            - generic [ref=e237] [cursor=pointer]:
+              - heading "Challenge" [level=4] [ref=e238] [cursor=pointer]
+              - paragraph [ref=e239] [cursor=pointer]: A major city needed to digitize and analyze 1,200 miles of infrastructure data for their smart city initiative, including roads, utilities, and public facilities.
+            - generic [ref=e240] [cursor=pointer]:
+              - generic [ref=e241] [cursor=pointer]:
+                - generic [ref=e242] [cursor=pointer]: 1,200+
+                - generic [ref=e243] [cursor=pointer]: Miles Digitized
+              - generic [ref=e244] [cursor=pointer]:
+                - generic [ref=e245] [cursor=pointer]: 2M+
+                - generic [ref=e246] [cursor=pointer]: Data Points Created
+              - generic [ref=e247] [cursor=pointer]:
+                - generic [ref=e248] [cursor=pointer]: 99.8%
+                - generic [ref=e249] [cursor=pointer]: Map Accuracy
+              - generic [ref=e250] [cursor=pointer]:
+                - generic [ref=e251] [cursor=pointer]: 150 miles/month
+                - generic [ref=e252] [cursor=pointer]: Processing Speed
+            - generic [ref=e253] [cursor=pointer]:
+              - generic [ref=e254] [cursor=pointer]: GIS Analysis
+              - generic [ref=e255] [cursor=pointer]: Map Digitization
+              - generic [ref=e256] [cursor=pointer]: Smart City
+              - generic [ref=e257] [cursor=pointer]: +2 more
+            - blockquote [ref=e258] [cursor=pointer]: "\"eExperts delivered beyond expectations. The data quality and insights are driving our entire smart city strategy.\""
+            - generic [ref=e259] [cursor=pointer]:
+              - generic [ref=e260] [cursor=pointer]: "Team: 15 GIS specialists"
+              - button "View Details" [ref=e261] [cursor=pointer]:
+                - text: View Details
+                - img [ref=e262] [cursor=pointer]
+        - generic [ref=e264] [cursor=pointer]:
+          - generic [ref=e265] [cursor=pointer]:
+            - generic [ref=e267] [cursor=pointer]:
+              - generic [ref=e268] [cursor=pointer]: Electronics Manufacturing
+              - generic [ref=e269] [cursor=pointer]: Electronics Data Solutions
+            - generic [ref=e270] [cursor=pointer]: 5 months
+          - generic [ref=e271] [cursor=pointer]:
+            - heading "Electronics Manufacturer BOM Optimization" [level=3] [ref=e272] [cursor=pointer]
+            - paragraph [ref=e273] [cursor=pointer]: Global Electronics Company
+            - generic [ref=e274] [cursor=pointer]:
+              - heading "Challenge" [level=4] [ref=e275] [cursor=pointer]
+              - paragraph [ref=e276] [cursor=pointer]: An electronics manufacturer with 50+ product lines needed to optimize their component management, reduce costs, and improve supply chain efficiency.
+            - generic [ref=e277] [cursor=pointer]:
+              - generic [ref=e278] [cursor=pointer]:
+                - generic [ref=e279] [cursor=pointer]: 100K+
+                - generic [ref=e280] [cursor=pointer]: Components Analyzed
+              - generic [ref=e281] [cursor=pointer]:
+                - generic [ref=e282] [cursor=pointer]: 25%
+                - generic [ref=e283] [cursor=pointer]: Cost Reduction
+              - generic [ref=e284] [cursor=pointer]:
+                - generic [ref=e285] [cursor=pointer]: 40%
+                - generic [ref=e286] [cursor=pointer]: Supplier Optimization
+              - generic [ref=e287] [cursor=pointer]:
+                - generic [ref=e288] [cursor=pointer]: "-35%"
+                - generic [ref=e289] [cursor=pointer]: Design Cycle Time
+            - generic [ref=e290] [cursor=pointer]:
+              - generic [ref=e291] [cursor=pointer]: BOM Optimization
+              - generic [ref=e292] [cursor=pointer]: Component Analysis
+              - generic [ref=e293] [cursor=pointer]: Supply Chain
+              - generic [ref=e294] [cursor=pointer]: +2 more
+            - blockquote [ref=e295] [cursor=pointer]: "\"The BOM optimization saved us millions and streamlined our entire product development process.\""
+            - generic [ref=e296] [cursor=pointer]:
+              - generic [ref=e297] [cursor=pointer]: "Team: 10 engineers"
+              - button "View Details" [ref=e298] [cursor=pointer]:
+                - text: View Details
+                - img [ref=e299] [cursor=pointer]
+        - generic [ref=e301] [cursor=pointer]:
+          - generic [ref=e302] [cursor=pointer]:
+            - generic [ref=e304] [cursor=pointer]:
+              - generic [ref=e305] [cursor=pointer]: Manufacturing
+              - generic [ref=e306] [cursor=pointer]: Multiple Services
+            - generic [ref=e307] [cursor=pointer]: 12 months
+          - generic [ref=e308] [cursor=pointer]:
+            - heading "Multi-Service Digital Transformation" [level=3] [ref=e309] [cursor=pointer]
+            - paragraph [ref=e310] [cursor=pointer]: Fortune 500 Manufacturing
+            - generic [ref=e311] [cursor=pointer]:
+              - heading "Challenge" [level=4] [ref=e312] [cursor=pointer]
+              - paragraph [ref=e313] [cursor=pointer]: A large manufacturer needed comprehensive digital transformation including quality processes, geospatial facility mapping, and AI-driven workflow automation.
+            - generic [ref=e314] [cursor=pointer]:
+              - generic [ref=e315] [cursor=pointer]:
+                - generic [ref=e316] [cursor=pointer]: 45%
+                - generic [ref=e317] [cursor=pointer]: Efficiency Improvement
+              - generic [ref=e318] [cursor=pointer]:
+                - generic [ref=e319] [cursor=pointer]: 50+
+                - generic [ref=e320] [cursor=pointer]: Facilities Mapped
+              - generic [ref=e321] [cursor=pointer]:
+                - generic [ref=e322] [cursor=pointer]: 200+
+                - generic [ref=e323] [cursor=pointer]: Processes Automated
+              - generic [ref=e324] [cursor=pointer]:
+                - generic [ref=e325] [cursor=pointer]: 300%
+                - generic [ref=e326] [cursor=pointer]: ROI Achieved
+            - generic [ref=e327] [cursor=pointer]:
+              - generic [ref=e328] [cursor=pointer]: Digital Transformation
+              - generic [ref=e329] [cursor=pointer]: Process Automation
+              - generic [ref=e330] [cursor=pointer]: Facility Mapping
+              - generic [ref=e331] [cursor=pointer]: +2 more
+            - blockquote [ref=e332] [cursor=pointer]: "\"Working with both Ritesource and eExperts gave us end-to-end transformation capabilities. Exceptional results.\""
+            - generic [ref=e333] [cursor=pointer]:
+              - generic [ref=e334] [cursor=pointer]: "Team: 25 specialists"
+              - button "View Details" [ref=e335] [cursor=pointer]:
+                - text: View Details
+                - img [ref=e336] [cursor=pointer]
+      - button "View More Case Studies" [ref=e339] [cursor=pointer]
+      - generic [ref=e340]:
+        - heading "Ready to Create Your Success Story?" [level=3] [ref=e341]
+        - paragraph [ref=e342]: Let's discuss how we can help you achieve similar results with our quality assurance and data solutions.
+        - generic [ref=e343]:
+          - link "Start Your Project" [ref=e344] [cursor=pointer]:
+            - /url: /contact
+          - link "Explore Services" [ref=e345] [cursor=pointer]:
+            - /url: /services
+    - generic [ref=e347]:
+      - generic [ref=e348]:
+        - heading "What Our Clients Say" [level=2] [ref=e349]:
+          - text: What Our
+          - generic [ref=e350]: Clients
+          - text: Say
+        - paragraph [ref=e351]: From healthcare to technology, our clients trust us with their most critical quality assurance and data challenges.
+      - generic [ref=e352]:
+        - generic [ref=e353]:
+          - generic [ref=e354]: 17+
+          - generic [ref=e355]: Years of Excellence
+        - generic [ref=e356]:
+          - generic [ref=e357]: 65+
+          - generic [ref=e358]: Team Members
+        - generic [ref=e359]:
+          - generic [ref=e360]: 200+
+          - generic [ref=e361]: Happy Clients
+        - generic [ref=e362]:
+          - generic [ref=e363]: 99.5%
+          - generic [ref=e364]: Accuracy Rate
+      - generic [ref=e365]:
+        - generic [ref=e367]:
+          - generic [ref=e369]:
+            - generic [ref=e370]:
+              - img [ref=e371]
+              - img [ref=e373]
+              - img [ref=e375]
+              - img [ref=e377]
+              - img [ref=e379]
+              - generic [ref=e381]: "5.0"
+            - blockquote [ref=e382]: "\"Ritesource has been invaluable for our medical transcription quality assurance. Their HIPAA-compliant processes and 99.5% accuracy rate have significantly improved our documentation workflow. The team understands healthcare nuances perfectly.\""
+            - generic [ref=e384]: Healthcare Documentation QA
+            - generic [ref=e385]:
+              - generic [ref=e386]:
+                - generic [ref=e387]: Dr. Sarah Johnson
+                - generic [ref=e388]: Medical Director
+                - generic [ref=e389]: HealthCare Associates
+                - generic [ref=e390]: Boston, MA
+              - generic [ref=e392]: DSJ
+          - generic [ref=e394]:
+            - generic [ref=e395]:
+              - img [ref=e396]
+              - img [ref=e398]
+              - img [ref=e400]
+              - img [ref=e402]
+              - img [ref=e404]
+              - generic [ref=e406]: "5.0"
+            - blockquote [ref=e407]: "\"Working with Ritesource on our software testing has been exceptional. They caught critical bugs that our internal team missed and their automated testing framework saved us months of development time. Highly professional and detail-oriented.\""
+            - generic [ref=e409]: Software Testing Services
+            - generic [ref=e410]:
+              - generic [ref=e411]:
+                - generic [ref=e412]: Marcus Chen
+                - generic [ref=e413]: CTO
+                - generic [ref=e414]: TechFlow Solutions
+                - generic [ref=e415]: San Francisco, CA
+              - generic [ref=e417]: MC
+          - generic [ref=e419]:
+            - generic [ref=e420]:
+              - img [ref=e421]
+              - img [ref=e423]
+              - img [ref=e425]
+              - img [ref=e427]
+              - img [ref=e429]
+              - generic [ref=e431]: "5.0"
+            - blockquote [ref=e432]: "\"eExperts processed over 500 miles of our geospatial data with incredible precision. Their map digitization and GIS analysis helped us complete our urban development project ahead of schedule. Outstanding technical expertise.\""
+            - generic [ref=e434]: Geospatial Data Services
+            - generic [ref=e435]:
+              - generic [ref=e436]:
+                - generic [ref=e437]: Dr. Priya Sharma
+                - generic [ref=e438]: GIS Manager
+                - generic [ref=e439]: Urban Planning Corp
+                - generic [ref=e440]: Toronto, Canada
+              - generic [ref=e442]: DPS
+          - generic [ref=e444]:
+            - generic [ref=e445]:
+              - img [ref=e446]
+              - img [ref=e448]
+              - img [ref=e450]
+              - img [ref=e452]
+              - img [ref=e454]
+              - generic [ref=e456]: "5.0"
+            - blockquote [ref=e457]: "\"The electronics data services from eExperts transformed our component management. They optimized our BOMs, processed over 100K component specifications, and their AI-driven workflows reduced our design cycle time by 40%.\""
+            - generic [ref=e459]: Electronics Data Solutions
+            - generic [ref=e460]:
+              - generic [ref=e461]:
+                - generic [ref=e462]: James Wilson
+                - generic [ref=e463]: Engineering Director
+                - generic [ref=e464]: ElectroTech Industries
+                - generic [ref=e465]: Austin, TX
+              - generic [ref=e467]: JW
+          - generic [ref=e469]:
+            - generic [ref=e470]:
+              - img [ref=e471]
+              - img [ref=e473]
+              - img [ref=e475]
+              - img [ref=e477]
+              - img [ref=e479]
+              - generic [ref=e481]: "5.0"
+            - blockquote [ref=e482]: "\"Both Ritesource and eExperts have been game-changers for our data operations. From quality assurance to AI-driven analytics, they deliver consistently high-quality results. Their 24-hour turnaround time is impressive.\""
+            - generic [ref=e484]: Multiple Services
+            - generic [ref=e485]:
+              - generic [ref=e486]:
+                - generic [ref=e487]: Lisa Rodriguez
+                - generic [ref=e488]: Operations Manager
+                - generic [ref=e489]: DataVision Analytics
+                - generic [ref=e490]: New York, NY
+              - generic [ref=e492]: LR
+          - generic [ref=e494]:
+            - generic [ref=e495]:
+              - img [ref=e496]
+              - img [ref=e498]
+              - img [ref=e500]
+              - img [ref=e502]
+              - img [ref=e504]
+              - generic [ref=e506]: "5.0"
+            - blockquote [ref=e507]: "\"As a medical device company, compliance is everything. Ritesource's HIPAA-compliant processes and attention to regulatory details have been crucial for our FDA submissions. They're an extension of our quality team.\""
+            - generic [ref=e509]: Healthcare Documentation QA
+            - generic [ref=e510]:
+              - generic [ref=e511]:
+                - generic [ref=e512]: David Kim
+                - generic [ref=e513]: Head of Quality
+                - generic [ref=e514]: MedDevice Pro
+                - generic [ref=e515]: Chicago, IL
+              - generic [ref=e517]: DK
+        - button "Previous testimonial" [ref=e518] [cursor=pointer]:
+          - img [ref=e519] [cursor=pointer]
+        - button "Next testimonial" [ref=e521] [cursor=pointer]:
+          - img [ref=e522] [cursor=pointer]
+      - generic [ref=e524]:
+        - button "Go to slide 1" [ref=e525] [cursor=pointer]
+        - button "Go to slide 2" [ref=e526] [cursor=pointer]
+      - generic [ref=e527]:
+        - paragraph [ref=e528]: Ready to join our satisfied clients?
+        - link "Start Your Project Today" [ref=e529] [cursor=pointer]:
+          - /url: /contact
+          - text: Start Your Project Today
+          - img [ref=e530] [cursor=pointer]
+    - generic [ref=e533]:
+      - generic [ref=e534]:
+        - heading "Interactive Tools" [level=2] [ref=e535]:
+          - text: Interactive
+          - generic [ref=e536]: Tools
+        - paragraph [ref=e537]: Get instant estimates and find the perfect services for your needs with our interactive calculators and tools.
+      - generic [ref=e538]:
+        - generic [ref=e539]:
+          - generic [ref=e540]:
+            - generic [ref=e542]: 💰
+            - generic [ref=e543]:
+              - heading "Cost Calculator" [level=3] [ref=e544]
+              - paragraph [ref=e545]: Get instant pricing estimates
+          - generic [ref=e546]:
+            - generic [ref=e547]:
+              - generic [ref=e548]: Service Type
+              - combobox [ref=e549]:
+                - option "Select a service" [selected]
+                - option "Healthcare Documentation QA"
+                - option "Software Testing"
+                - option "Geospatial Data Services"
+                - option "Electronics Data Solutions"
+                - option "AI-Driven Workflows"
+            - generic [ref=e550]:
+              - generic [ref=e551]: Project Size
+              - combobox [ref=e552]:
+                - option "Small (< 100 hours)" [selected]
+                - option "Medium (100-500 hours)"
+                - option "Large (500-1000 hours)"
+                - option "Enterprise (1000+ hours)"
+            - generic [ref=e553]:
+              - generic [ref=e554]: Timeline
+              - combobox [ref=e555]:
+                - option "Standard (4+ weeks)" [selected]
+                - option "Expedited (2-4 weeks)"
+                - option "Rush (< 2 weeks)"
+            - generic [ref=e556]:
+              - generic [ref=e557]: Estimated Hours
+              - slider [ref=e558] [cursor=pointer]: "100"
+              - generic [ref=e559]:
+                - generic [ref=e560]: 10h
+                - generic [ref=e561]: 100h
+                - generic [ref=e562]: 1000h
+            - generic [ref=e564]:
+              - generic [ref=e565]: Estimated Cost
+              - generic [ref=e566]: $0
+              - generic [ref=e567]: "* Actual costs may vary based on specific requirements"
+            - button "Get Detailed Quote" [ref=e568] [cursor=pointer]
+        - generic [ref=e569]:
+          - generic [ref=e570]:
+            - generic [ref=e572]: 🎯
+            - generic [ref=e573]:
+              - heading "Service Matcher" [level=3] [ref=e574]
+              - paragraph [ref=e575]: Find your perfect service
+          - generic [ref=e576]:
+            - generic [ref=e577]:
+              - generic [ref=e578]: What industry are you in?
+              - generic [ref=e579]:
+                - generic [ref=e580] [cursor=pointer]:
+                  - radio "Healthcare" [ref=e581]
+                  - generic [ref=e582] [cursor=pointer]: Healthcare
+                - generic [ref=e583] [cursor=pointer]:
+                  - radio "Technology" [ref=e584]
+                  - generic [ref=e585] [cursor=pointer]: Technology
+                - generic [ref=e586] [cursor=pointer]:
+                  - radio "Manufacturing" [ref=e587]
+                  - generic [ref=e588] [cursor=pointer]: Manufacturing
+                - generic [ref=e589] [cursor=pointer]:
+                  - radio "Other" [ref=e590]
+                  - generic [ref=e591] [cursor=pointer]: Other
+            - generic [ref=e592]:
+              - generic [ref=e593]: What's your main challenge?
+              - generic [ref=e594]:
+                - generic [ref=e595] [cursor=pointer]:
+                  - radio "Quality & Accuracy Issues" [ref=e596]
+                  - generic [ref=e597] [cursor=pointer]: Quality & Accuracy Issues
+                - generic [ref=e598] [cursor=pointer]:
+                  - radio "Slow Turnaround Times" [ref=e599]
+                  - generic [ref=e600] [cursor=pointer]: Slow Turnaround Times
+                - generic [ref=e601] [cursor=pointer]:
+                  - radio "Lack of Capacity" [ref=e602]
+                  - generic [ref=e603] [cursor=pointer]: Lack of Capacity
+                - generic [ref=e604] [cursor=pointer]:
+                  - radio "Missing Expertise" [ref=e605]
+                  - generic [ref=e606] [cursor=pointer]: Missing Expertise
+            - generic [ref=e607]:
+              - generic [ref=e608]: Team size?
+              - combobox [ref=e609]:
+                - option "Small (1-10 people)" [selected]
+                - option "Medium (11-50 people)"
+                - option "Large (51-200 people)"
+                - option "Enterprise (200+ people)"
+            - button "Find My Perfect Service" [ref=e610] [cursor=pointer]
+        - generic [ref=e611]:
+          - generic [ref=e612]:
+            - generic [ref=e614]: 📈
+            - generic [ref=e615]:
+              - heading "ROI Calculator" [level=3] [ref=e616]
+              - paragraph [ref=e617]: Calculate your return on investment
+          - generic [ref=e618]:
+            - generic [ref=e619]:
+              - generic [ref=e620]: Current Monthly Cost (Internal)
+              - generic [ref=e621]:
+                - generic [ref=e622]: $
+                - spinbutton [ref=e623]
+            - generic [ref=e624]:
+              - generic [ref=e625]: Current Accuracy Rate (%)
+              - slider [ref=e626] [cursor=pointer]: "85"
+              - generic [ref=e627]:
+                - generic [ref=e628]: 70%
+                - generic [ref=e629]: 85%
+                - generic [ref=e630]: 98%
+            - generic [ref=e631]:
+              - generic [ref=e632]: Hours Spent on Quality Issues (Monthly)
+              - spinbutton [ref=e633]
+            - generic [ref=e634]:
+              - heading "Projected Savings with Our Services" [level=4] [ref=e635]
+              - generic [ref=e636]:
+                - generic [ref=e637]:
+                  - generic [ref=e638]: Monthly Savings
+                  - generic [ref=e639]: $0
+                - generic [ref=e640]:
+                  - generic [ref=e641]: Annual ROI
+                  - generic [ref=e642]: 0%
+            - button "Schedule ROI Discussion" [ref=e643] [cursor=pointer]
+        - generic [ref=e644]:
+          - generic [ref=e645]:
+            - generic [ref=e647]: ⏱️
+            - generic [ref=e648]:
+              - heading "Timeline Estimator" [level=3] [ref=e649]
+              - paragraph [ref=e650]: Estimate project duration
+          - generic [ref=e651]:
+            - generic [ref=e652]:
+              - generic [ref=e653]: Project Type
+              - combobox [ref=e654]:
+                - option "Documentation Review" [selected]
+                - option "Software Testing"
+                - option "Data Processing"
+                - option "System Integration"
+            - generic [ref=e655]:
+              - generic [ref=e656]: Volume/Scope
+              - combobox [ref=e657]:
+                - option "Small (< 100 items)" [selected]
+                - option "Medium (100-1000 items)"
+                - option "Large (1000-10000 items)"
+                - option "Massive (10000+ items)"
+            - generic [ref=e658]:
+              - generic [ref=e659]: Complexity Level
+              - generic [ref=e660]:
+                - generic [ref=e661] [cursor=pointer]:
+                  - radio "Low" [ref=e662]
+                  - generic [ref=e663] [cursor=pointer]: Low
+                - generic [ref=e664] [cursor=pointer]:
+                  - radio "Medium" [checked] [ref=e665]
+                  - generic [ref=e666] [cursor=pointer]: Medium
+                - generic [ref=e667] [cursor=pointer]:
+                  - radio "High" [ref=e668]
+                  - generic [ref=e669] [cursor=pointer]: High
+            - generic [ref=e670]:
+              - heading "Estimated Timeline" [level=4] [ref=e671]
+              - generic [ref=e672]:
+                - generic [ref=e673]: 1-2 weeks
+                - generic [ref=e674]: Based on similar projects
+            - button "Discuss My Timeline" [ref=e675] [cursor=pointer]
+    - generic [ref=e677]:
+      - heading "Ready to Transform Your Business?" [level=2] [ref=e678]
+      - paragraph [ref=e679]: Let's create solutions that move your business forward - fast and right.
+      - link "Start Your Project Today" [ref=e680] [cursor=pointer]:
+        - /url: /contact
+  - contentinfo [ref=e681]:
+    - generic [ref=e687]:
+      - generic [ref=e688]:
+        - generic [ref=e689]:
+          - generic [ref=e690]:
+            - img "Ritesource" [ref=e691]
+            - generic [ref=e692]: "&"
+            - img "eExperts" [ref=e693]
+          - heading "Ritesource & eExperts" [level=3] [ref=e694]:
+            - generic [ref=e695]: Ritesource
+            - generic [ref=e696]: "&"
+            - generic [ref=e697]: eExperts
+          - paragraph [ref=e698]: Sister companies delivering excellence in quality assurance and data solutions since 2008.
+        - generic [ref=e703]:
+          - heading "Quick Links" [level=4] [ref=e704]
+          - list [ref=e705]:
+            - listitem [ref=e706]:
+              - link "Home" [ref=e707] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e708]:
+              - link "About Us" [ref=e709] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e710]:
+              - link "Services" [ref=e711] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e712]:
+              - link "Resources" [ref=e713] [cursor=pointer]:
+                - /url: /resources
+            - listitem [ref=e714]:
+              - link "Contact" [ref=e715] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e716]:
+          - heading "Ahmedabad Office" [level=4] [ref=e717]
+          - generic [ref=e718]:
+            - paragraph [ref=e719]:
+              - generic [ref=e720]: 📍
+              - text: D-607 Ganesh Glory-11,
+              - generic [ref=e721]: Jagatpur road, off SG Highway,
+              - generic [ref=e722]: Ahmedabad - 382470
+              - generic [ref=e723]: Gujarat, India
+            - paragraph [ref=e724]:
+              - generic [ref=e725]: 📞
+              - link "+91 79 4895 5466" [ref=e726] [cursor=pointer]:
+                - /url: tel:+917948955466
+        - generic [ref=e727]:
+          - heading "Valsad Office" [level=4] [ref=e728]
+          - generic [ref=e729]:
+            - paragraph [ref=e730]:
+              - generic [ref=e731]: 📍
+              - text: 506, 5th floor, Millennium Empire,
+              - generic [ref=e732]: Near D-Mart, Valsad - 396001
+              - generic [ref=e733]: Gujarat, India
+            - generic [ref=e734]:
+              - paragraph [ref=e735]:
+                - generic [ref=e736]: ✉️
+                - link "info@eexperts.info" [ref=e737] [cursor=pointer]:
+                  - /url: mailto:info@eexperts.info
+              - paragraph [ref=e738]:
+                - generic [ref=e739]: ✉️
+                - link "info@ritesource.com" [ref=e740] [cursor=pointer]:
+                  - /url: mailto:info@ritesource.com
+              - paragraph [ref=e741]:
+                - generic [ref=e742]: 💬
+                - link "WhatsApp Support" [ref=e743] [cursor=pointer]:
+                  - /url: https://wa.me/917948955466
+      - generic [ref=e744]:
+        - paragraph [ref=e750]:
+          - text: © 2025
+          - generic [ref=e751]: Ritesource Infosystems LLP
+          - text: "&"
+          - generic [ref=e752]: Efficiency Experts Data Solutions LLP
+          - text: . All rights reserved.
+        - paragraph [ref=e753]: Crafted with precision • Delivering excellence since 2008
+  - generic [ref=e754]: Analytics disabled (dev mode)
+  - button "Open live chat" [ref=e756] [cursor=pointer]:
+    - img [ref=e757] [cursor=pointer]
+  - generic [ref=e761]:
+    - button "Menu" [ref=e762]:
+      - img [ref=e764]
+      - generic: Menu
+    - button "Inspect" [ref=e768]:
+      - img [ref=e770]
+      - generic: Inspect
+    - button "Audit" [ref=e772]:
+      - img [ref=e774]
+      - generic: Audit
+    - button "Settings" [ref=e777]:
+      - img [ref=e779]
+      - generic: Settings
+```

@@ -1,0 +1,432 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "Ritesource Infosystems & Efficiency Experts Data Solutions Ritesource & eExperts" [ref=e6]:
+        - /url: /
+        - generic [ref=e7]:
+          - img "Ritesource Infosystems" [ref=e9]
+          - generic [ref=e10]: "&"
+          - img "Efficiency Experts Data Solutions" [ref=e12]
+        - generic [ref=e13]:
+          - generic [ref=e14]: Ritesource
+          - generic [ref=e15]: "&"
+          - generic [ref=e16]: eExperts
+      - navigation [ref=e17]:
+        - link "Home" [ref=e18]:
+          - /url: /
+        - link "About Us" [ref=e19]:
+          - /url: /about
+        - link "Services" [ref=e20]:
+          - /url: /services
+        - link "Resources" [ref=e21]:
+          - /url: /resources
+        - link "Contact" [ref=e22]:
+          - /url: /contact
+        - button "Toggle dark mode" [ref=e23] [cursor=pointer]:
+          - img [ref=e24] [cursor=pointer]
+  - main [ref=e26]:
+    - generic [ref=e28]:
+      - heading "About Us" [level=1] [ref=e29]
+      - paragraph [ref=e30]: Two Companies, One Vision
+    - generic [ref=e33]:
+      - heading "Our Journey" [level=2] [ref=e34]
+      - generic [ref=e35]:
+        - paragraph [ref=e36]:
+          - strong [ref=e37]: Ritesource Infosystems LLP
+          - text: and
+          - strong [ref=e38]: Efficiency Experts Data Solutions LLP (eExperts)
+          - text: represent over 17 years of technology evolution and expertise from Gujarat, India. As sister companies with shared leadership, we provide specialized quality assurance and data solutions to clients from India to North America.
+        - generic [ref=e39]:
+          - heading "2008 - The Beginning" [level=3] [ref=e40]
+          - paragraph [ref=e41]: Ritesource Infosystems began as a PCB engineering services company, providing high-quality electronic manufacturing solutions to clients worldwide.
+        - generic [ref=e42]:
+          - heading "2022 - Strategic Transformation" [level=3] [ref=e43]
+          - paragraph [ref=e44]: After over a decade of success in electronics manufacturing, our PCB operations became part of one of North America's largest PCB manufacturers through a strategic acquisition. This transition allowed Ritesource to pivot completely to quality assurance services.
+        - generic [ref=e45]:
+          - heading "2023 - Expansion" [level=3] [ref=e46]
+          - paragraph [ref=e47]: Building on this transformation, we launched Efficiency Experts Data Solutions (eExperts) to address the growing demand for specialized data services, particularly in geospatial analysis and electronics data solutions.
+        - generic [ref=e48]:
+          - heading "2024 - Today" [level=3] [ref=e49]
+          - paragraph [ref=e50]: Starting with just 2 people and one client, we've grown to a 65+ member team serving multiple clients across diverse industries, maintaining our commitment to precision, adaptability, and speed.
+    - generic [ref=e52]:
+      - heading "What We Stand For" [level=2] [ref=e53]
+      - generic [ref=e54]:
+        - generic [ref=e55]:
+          - heading "Integrity In Every Interaction" [level=3] [ref=e56]
+          - paragraph [ref=e57]: We do what we say — and we say it straight. Our clients trust us because we deliver transparently, communicate clearly, and never compromise on ethics.
+        - generic [ref=e58]:
+          - heading "Ownership With Accountability" [level=3] [ref=e59]
+          - paragraph [ref=e60]: From the smallest bug to the biggest project, we take full responsibility. We don't just follow instructions — we drive results like it's our own business.
+        - generic [ref=e61]:
+          - heading "Agility With Purpose" [level=3] [ref=e62]
+          - paragraph [ref=e63]: We adapt fast, but we don't just chase trends. Every shift we make is grounded in your goals, project needs, and long-term success.
+    - generic [ref=e65]:
+      - heading "Our Offices" [level=2] [ref=e66]
+      - generic [ref=e67]:
+        - generic [ref=e68]:
+          - heading "Ahmedabad Office" [level=3] [ref=e69]
+          - generic [ref=e70]:
+            - paragraph [ref=e71]: D-607 Ganesh Glory-11,
+            - paragraph [ref=e72]: Jagatpur road, off SG Highway,
+            - paragraph [ref=e73]: Ahmedabad - 382470
+            - paragraph [ref=e74]: Gujarat, India
+        - generic [ref=e75]:
+          - heading "Valsad Office" [level=3] [ref=e76]
+          - generic [ref=e77]:
+            - paragraph [ref=e78]: 506, 5th floor,
+            - paragraph [ref=e79]: Millennium Empire,
+            - paragraph [ref=e80]: Near D-Mart, Valsad - 396001
+            - paragraph [ref=e81]: Gujarat, India
+            - paragraph [ref=e82]: Both offices are fully equipped operational centers supporting our global client base.
+    - generic [ref=e84]:
+      - generic [ref=e85]:
+        - heading "Meet Our Leadership Team" [level=2] [ref=e86]:
+          - text: Meet Our
+          - generic [ref=e87]: Leadership
+          - text: Team
+        - paragraph [ref=e88]: Experienced professionals dedicated to delivering exceptional quality assurance and data solutions across industries.
+      - generic [ref=e89]:
+        - generic [ref=e90]:
+          - generic [ref=e91]: 🏢
+          - generic [ref=e92]: 17+
+          - generic [ref=e93]: Years of Excellence
+        - generic [ref=e94]:
+          - generic [ref=e95]: 👥
+          - generic [ref=e96]: 65+
+          - generic [ref=e97]: Team Members
+        - generic [ref=e98]:
+          - generic [ref=e99]: 🤝
+          - generic [ref=e100]: 200+
+          - generic [ref=e101]: Happy Clients
+        - generic [ref=e102]:
+          - generic [ref=e103]: 🌍
+          - generic [ref=e104]: 15+
+          - generic [ref=e105]: Countries Served
+        - generic [ref=e106]:
+          - generic [ref=e107]: ⭐
+          - generic [ref=e108]: 99.5%
+          - generic [ref=e109]: Quality Score
+        - generic [ref=e110]:
+          - generic [ref=e111]: 🚀
+          - generic [ref=e112]: 24/7
+          - generic [ref=e113]: Support Available
+      - generic [ref=e114]:
+        - generic [ref=e115]:
+          - generic [ref=e116]:
+            - generic [ref=e119]: HK
+            - generic [ref=e120]: 17+ years
+          - generic [ref=e121]:
+            - heading "Hetal Khandwala" [level=3] [ref=e122]
+            - paragraph [ref=e123]: Co-Founder & CEO
+            - paragraph [ref=e124]: Ritesource & eExperts
+            - paragraph [ref=e125]: With 17+ years in quality assurance and business development, Hetal leads our strategic vision and client relationships. Expert in healthcare compliance, process optimization, and team scaling.
+            - generic [ref=e126]:
+              - heading "Expertise" [level=4] [ref=e127]
+              - generic [ref=e128]:
+                - generic [ref=e129]: Quality Assurance
+                - generic [ref=e130]: HIPAA Compliance
+                - generic [ref=e131]: Business Strategy
+                - generic [ref=e132]: "+1"
+            - generic [ref=e133]:
+              - heading "Key Achievements" [level=4] [ref=e134]
+              - list [ref=e135]:
+                - listitem [ref=e136]:
+                  - generic [ref=e137]: •
+                  - generic [ref=e138]: Built 65+ member QA team
+                - listitem [ref=e139]:
+                  - generic [ref=e140]: •
+                  - generic [ref=e141]: HIPAA compliance expert
+            - generic [ref=e142]:
+              - generic [ref=e143]: MBA, Engineering Background
+              - generic [ref=e144]:
+                - link "Hetal Khandwala LinkedIn" [ref=e145]:
+                  - /url: https://linkedin.com/in/hetalkhandwala
+                  - img [ref=e146]
+                - link "Email Hetal Khandwala" [ref=e148]:
+                  - /url: mailto:hetal@ritesource.com
+                  - img [ref=e149]
+        - generic [ref=e151]:
+          - generic [ref=e152]:
+            - generic [ref=e155]: MD
+            - generic [ref=e156]: 15+ years
+          - generic [ref=e157]:
+            - heading "Mital Desai" [level=3] [ref=e158]
+            - paragraph [ref=e159]: Co-Founder & CTO
+            - paragraph [ref=e160]: Ritesource & eExperts
+            - paragraph [ref=e161]: Technology visionary with deep expertise in geospatial systems, AI workflows, and data processing. Drives our technical innovation and advanced analytics capabilities.
+            - generic [ref=e162]:
+              - heading "Expertise" [level=4] [ref=e163]
+              - generic [ref=e164]:
+                - generic [ref=e165]: Geospatial Analysis
+                - generic [ref=e166]: AI/ML
+                - generic [ref=e167]: Data Architecture
+                - generic [ref=e168]: "+1"
+            - generic [ref=e169]:
+              - heading "Key Achievements" [level=4] [ref=e170]
+              - list [ref=e171]:
+                - listitem [ref=e172]:
+                  - generic [ref=e173]: •
+                  - generic [ref=e174]: Processed 2000+ miles of geospatial data
+                - listitem [ref=e175]:
+                  - generic [ref=e176]: •
+                  - generic [ref=e177]: AI workflow automation expert
+            - generic [ref=e178]:
+              - generic [ref=e179]: MS Computer Science, GIS Certification
+              - generic [ref=e180]:
+                - link "Mital Desai LinkedIn" [ref=e181]:
+                  - /url: https://linkedin.com/in/mitaldesai
+                  - img [ref=e182]
+                - link "Email Mital Desai" [ref=e184]:
+                  - /url: mailto:mital@eexperts.info
+                  - img [ref=e185]
+        - generic [ref=e187]:
+          - generic [ref=e188]:
+            - generic [ref=e191]: DPS
+            - generic [ref=e192]: 12+ years
+          - generic [ref=e193]:
+            - heading "Dr. Priya Sharma" [level=3] [ref=e194]
+            - paragraph [ref=e195]: VP of Healthcare Quality
+            - paragraph [ref=e196]: Ritesource
+            - paragraph [ref=e197]: Board-certified physician turned quality assurance expert. Ensures clinical accuracy and regulatory compliance across all healthcare documentation projects.
+            - generic [ref=e198]:
+              - heading "Expertise" [level=4] [ref=e199]
+              - generic [ref=e200]:
+                - generic [ref=e201]: Clinical Review
+                - generic [ref=e202]: Medical Coding
+                - generic [ref=e203]: Regulatory Compliance
+                - generic [ref=e204]: "+1"
+            - generic [ref=e205]:
+              - heading "Key Achievements" [level=4] [ref=e206]
+              - list [ref=e207]:
+                - listitem [ref=e208]:
+                  - generic [ref=e209]: •
+                  - generic [ref=e210]: 99.8% clinical accuracy rate
+                - listitem [ref=e211]:
+                  - generic [ref=e212]: •
+                  - generic [ref=e213]: Led 50+ HIPAA audits
+            - generic [ref=e214]:
+              - generic [ref=e215]: MD, Healthcare Quality Certification
+              - link "Dr. Priya Sharma LinkedIn" [ref=e217]:
+                - /url: https://linkedin.com/in/drpriyasharma
+                - img [ref=e218]
+        - generic [ref=e220]:
+          - generic [ref=e221]:
+            - generic [ref=e224]: RP
+            - generic [ref=e225]: 10+ years
+          - generic [ref=e226]:
+            - heading "Raj Patel" [level=3] [ref=e227]
+            - paragraph [ref=e228]: Director of Technology
+            - paragraph [ref=e229]: eExperts
+            - paragraph [ref=e230]: Full-stack developer and DevOps expert leading our technical delivery and automation initiatives. Specializes in scalable systems and AI integration.
+            - generic [ref=e231]:
+              - heading "Expertise" [level=4] [ref=e232]
+              - generic [ref=e233]:
+                - generic [ref=e234]: Software Development
+                - generic [ref=e235]: DevOps
+                - generic [ref=e236]: System Architecture
+                - generic [ref=e237]: "+1"
+            - generic [ref=e238]:
+              - heading "Key Achievements" [level=4] [ref=e239]
+              - list [ref=e240]:
+                - listitem [ref=e241]:
+                  - generic [ref=e242]: •
+                  - generic [ref=e243]: Built scalable automation systems
+                - listitem [ref=e244]:
+                  - generic [ref=e245]: •
+                  - generic [ref=e246]: Led 100+ software projects
+            - generic [ref=e247]:
+              - generic [ref=e248]: MS Software Engineering
+              - link "Raj Patel LinkedIn" [ref=e250]:
+                - /url: https://linkedin.com/in/rajpateltech
+                - img [ref=e251]
+        - generic [ref=e253]:
+          - generic [ref=e254]:
+            - generic [ref=e257]: SC
+            - generic [ref=e258]: 8+ years
+          - generic [ref=e259]:
+            - heading "Sarah Chen" [level=3] [ref=e260]
+            - paragraph [ref=e261]: VP of Client Success
+            - paragraph [ref=e262]: Ritesource & eExperts
+            - paragraph [ref=e263]: Client relationship expert ensuring exceptional service delivery and long-term partnerships. Manages global accounts and business development.
+            - generic [ref=e264]:
+              - heading "Expertise" [level=4] [ref=e265]
+              - generic [ref=e266]:
+                - generic [ref=e267]: Client Management
+                - generic [ref=e268]: Business Development
+                - generic [ref=e269]: Project Management
+                - generic [ref=e270]: "+1"
+            - generic [ref=e271]:
+              - heading "Key Achievements" [level=4] [ref=e272]
+              - list [ref=e273]:
+                - listitem [ref=e274]:
+                  - generic [ref=e275]: •
+                  - generic [ref=e276]: 98% client retention rate
+                - listitem [ref=e277]:
+                  - generic [ref=e278]: •
+                  - generic [ref=e279]: Expanded to 15+ countries
+            - generic [ref=e280]:
+              - generic [ref=e281]: MBA International Business
+              - link "Sarah Chen LinkedIn" [ref=e283]:
+                - /url: https://linkedin.com/in/sarahchen
+                - img [ref=e284]
+        - generic [ref=e286]:
+          - generic [ref=e287]:
+            - generic [ref=e290]: DJW
+            - generic [ref=e291]: 15+ years
+          - generic [ref=e292]:
+            - heading "Dr. James Wilson" [level=3] [ref=e293]
+            - paragraph [ref=e294]: Senior GIS Analyst
+            - paragraph [ref=e295]: eExperts
+            - paragraph [ref=e296]: Geospatial expert with PhD in Geography and 15+ years in GIS analysis. Leads complex mapping projects and spatial data processing initiatives.
+            - generic [ref=e297]:
+              - heading "Expertise" [level=4] [ref=e298]
+              - generic [ref=e299]:
+                - generic [ref=e300]: GIS Analysis
+                - generic [ref=e301]: Remote Sensing
+                - generic [ref=e302]: Spatial Modeling
+                - generic [ref=e303]: "+1"
+            - generic [ref=e304]:
+              - heading "Key Achievements" [level=4] [ref=e305]
+              - list [ref=e306]:
+                - listitem [ref=e307]:
+                  - generic [ref=e308]: •
+                  - generic [ref=e309]: 500+ miles of infrastructure mapped
+                - listitem [ref=e310]:
+                  - generic [ref=e311]: •
+                  - generic [ref=e312]: Smart city project leader
+            - generic [ref=e313]:
+              - generic [ref=e314]: PhD Geography, GIS Professional Certification
+              - link "Dr. James Wilson LinkedIn" [ref=e316]:
+                - /url: https://linkedin.com/in/drjameswilson
+                - img [ref=e317]
+      - generic [ref=e319]:
+        - generic [ref=e320]:
+          - heading "Our Culture & Values" [level=3] [ref=e321]
+          - paragraph [ref=e322]: The principles that guide everything we do
+        - generic [ref=e323]:
+          - generic [ref=e324]:
+            - generic [ref=e325]: 🎯
+            - generic [ref=e326]:
+              - heading "Excellence in Everything" [level=4] [ref=e327]
+              - paragraph [ref=e328]: We don't just meet standards—we set them. Every project reflects our commitment to exceptional quality.
+          - generic [ref=e329]:
+            - generic [ref=e330]: 📚
+            - generic [ref=e331]:
+              - heading "Continuous Learning" [level=4] [ref=e332]
+              - paragraph [ref=e333]: Technology evolves, and so do we. Our team invests in ongoing education and industry certifications.
+          - generic [ref=e334]:
+            - generic [ref=e335]: 💡
+            - generic [ref=e336]:
+              - heading "Client-First Mindset" [level=4] [ref=e337]
+              - paragraph [ref=e338]: Your success is our success. We understand your business and deliver solutions that drive real results.
+          - generic [ref=e339]:
+            - generic [ref=e340]: 🤝
+            - generic [ref=e341]:
+              - heading "Integrity & Transparency" [level=4] [ref=e342]
+              - paragraph [ref=e343]: Clear communication, honest feedback, and ethical practices in every client interaction.
+      - generic [ref=e344]:
+        - heading "Join Our Growing Team" [level=3] [ref=e345]
+        - paragraph [ref=e346]: We're always looking for talented professionals who share our passion for quality and innovation. Join us in delivering exceptional solutions to clients worldwide.
+        - generic [ref=e347]:
+          - link "Explore Careers" [ref=e348]:
+            - /url: /contact
+          - link "Send Your Resume" [ref=e349]:
+            - /url: mailto:careers@ritesource.com
+    - generic [ref=e351]:
+      - heading "Ready to Work Together?" [level=2] [ref=e352]
+      - paragraph [ref=e353]: Let's discuss how we can help transform your business
+      - link "Get In Touch" [ref=e354]:
+        - /url: /contact
+  - contentinfo [ref=e355]:
+    - generic [ref=e361]:
+      - generic [ref=e362]:
+        - generic [ref=e363]:
+          - generic [ref=e364]:
+            - img "Ritesource" [ref=e365]
+            - generic [ref=e366]: "&"
+            - img "eExperts" [ref=e367]
+          - heading "Ritesource & eExperts" [level=3] [ref=e368]:
+            - generic [ref=e369]: Ritesource
+            - generic [ref=e370]: "&"
+            - generic [ref=e371]: eExperts
+          - paragraph [ref=e372]: Sister companies delivering excellence in quality assurance and data solutions since 2008.
+        - generic [ref=e377]:
+          - heading "Quick Links" [level=4] [ref=e378]
+          - list [ref=e379]:
+            - listitem [ref=e380]:
+              - link "Home" [ref=e381]:
+                - /url: /
+            - listitem [ref=e382]:
+              - link "About Us" [ref=e383]:
+                - /url: /about
+            - listitem [ref=e384]:
+              - link "Services" [ref=e385]:
+                - /url: /services
+            - listitem [ref=e386]:
+              - link "Resources" [ref=e387]:
+                - /url: /resources
+            - listitem [ref=e388]:
+              - link "Contact" [ref=e389]:
+                - /url: /contact
+        - generic [ref=e390]:
+          - heading "Ahmedabad Office" [level=4] [ref=e391]
+          - generic [ref=e392]:
+            - paragraph [ref=e393]:
+              - generic [ref=e394]: 📍
+              - text: D-607 Ganesh Glory-11,
+              - generic [ref=e395]: Jagatpur road, off SG Highway,
+              - generic [ref=e396]: Ahmedabad - 382470
+              - generic [ref=e397]: Gujarat, India
+            - paragraph [ref=e398]:
+              - generic [ref=e399]: 📞
+              - link "+91 79 4895 5466" [ref=e400]:
+                - /url: tel:+917948955466
+        - generic [ref=e401]:
+          - heading "Valsad Office" [level=4] [ref=e402]
+          - generic [ref=e403]:
+            - paragraph [ref=e404]:
+              - generic [ref=e405]: 📍
+              - text: 506, 5th floor, Millennium Empire,
+              - generic [ref=e406]: Near D-Mart, Valsad - 396001
+              - generic [ref=e407]: Gujarat, India
+            - generic [ref=e408]:
+              - paragraph [ref=e409]:
+                - generic [ref=e410]: ✉️
+                - link "info@eexperts.info" [ref=e411]:
+                  - /url: mailto:info@eexperts.info
+              - paragraph [ref=e412]:
+                - generic [ref=e413]: ✉️
+                - link "info@ritesource.com" [ref=e414]:
+                  - /url: mailto:info@ritesource.com
+              - paragraph [ref=e415]:
+                - generic [ref=e416]: 💬
+                - link "WhatsApp Support" [ref=e417]:
+                  - /url: https://wa.me/917948955466
+      - generic [ref=e418]:
+        - paragraph [ref=e424]:
+          - text: © 2025
+          - generic [ref=e425]: Ritesource Infosystems LLP
+          - text: "&"
+          - generic [ref=e426]: Efficiency Experts Data Solutions LLP
+          - text: . All rights reserved.
+        - paragraph [ref=e427]: Crafted with precision • Delivering excellence since 2008
+  - generic [ref=e428]: Analytics disabled (dev mode)
+  - button "Open live chat" [ref=e430] [cursor=pointer]:
+    - img [ref=e431] [cursor=pointer]
+  - generic [ref=e435]:
+    - button "Menu" [ref=e436]:
+      - img [ref=e438]
+      - generic: Menu
+    - button "Inspect" [ref=e442]:
+      - img [ref=e444]
+      - generic: Inspect
+    - button "Audit" [ref=e446]:
+      - img [ref=e448]
+      - generic: Audit
+    - button "Settings" [ref=e451]:
+      - img [ref=e453]
+      - generic: Settings
+```

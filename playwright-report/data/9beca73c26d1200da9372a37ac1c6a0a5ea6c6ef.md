@@ -1,0 +1,276 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "Ritesource Infosystems & Efficiency Experts Data Solutions" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e7] [cursor=pointer]:
+          - img "Ritesource Infosystems" [ref=e9] [cursor=pointer]
+          - generic [ref=e10] [cursor=pointer]: "&"
+          - img "Efficiency Experts Data Solutions" [ref=e12] [cursor=pointer]
+      - generic [ref=e13]:
+        - button "Toggle dark mode" [ref=e14] [cursor=pointer]:
+          - img [ref=e15] [cursor=pointer]
+        - button [ref=e17] [cursor=pointer]:
+          - img [ref=e18] [cursor=pointer]
+  - main [ref=e20]:
+    - generic [ref=e22]:
+      - heading "Our Services" [level=1] [ref=e23]
+      - paragraph [ref=e24]: Comprehensive Solutions for Modern Businesses
+    - paragraph [ref=e28]: We partner with growing businesses to deliver high-precision, high-speed support in quality assurance, geospatial analysis, electronics data, and AI-integrated workflows. Whether you're building physical infrastructure or digital products — we help you get it done right.
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - heading "Ritesource Infosystems LLP" [level=2] [ref=e32]
+        - paragraph [ref=e33]: Quality Assurance & Testing Excellence
+      - generic [ref=e34]:
+        - generic [ref=e35]:
+          - generic [ref=e36]: 🏥
+          - heading "Healthcare Documentation QA" [level=3] [ref=e37]
+          - list [ref=e38]:
+            - listitem [ref=e39]:
+              - generic [ref=e40]: •
+              - generic [ref=e41]: Medical transcription quality review
+            - listitem [ref=e42]:
+              - generic [ref=e43]: •
+              - generic [ref=e44]: Clinical documentation audit
+            - listitem [ref=e45]:
+              - generic [ref=e46]: •
+              - generic [ref=e47]: Medical coding verification
+            - listitem [ref=e48]:
+              - generic [ref=e49]: •
+              - generic [ref=e50]: Healthcare compliance checking
+            - listitem [ref=e51]:
+              - generic [ref=e52]: •
+              - generic [ref=e53]: EHR/EMR data validation
+            - listitem [ref=e54]:
+              - generic [ref=e55]: •
+              - generic [ref=e56]: HIPAA compliant processes
+        - generic [ref=e57]:
+          - generic [ref=e58]: 🧪
+          - heading "Software Testing Services" [level=3] [ref=e59]
+          - list [ref=e60]:
+            - listitem [ref=e61]:
+              - generic [ref=e62]: •
+              - generic [ref=e63]: Manual and automated testing
+            - listitem [ref=e64]:
+              - generic [ref=e65]: •
+              - generic [ref=e66]: Web and mobile application testing
+            - listitem [ref=e67]:
+              - generic [ref=e68]: •
+              - generic [ref=e69]: API and integration testing
+            - listitem [ref=e70]:
+              - generic [ref=e71]: •
+              - generic [ref=e72]: Performance and load testing
+            - listitem [ref=e73]:
+              - generic [ref=e74]: •
+              - generic [ref=e75]: Security and vulnerability testing
+            - listitem [ref=e76]:
+              - generic [ref=e77]: •
+              - generic [ref=e78]: User acceptance testing (UAT)
+    - generic [ref=e80]:
+      - generic [ref=e81]:
+        - heading "Efficiency Experts Data Solutions LLP" [level=2] [ref=e82]
+        - paragraph [ref=e83]: Data & Technology Solutions
+      - generic [ref=e84]:
+        - generic [ref=e85]:
+          - generic [ref=e86]: 🗺️
+          - heading "Geospatial Data Services" [level=3] [ref=e87]
+          - list [ref=e88]:
+            - listitem [ref=e89]:
+              - generic [ref=e90]: •
+              - generic [ref=e91]: Geographic information system (GIS) analysis
+            - listitem [ref=e92]:
+              - generic [ref=e93]: •
+              - generic [ref=e94]: Map digitization and vectorization
+            - listitem [ref=e95]:
+              - generic [ref=e96]: •
+              - generic [ref=e97]: Spatial data processing
+            - listitem [ref=e98]:
+              - generic [ref=e99]: •
+              - generic [ref=e100]: Remote sensing data analysis
+            - listitem [ref=e101]:
+              - generic [ref=e102]: •
+              - generic [ref=e103]: Location intelligence solutions
+            - listitem [ref=e104]:
+              - generic [ref=e105]: •
+              - generic [ref=e106]: 2000+ miles of data processed
+        - generic [ref=e107]:
+          - generic [ref=e108]: ⚡
+          - heading "Electronics Data Solutions" [level=3] [ref=e109]
+          - list [ref=e110]:
+            - listitem [ref=e111]:
+              - generic [ref=e112]: •
+              - generic [ref=e113]: Component specification management
+            - listitem [ref=e114]:
+              - generic [ref=e115]: •
+              - generic [ref=e116]: BOM (Bill of Materials) optimization
+            - listitem [ref=e117]:
+              - generic [ref=e118]: •
+              - generic [ref=e119]: Technical documentation
+            - listitem [ref=e120]:
+              - generic [ref=e121]: •
+              - generic [ref=e122]: CAD data processing
+            - listitem [ref=e123]:
+              - generic [ref=e124]: •
+              - generic [ref=e125]: Engineering change management
+            - listitem [ref=e126]:
+              - generic [ref=e127]: •
+              - generic [ref=e128]: 1L+ components data processed
+        - generic [ref=e129]:
+          - generic [ref=e130]: 🤖
+          - heading "AI-Driven Workflows" [level=3] [ref=e131]
+          - list [ref=e132]:
+            - listitem [ref=e133]:
+              - generic [ref=e134]: •
+              - generic [ref=e135]: Process automation solutions
+            - listitem [ref=e136]:
+              - generic [ref=e137]: •
+              - generic [ref=e138]: Data extraction and processing
+            - listitem [ref=e139]:
+              - generic [ref=e140]: •
+              - generic [ref=e141]: Intelligent document processing
+            - listitem [ref=e142]:
+              - generic [ref=e143]: •
+              - generic [ref=e144]: Predictive analytics
+            - listitem [ref=e145]:
+              - generic [ref=e146]: •
+              - generic [ref=e147]: Custom AI model integration
+            - listitem [ref=e148]:
+              - generic [ref=e149]: •
+              - generic [ref=e150]: Workflow optimization
+        - generic [ref=e151]:
+          - generic [ref=e152]: 🚀
+          - heading "Future-Ready Capabilities" [level=3] [ref=e153]
+          - list [ref=e154]:
+            - listitem [ref=e155]:
+              - generic [ref=e156]: •
+              - generic [ref=e157]: Cloud migration support
+            - listitem [ref=e158]:
+              - generic [ref=e159]: •
+              - generic [ref=e160]: DevOps integration
+            - listitem [ref=e161]:
+              - generic [ref=e162]: •
+              - generic [ref=e163]: Continuous integration/deployment
+            - listitem [ref=e164]:
+              - generic [ref=e165]: •
+              - generic [ref=e166]: Tool-agnostic approach
+            - listitem [ref=e167]:
+              - generic [ref=e168]: •
+              - generic [ref=e169]: Scalable team augmentation
+            - listitem [ref=e170]:
+              - generic [ref=e171]: •
+              - generic [ref=e172]: 24/7 support capabilities
+    - generic [ref=e174]:
+      - heading "Why Our Services Stand Out" [level=2] [ref=e175]
+      - generic [ref=e176]:
+        - generic [ref=e177]:
+          - generic [ref=e178]: ✅
+          - heading "99.5% Accuracy" [level=4] [ref=e179]
+        - generic [ref=e180]:
+          - generic [ref=e181]: 🔒
+          - heading "HIPAA Compliant" [level=4] [ref=e182]
+        - generic [ref=e183]:
+          - generic [ref=e184]: ⚡
+          - heading "Fast Turnaround" [level=4] [ref=e185]
+        - generic [ref=e186]:
+          - generic [ref=e187]: 🌍
+          - heading "Global Reach" [level=4] [ref=e188]
+    - generic [ref=e190]:
+      - heading "Ready to Get Started?" [level=2] [ref=e191]
+      - paragraph [ref=e192]: Let's discuss your specific requirements and how we can help
+      - link "Request a Quote" [ref=e193] [cursor=pointer]:
+        - /url: /contact
+  - contentinfo [ref=e194]:
+    - generic [ref=e200]:
+      - generic [ref=e201]:
+        - generic [ref=e202]:
+          - generic [ref=e203]:
+            - img "Ritesource" [ref=e204]
+            - generic [ref=e205]: "&"
+            - img "eExperts" [ref=e206]
+          - heading "Ritesource & eExperts" [level=3] [ref=e207]:
+            - generic [ref=e208]: Ritesource
+            - generic [ref=e209]: "&"
+            - generic [ref=e210]: eExperts
+          - paragraph [ref=e211]: Sister companies delivering excellence in quality assurance and data solutions since 2008.
+        - generic [ref=e216]:
+          - heading "Quick Links" [level=4] [ref=e217]
+          - list [ref=e218]:
+            - listitem [ref=e219]:
+              - link "Home" [ref=e220] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e221]:
+              - link "About Us" [ref=e222] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e223]:
+              - link "Services" [ref=e224] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e225]:
+              - link "Resources" [ref=e226] [cursor=pointer]:
+                - /url: /resources
+            - listitem [ref=e227]:
+              - link "Contact" [ref=e228] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e229]:
+          - heading "Ahmedabad Office" [level=4] [ref=e230]
+          - generic [ref=e231]:
+            - paragraph [ref=e232]:
+              - generic [ref=e233]: 📍
+              - text: D-607 Ganesh Glory-11,
+              - generic [ref=e234]: Jagatpur road, off SG Highway,
+              - generic [ref=e235]: Ahmedabad - 382470
+              - generic [ref=e236]: Gujarat, India
+            - paragraph [ref=e237]:
+              - generic [ref=e238]: 📞
+              - link "+91 79 4895 5466" [ref=e239] [cursor=pointer]:
+                - /url: tel:+917948955466
+        - generic [ref=e240]:
+          - heading "Valsad Office" [level=4] [ref=e241]
+          - generic [ref=e242]:
+            - paragraph [ref=e243]:
+              - generic [ref=e244]: 📍
+              - text: 506, 5th floor, Millennium Empire,
+              - generic [ref=e245]: Near D-Mart, Valsad - 396001
+              - generic [ref=e246]: Gujarat, India
+            - generic [ref=e247]:
+              - paragraph [ref=e248]:
+                - generic [ref=e249]: ✉️
+                - link "info@eexperts.info" [ref=e250] [cursor=pointer]:
+                  - /url: mailto:info@eexperts.info
+              - paragraph [ref=e251]:
+                - generic [ref=e252]: ✉️
+                - link "info@ritesource.com" [ref=e253] [cursor=pointer]:
+                  - /url: mailto:info@ritesource.com
+              - paragraph [ref=e254]:
+                - generic [ref=e255]: 💬
+                - link "WhatsApp Support" [ref=e256] [cursor=pointer]:
+                  - /url: https://wa.me/917948955466
+      - generic [ref=e257]:
+        - paragraph [ref=e263]:
+          - text: © 2025
+          - generic [ref=e264]: Ritesource Infosystems LLP
+          - text: "&"
+          - generic [ref=e265]: Efficiency Experts Data Solutions LLP
+          - text: . All rights reserved.
+        - paragraph [ref=e266]: Crafted with precision • Delivering excellence since 2008
+  - generic [ref=e267]: Analytics disabled (dev mode)
+  - button "Open live chat" [ref=e269] [cursor=pointer]:
+    - img [ref=e270] [cursor=pointer]
+  - generic [ref=e274]:
+    - button "Menu" [ref=e275]:
+      - img [ref=e277]
+      - generic: Menu
+    - button "Inspect" [ref=e281]:
+      - img [ref=e283]
+      - generic: Inspect
+    - button "Audit" [ref=e285]:
+      - generic [ref=e286]:
+        - img [ref=e287]
+        - img [ref=e290]
+      - generic: Audit
+    - button "Settings" [ref=e293]:
+      - img [ref=e295]
+      - generic: Settings
+```

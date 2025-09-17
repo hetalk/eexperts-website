@@ -1,0 +1,3202 @@
+{
+  "config": {
+    "configFile": "/Users/hetalkhandwala/eexperts-website/playwright.config.js",
+    "rootDir": "/Users/hetalkhandwala/eexperts-website/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 5
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/hetalkhandwala/eexperts-website/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/hetalkhandwala/eexperts-website/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/hetalkhandwala/eexperts-website/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/hetalkhandwala/eexperts-website/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/hetalkhandwala/eexperts-website/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/hetalkhandwala/eexperts-website/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/hetalkhandwala/eexperts-website/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "Mobile Chrome",
+        "name": "Mobile Chrome",
+        "testDir": "/Users/hetalkhandwala/eexperts-website/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/hetalkhandwala/eexperts-website/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "Mobile Safari",
+        "name": "Mobile Safari",
+        "testDir": "/Users/hetalkhandwala/eexperts-website/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.55.0",
+    "workers": 5,
+    "webServer": {
+      "command": "npm run dev",
+      "port": 4321,
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "comprehensive-site-test.spec.js",
+      "file": "comprehensive-site-test.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "eExperts Website Comprehensive Functional Test",
+          "file": "comprehensive-site-test.spec.js",
+          "line": 7,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Page /: Visual and Accessibility Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1233,
+                      "error": {
+                        "message": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+                        "stack": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54",
+                        "location": {
+                          "file": "eval at evaluate (:291:30), <anonymous>",
+                          "column": 11,
+                          "line": 3
+                        }
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "eval at evaluate (:291:30), <anonymous>",
+                            "column": 11,
+                            "line": 3
+                          },
+                          "message": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:26.116Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e8d21-ual-and-Accessibility-Check-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e8d21-ual-and-Accessibility-Check-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e8d21-ual-and-Accessibility-Check-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "eval at evaluate (:291:30), <anonymous>",
+                        "column": 11,
+                        "line": 3
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-001c6157380658a62327",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "Page /services: Visual and Accessibility Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 1070,
+                      "error": {
+                        "message": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+                        "stack": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54",
+                        "location": {
+                          "file": "eval at evaluate (:291:30), <anonymous>",
+                          "column": 11,
+                          "line": 3
+                        }
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "eval at evaluate (:291:30), <anonymous>",
+                            "column": 11,
+                            "line": 3
+                          },
+                          "message": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:26.130Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-03bdf-ual-and-Accessibility-Check-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-03bdf-ual-and-Accessibility-Check-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-03bdf-ual-and-Accessibility-Check-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "eval at evaluate (:291:30), <anonymous>",
+                        "column": 11,
+                        "line": 3
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-32541ca74c488a333d8a",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "Page /contact: Visual and Accessibility Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 1522,
+                      "error": {
+                        "message": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+                        "stack": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54",
+                        "location": {
+                          "file": "eval at evaluate (:291:30), <anonymous>",
+                          "column": 11,
+                          "line": 3
+                        }
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "eval at evaluate (:291:30), <anonymous>",
+                            "column": 11,
+                            "line": 3
+                          },
+                          "message": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:26.126Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-39ae4-ual-and-Accessibility-Check-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-39ae4-ual-and-Accessibility-Check-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-39ae4-ual-and-Accessibility-Check-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "eval at evaluate (:291:30), <anonymous>",
+                        "column": 11,
+                        "line": 3
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-bb53b05804e0925394e2",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "Page /about: Visual and Accessibility Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 1091,
+                      "error": {
+                        "message": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+                        "stack": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54",
+                        "location": {
+                          "file": "eval at evaluate (:291:30), <anonymous>",
+                          "column": 11,
+                          "line": 3
+                        }
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "eval at evaluate (:291:30), <anonymous>",
+                            "column": 11,
+                            "line": 3
+                          },
+                          "message": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:26.136Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1ce0b-ual-and-Accessibility-Check-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1ce0b-ual-and-Accessibility-Check-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1ce0b-ual-and-Accessibility-Check-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "eval at evaluate (:291:30), <anonymous>",
+                        "column": 11,
+                        "line": 3
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-f5b08c3995bb23d6e443",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "Header Navigation Functionality",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 4,
+                      "status": "timedOut",
+                      "duration": 30721,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 31,
+                            "line": 50
+                          },
+                          "message": "Error: locator.getAttribute: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('header nav a').nth(1)\u001b[22m\n\n\n  48 |     for (let i = 0; i < linkCount; i++) {\n  49 |       const link = navLinks.nth(i);\n> 50 |       const href = await link.getAttribute('href');\n     |                               ^\n  51 |\n  52 |       await link.click();\n  53 |       await page.waitForURL('**' + href);\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:50:31"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:26.134Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e6853-er-Navigation-Functionality-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e6853-er-Navigation-Functionality-chromium/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-1722f923e751b6d125b4",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 41,
+              "column": 3
+            },
+            {
+              "title": "Dark Mode Toggle",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 631,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Dark mode toggle should exist\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Dark mode toggle should exist\"\u001b[39m\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:65:28",
+                        "location": {
+                          "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                          "column": 28,
+                          "line": 65
+                        },
+                        "snippet": "  63 |     const darkModeToggle = await page.locator('[data-testid=\"dark-mode-toggle\"]');\n  64 |\n> 65 |     expect(darkModeToggle).toBeTruthy('Dark mode toggle should exist');\n     |                            ^\n  66 |\n  67 |     // Toggle dark mode and verify body class changes\n  68 |     await darkModeToggle.click();"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 28,
+                            "line": 65
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Dark mode toggle should exist\"\u001b[39m\n\n  63 |     const darkModeToggle = await page.locator('[data-testid=\"dark-mode-toggle\"]');\n  64 |\n> 65 |     expect(darkModeToggle).toBeTruthy('Dark mode toggle should exist');\n     |                            ^\n  66 |\n  67 |     // Toggle dark mode and verify body class changes\n  68 |     await darkModeToggle.click();\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:65:28"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:27.946Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1f02c-ional-Test-Dark-Mode-Toggle-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1f02c-ional-Test-Dark-Mode-Toggle-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1f02c-ional-Test-Dark-Mode-Toggle-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                        "column": 28,
+                        "line": 65
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-6338b37900915803e15c",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 61,
+              "column": 3
+            },
+            {
+              "title": "Contact Form Submission",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30585,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 16,
+                            "line": 82
+                          },
+                          "message": "Error: page.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[name=\"name\"]')\u001b[22m\n\n\n  80 |\n  81 |     // Fill out contact form\n> 82 |     await page.fill('input[name=\"name\"]', 'Test User');\n     |                ^\n  83 |     await page.fill('input[name=\"email\"]', 'test@example.com');\n  84 |     await page.fill('textarea[name=\"message\"]', 'Test contact form submission');\n  85 |\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:82:16"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:27.945Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-5f698-est-Contact-Form-Submission-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-5f698-est-Contact-Form-Submission-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-5f698-est-Contact-Form-Submission-chromium/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-e028fbca2bda4ae3c665",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 78,
+              "column": 3
+            },
+            {
+              "title": "Responsive Design Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 543,
+                      "error": {
+                        "message": "Error: locator.isVisible: Error: strict mode violation: locator('header') resolved to 7 elements:\n    1) <header data-astro-source-loc=\"15:102\" data-astro-source-file=\"/Users/hetalkhandwala/eexperts-website/src/components/Header.astro\" class=\"bg-white dark:bg-gray-800 shadow-lg sticky top-0 z-50 transition-colors duration-200\">…</header> aka getByRole('banner')\n    2) <header>…</header> aka getByText('4.16.19 Copy debug info')\n    3) <header>…</header> aka getByText('Featured integrationsView all')\n    4) <header>…</header> aka locator('header').filter({ hasText: 'No islands detected.' })\n    5) <header>…</header> aka locator('header').filter({ hasText: 'Audit 0' })\n    6) <header>…</header> aka locator('header').filter({ hasText: 'No accessibility or' })\n    7) <header>…</header> aka locator('header').filter({ hasText: 'Settings' })\n\nCall log:\n\u001b[2m    - checking visibility of locator('header')\u001b[22m\n",
+                        "stack": "Error: locator.isVisible: Error: strict mode violation: locator('header') resolved to 7 elements:\n    1) <header data-astro-source-loc=\"15:102\" data-astro-source-file=\"/Users/hetalkhandwala/eexperts-website/src/components/Header.astro\" class=\"bg-white dark:bg-gray-800 shadow-lg sticky top-0 z-50 transition-colors duration-200\">…</header> aka getByRole('banner')\n    2) <header>…</header> aka getByText('4.16.19 Copy debug info')\n    3) <header>…</header> aka getByText('Featured integrationsView all')\n    4) <header>…</header> aka locator('header').filter({ hasText: 'No islands detected.' })\n    5) <header>…</header> aka locator('header').filter({ hasText: 'Audit 0' })\n    6) <header>…</header> aka locator('header').filter({ hasText: 'No accessibility or' })\n    7) <header>…</header> aka locator('header').filter({ hasText: 'Settings' })\n\nCall log:\n\u001b[2m    - checking visibility of locator('header')\u001b[22m\n\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:110:27",
+                        "location": {
+                          "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                          "column": 27,
+                          "line": 110
+                        },
+                        "snippet": "  108 |       const footer = await page.locator('footer');\n  109 |\n> 110 |       expect(await header.isVisible()).toBeTruthy(`Header should be visible at ${viewport.width}px`);\n      |                           ^\n  111 |       expect(await footer.isVisible()).toBeTruthy(`Footer should be visible at ${viewport.width}px`);\n  112 |     }\n  113 |   });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 27,
+                            "line": 110
+                          },
+                          "message": "Error: locator.isVisible: Error: strict mode violation: locator('header') resolved to 7 elements:\n    1) <header data-astro-source-loc=\"15:102\" data-astro-source-file=\"/Users/hetalkhandwala/eexperts-website/src/components/Header.astro\" class=\"bg-white dark:bg-gray-800 shadow-lg sticky top-0 z-50 transition-colors duration-200\">…</header> aka getByRole('banner')\n    2) <header>…</header> aka getByText('4.16.19 Copy debug info')\n    3) <header>…</header> aka getByText('Featured integrationsView all')\n    4) <header>…</header> aka locator('header').filter({ hasText: 'No islands detected.' })\n    5) <header>…</header> aka locator('header').filter({ hasText: 'Audit 0' })\n    6) <header>…</header> aka locator('header').filter({ hasText: 'No accessibility or' })\n    7) <header>…</header> aka locator('header').filter({ hasText: 'Settings' })\n\nCall log:\n\u001b[2m    - checking visibility of locator('header')\u001b[22m\n\n\n  108 |       const footer = await page.locator('footer');\n  109 |\n> 110 |       expect(await header.isVisible()).toBeTruthy(`Header should be visible at ${viewport.width}px`);\n      |                           ^\n  111 |       expect(await footer.isVisible()).toBeTruthy(`Footer should be visible at ${viewport.width}px`);\n  112 |     }\n  113 |   });\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:110:27"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:28.013Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-d5589-est-Responsive-Design-Check-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-d5589-est-Responsive-Design-Check-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-d5589-est-Responsive-Design-Check-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                        "column": 27,
+                        "line": 110
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-a60671dd61f57cef9723",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 95,
+              "column": 3
+            },
+            {
+              "title": "Page Performance Check",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 543,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:28.478Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-6682fecfba03e1b6a051",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 116,
+              "column": 3
+            },
+            {
+              "title": "Page /: Visual and Accessibility Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 1548,
+                      "error": {
+                        "message": "Error: page.evaluate: axe is not defined\n@debugger eval code line 291 > eval:3:11\n@debugger eval code line 291 > eval:2:16\nevaluate@debugger eval code:293:16\n@debugger eval code:1:44\n",
+                        "stack": "Error: page.evaluate: axe is not defined\n@debugger eval code line 291 > eval:3:11\n@debugger eval code line 291 > eval:2:16\nevaluate@debugger eval code:293:16\n@debugger eval code:1:44\n\n    at @debugger eval code line 291 > eval:3:11\n    at @debugger eval code line 291 > eval:2:16\n    at evaluate@debugger eval code:293:16\n    at @debugger eval code:1:44\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54",
+                        "location": {
+                          "file": "@debugger eval code line 291 > eval",
+                          "column": 11,
+                          "line": 3
+                        }
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "@debugger eval code line 291 > eval",
+                            "column": 11,
+                            "line": 3
+                          },
+                          "message": "Error: page.evaluate: axe is not defined\n@debugger eval code line 291 > eval:3:11\n@debugger eval code line 291 > eval:2:16\nevaluate@debugger eval code:293:16\n@debugger eval code:1:44\n\n    at @debugger eval code line 291 > eval:3:11\n    at @debugger eval code line 291 > eval:2:16\n    at evaluate@debugger eval code:293:16\n    at @debugger eval code:1:44\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:29.074Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e8d21-ual-and-Accessibility-Check-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e8d21-ual-and-Accessibility-Check-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e8d21-ual-and-Accessibility-Check-firefox/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "@debugger eval code line 291 > eval",
+                        "column": 11,
+                        "line": 3
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-a8c03d67782cdbc573a7",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "Page /services: Visual and Accessibility Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1763,
+                      "error": {
+                        "message": "Error: page.evaluate: axe is not defined\n@debugger eval code line 291 > eval:3:11\n@debugger eval code line 291 > eval:2:16\nevaluate@debugger eval code:293:16\n@debugger eval code:1:44\n",
+                        "stack": "Error: page.evaluate: axe is not defined\n@debugger eval code line 291 > eval:3:11\n@debugger eval code line 291 > eval:2:16\nevaluate@debugger eval code:293:16\n@debugger eval code:1:44\n\n    at @debugger eval code line 291 > eval:3:11\n    at @debugger eval code line 291 > eval:2:16\n    at evaluate@debugger eval code:293:16\n    at @debugger eval code:1:44\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54",
+                        "location": {
+                          "file": "@debugger eval code line 291 > eval",
+                          "column": 11,
+                          "line": 3
+                        }
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "@debugger eval code line 291 > eval",
+                            "column": 11,
+                            "line": 3
+                          },
+                          "message": "Error: page.evaluate: axe is not defined\n@debugger eval code line 291 > eval:3:11\n@debugger eval code line 291 > eval:2:16\nevaluate@debugger eval code:293:16\n@debugger eval code:1:44\n\n    at @debugger eval code line 291 > eval:3:11\n    at @debugger eval code line 291 > eval:2:16\n    at evaluate@debugger eval code:293:16\n    at @debugger eval code:1:44\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:29.080Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-03bdf-ual-and-Accessibility-Check-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-03bdf-ual-and-Accessibility-Check-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-03bdf-ual-and-Accessibility-Check-firefox/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "@debugger eval code line 291 > eval",
+                        "column": 11,
+                        "line": 3
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-0ff5b30c466626d89c2d",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "Page /contact: Visual and Accessibility Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 1470,
+                      "error": {
+                        "message": "Error: page.evaluate: axe is not defined\n@debugger eval code line 291 > eval:3:11\n@debugger eval code line 291 > eval:2:16\nevaluate@debugger eval code:293:16\n@debugger eval code:1:44\n",
+                        "stack": "Error: page.evaluate: axe is not defined\n@debugger eval code line 291 > eval:3:11\n@debugger eval code line 291 > eval:2:16\nevaluate@debugger eval code:293:16\n@debugger eval code:1:44\n\n    at @debugger eval code line 291 > eval:3:11\n    at @debugger eval code line 291 > eval:2:16\n    at evaluate@debugger eval code:293:16\n    at @debugger eval code:1:44\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54",
+                        "location": {
+                          "file": "@debugger eval code line 291 > eval",
+                          "column": 11,
+                          "line": 3
+                        }
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "@debugger eval code line 291 > eval",
+                            "column": 11,
+                            "line": 3
+                          },
+                          "message": "Error: page.evaluate: axe is not defined\n@debugger eval code line 291 > eval:3:11\n@debugger eval code line 291 > eval:2:16\nevaluate@debugger eval code:293:16\n@debugger eval code:1:44\n\n    at @debugger eval code line 291 > eval:3:11\n    at @debugger eval code line 291 > eval:2:16\n    at evaluate@debugger eval code:293:16\n    at @debugger eval code:1:44\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:29.446Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-39ae4-ual-and-Accessibility-Check-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-39ae4-ual-and-Accessibility-Check-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-39ae4-ual-and-Accessibility-Check-firefox/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "@debugger eval code line 291 > eval",
+                        "column": 11,
+                        "line": 3
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-255abbd8b4eb1d3ff519",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "Page /about: Visual and Accessibility Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 1416,
+                      "error": {
+                        "message": "Error: page.evaluate: axe is not defined\n@debugger eval code line 291 > eval:3:11\n@debugger eval code line 291 > eval:2:16\nevaluate@debugger eval code:293:16\n@debugger eval code:1:44\n",
+                        "stack": "Error: page.evaluate: axe is not defined\n@debugger eval code line 291 > eval:3:11\n@debugger eval code line 291 > eval:2:16\nevaluate@debugger eval code:293:16\n@debugger eval code:1:44\n\n    at @debugger eval code line 291 > eval:3:11\n    at @debugger eval code line 291 > eval:2:16\n    at evaluate@debugger eval code:293:16\n    at @debugger eval code:1:44\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54",
+                        "location": {
+                          "file": "@debugger eval code line 291 > eval",
+                          "column": 11,
+                          "line": 3
+                        }
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "@debugger eval code line 291 > eval",
+                            "column": 11,
+                            "line": 3
+                          },
+                          "message": "Error: page.evaluate: axe is not defined\n@debugger eval code line 291 > eval:3:11\n@debugger eval code line 291 > eval:2:16\nevaluate@debugger eval code:293:16\n@debugger eval code:1:44\n\n    at @debugger eval code line 291 > eval:3:11\n    at @debugger eval code line 291 > eval:2:16\n    at evaluate@debugger eval code:293:16\n    at @debugger eval code:1:44\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:31.861Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1ce0b-ual-and-Accessibility-Check-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1ce0b-ual-and-Accessibility-Check-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1ce0b-ual-and-Accessibility-Check-firefox/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "@debugger eval code line 291 > eval",
+                        "column": 11,
+                        "line": 3
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-a6a0dd85c4021f617cf7",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "Header Navigation Functionality",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 2,
+                      "status": "timedOut",
+                      "duration": 30185,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 18,
+                            "line": 52
+                          },
+                          "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('header nav a').nth(5)\u001b[22m\n\u001b[2m    - locator resolved to <a href=\"/\" data-astro-source-loc=\"108:103\" class=\"block py-2 text-gray-700 dark:text-gray-300 hover:text-secondary transition\" data-astro-source-file=\"/Users/hetalkhandwala/eexperts-website/src/components/Header.astro\">Home</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    49 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\n\n  50 |       const href = await link.getAttribute('href');\n  51 |\n> 52 |       await link.click();\n     |                  ^\n  53 |       await page.waitForURL('**' + href);\n  54 |\n  55 |       expect(page.url()).toContain(href);\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:52:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:32.093Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e6853-er-Navigation-Functionality-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e6853-er-Navigation-Functionality-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e6853-er-Navigation-Functionality-firefox/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-c94af51c2bc6f44db6b3",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 41,
+              "column": 3
+            },
+            {
+              "title": "Dark Mode Toggle",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1500,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Dark mode toggle should exist\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Dark mode toggle should exist\"\u001b[39m\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:65:28",
+                        "location": {
+                          "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                          "column": 28,
+                          "line": 65
+                        },
+                        "snippet": "  63 |     const darkModeToggle = await page.locator('[data-testid=\"dark-mode-toggle\"]');\n  64 |\n> 65 |     expect(darkModeToggle).toBeTruthy('Dark mode toggle should exist');\n     |                            ^\n  66 |\n  67 |     // Toggle dark mode and verify body class changes\n  68 |     await darkModeToggle.click();"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 28,
+                            "line": 65
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Dark mode toggle should exist\"\u001b[39m\n\n  63 |     const darkModeToggle = await page.locator('[data-testid=\"dark-mode-toggle\"]');\n  64 |\n> 65 |     expect(darkModeToggle).toBeTruthy('Dark mode toggle should exist');\n     |                            ^\n  66 |\n  67 |     // Toggle dark mode and verify body class changes\n  68 |     await darkModeToggle.click();\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:65:28"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:32.743Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1f02c-ional-Test-Dark-Mode-Toggle-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1f02c-ional-Test-Dark-Mode-Toggle-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1f02c-ional-Test-Dark-Mode-Toggle-firefox/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                        "column": 28,
+                        "line": 65
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-f53389fb21c2f9faca3b",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 61,
+              "column": 3
+            },
+            {
+              "title": "Contact Form Submission",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 3,
+                      "status": "timedOut",
+                      "duration": 30147,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 16,
+                            "line": 82
+                          },
+                          "message": "Error: page.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[name=\"name\"]')\u001b[22m\n\n\n  80 |\n  81 |     // Fill out contact form\n> 82 |     await page.fill('input[name=\"name\"]', 'Test User');\n     |                ^\n  83 |     await page.fill('input[name=\"email\"]', 'test@example.com');\n  84 |     await page.fill('textarea[name=\"message\"]', 'Test contact form submission');\n  85 |\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:82:16"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:34.531Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-5f698-est-Contact-Form-Submission-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-5f698-est-Contact-Form-Submission-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-5f698-est-Contact-Form-Submission-firefox/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-8402fdf64f6ae1b3cac4",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 78,
+              "column": 3
+            },
+            {
+              "title": "Responsive Design Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1495,
+                      "error": {
+                        "message": "Error: locator.isVisible: Error: strict mode violation: locator('header') resolved to 7 elements:\n    1) <header data-astro-source-loc=\"15:102\" data-astro-source-file=\"/Users/hetalkhandwala/eexperts-website/src/components/Header.astro\" class=\"bg-white dark:bg-gray-800 shadow-lg sticky top-0 z-50 transition-colors duration-200\">…</header> aka getByRole('banner')\n    2) <header>…</header> aka getByText('4.16.19 Copy debug info')\n    3) <header>…</header> aka getByText('Featured integrationsView all')\n    4) <header>…</header> aka locator('header').filter({ hasText: 'No islands detected.' })\n    5) <header>…</header> aka locator('header').filter({ hasText: 'Audit 0' })\n    6) <header>…</header> aka locator('header').filter({ hasText: 'No accessibility or' })\n    7) <header>…</header> aka locator('header').filter({ hasText: 'Settings' })\n\nCall log:\n\u001b[2m    - checking visibility of locator('header')\u001b[22m\n",
+                        "stack": "Error: locator.isVisible: Error: strict mode violation: locator('header') resolved to 7 elements:\n    1) <header data-astro-source-loc=\"15:102\" data-astro-source-file=\"/Users/hetalkhandwala/eexperts-website/src/components/Header.astro\" class=\"bg-white dark:bg-gray-800 shadow-lg sticky top-0 z-50 transition-colors duration-200\">…</header> aka getByRole('banner')\n    2) <header>…</header> aka getByText('4.16.19 Copy debug info')\n    3) <header>…</header> aka getByText('Featured integrationsView all')\n    4) <header>…</header> aka locator('header').filter({ hasText: 'No islands detected.' })\n    5) <header>…</header> aka locator('header').filter({ hasText: 'Audit 0' })\n    6) <header>…</header> aka locator('header').filter({ hasText: 'No accessibility or' })\n    7) <header>…</header> aka locator('header').filter({ hasText: 'Settings' })\n\nCall log:\n\u001b[2m    - checking visibility of locator('header')\u001b[22m\n\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:110:27",
+                        "location": {
+                          "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                          "column": 27,
+                          "line": 110
+                        },
+                        "snippet": "  108 |       const footer = await page.locator('footer');\n  109 |\n> 110 |       expect(await header.isVisible()).toBeTruthy(`Header should be visible at ${viewport.width}px`);\n      |                           ^\n  111 |       expect(await footer.isVisible()).toBeTruthy(`Footer should be visible at ${viewport.width}px`);\n  112 |     }\n  113 |   });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 27,
+                            "line": 110
+                          },
+                          "message": "Error: locator.isVisible: Error: strict mode violation: locator('header') resolved to 7 elements:\n    1) <header data-astro-source-loc=\"15:102\" data-astro-source-file=\"/Users/hetalkhandwala/eexperts-website/src/components/Header.astro\" class=\"bg-white dark:bg-gray-800 shadow-lg sticky top-0 z-50 transition-colors duration-200\">…</header> aka getByRole('banner')\n    2) <header>…</header> aka getByText('4.16.19 Copy debug info')\n    3) <header>…</header> aka getByText('Featured integrationsView all')\n    4) <header>…</header> aka locator('header').filter({ hasText: 'No islands detected.' })\n    5) <header>…</header> aka locator('header').filter({ hasText: 'Audit 0' })\n    6) <header>…</header> aka locator('header').filter({ hasText: 'No accessibility or' })\n    7) <header>…</header> aka locator('header').filter({ hasText: 'Settings' })\n\nCall log:\n\u001b[2m    - checking visibility of locator('header')\u001b[22m\n\n\n  108 |       const footer = await page.locator('footer');\n  109 |\n> 110 |       expect(await header.isVisible()).toBeTruthy(`Header should be visible at ${viewport.width}px`);\n      |                           ^\n  111 |       expect(await footer.isVisible()).toBeTruthy(`Footer should be visible at ${viewport.width}px`);\n  112 |     }\n  113 |   });\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:110:27"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:39.838Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-d5589-est-Responsive-Design-Check-firefox/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-d5589-est-Responsive-Design-Check-firefox/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-d5589-est-Responsive-Design-Check-firefox/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                        "column": 27,
+                        "line": 110
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-397dc4a9bb1b1bfd1b36",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 95,
+              "column": 3
+            },
+            {
+              "title": "Page Performance Check",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 17,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1382,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:42.280Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-f35ab81e0a478317b815",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 116,
+              "column": 3
+            },
+            {
+              "title": "Page /: Visual and Accessibility Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 18,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1499,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mBuffer\u001b[39m\u001b[2m).\u001b[22mtoMatchSnapshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\n  855 pixels (ratio 0.01 of all image pixels) are different.\n\n  Snapshot: /-page.png\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mBuffer\u001b[39m\u001b[2m).\u001b[22mtoMatchSnapshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\n  855 pixels (ratio 0.01 of all image pixels) are different.\n\n  Snapshot: /-page.png\n\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:22:46",
+                        "location": {
+                          "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                          "column": 46,
+                          "line": 22
+                        },
+                        "snippet": "  20 |\n  21 |       // Visual Regression Check\n> 22 |       expect(await browserPage.screenshot()).toMatchSnapshot(`${page}-page.png`);\n     |                                              ^\n  23 |\n  24 |       // Accessibility Testing with Axe\n  25 |       const accessibilityResults = await browserPage.evaluate(() => {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 46,
+                            "line": 22
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mBuffer\u001b[39m\u001b[2m).\u001b[22mtoMatchSnapshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\n  855 pixels (ratio 0.01 of all image pixels) are different.\n\n  Snapshot: /-page.png\n\n\n  20 |\n  21 |       // Visual Regression Check\n> 22 |       expect(await browserPage.screenshot()).toMatchSnapshot(`${page}-page.png`);\n     |                                              ^\n  23 |\n  24 |       // Accessibility Testing with Axe\n  25 |       const accessibilityResults = await browserPage.evaluate(() => {\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:22:46"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:44.576Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "--page-expected.png",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js-snapshots/--page-webkit-darwin.png"
+                        },
+                        {
+                          "name": "--page-actual.png",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e8d21-ual-and-Accessibility-Check-webkit/--page-actual.png"
+                        },
+                        {
+                          "name": "--page-diff.png",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e8d21-ual-and-Accessibility-Check-webkit/--page-diff.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e8d21-ual-and-Accessibility-Check-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e8d21-ual-and-Accessibility-Check-webkit/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e8d21-ual-and-Accessibility-Check-webkit/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                        "column": 46,
+                        "line": 22
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-6781864b3667aab5f00f",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "Page /services: Visual and Accessibility Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 19,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 853,
+                      "error": {
+                        "message": "Error: page.evaluate: ReferenceError: Can't find variable: axe",
+                        "stack": "Error: page.evaluate: ReferenceError: Can't find variable: axe\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54",
+                        "location": {
+                          "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                          "column": 54,
+                          "line": 25
+                        },
+                        "snippet": "  23 |\n  24 |       // Accessibility Testing with Axe\n> 25 |       const accessibilityResults = await browserPage.evaluate(() => {\n     |                                                      ^\n  26 |         return new Promise((resolve) => {\n  27 |           axe.run((err, results) => {\n  28 |             if (err) resolve({ violations: [] });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 54,
+                            "line": 25
+                          },
+                          "message": "Error: page.evaluate: ReferenceError: Can't find variable: axe\n\n  23 |\n  24 |       // Accessibility Testing with Axe\n> 25 |       const accessibilityResults = await browserPage.evaluate(() => {\n     |                                                      ^\n  26 |         return new Promise((resolve) => {\n  27 |           axe.run((err, results) => {\n  28 |             if (err) resolve({ violations: [] });\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:46.540Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-03bdf-ual-and-Accessibility-Check-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-03bdf-ual-and-Accessibility-Check-webkit/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-03bdf-ual-and-Accessibility-Check-webkit/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                        "column": 54,
+                        "line": 25
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-b0e9a512158b9ca0c432",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "Page /contact: Visual and Accessibility Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 20,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5856,
+                      "error": {
+                        "message": "Error: page.evaluate: ReferenceError: Can't find variable: axe",
+                        "stack": "Error: page.evaluate: ReferenceError: Can't find variable: axe\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54",
+                        "location": {
+                          "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                          "column": 54,
+                          "line": 25
+                        },
+                        "snippet": "  23 |\n  24 |       // Accessibility Testing with Axe\n> 25 |       const accessibilityResults = await browserPage.evaluate(() => {\n     |                                                      ^\n  26 |         return new Promise((resolve) => {\n  27 |           axe.run((err, results) => {\n  28 |             if (err) resolve({ violations: [] });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 54,
+                            "line": 25
+                          },
+                          "message": "Error: page.evaluate: ReferenceError: Can't find variable: axe\n\n  23 |\n  24 |       // Accessibility Testing with Axe\n> 25 |       const accessibilityResults = await browserPage.evaluate(() => {\n     |                                                      ^\n  26 |         return new Promise((resolve) => {\n  27 |           axe.run((err, results) => {\n  28 |             if (err) resolve({ violations: [] });\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:47.808Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-39ae4-ual-and-Accessibility-Check-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-39ae4-ual-and-Accessibility-Check-webkit/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-39ae4-ual-and-Accessibility-Check-webkit/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                        "column": 54,
+                        "line": 25
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-08bb0b5da6a36c99fda8",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "Page /about: Visual and Accessibility Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 21,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 849,
+                      "error": {
+                        "message": "Error: page.evaluate: ReferenceError: Can't find variable: axe",
+                        "stack": "Error: page.evaluate: ReferenceError: Can't find variable: axe\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54",
+                        "location": {
+                          "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                          "column": 54,
+                          "line": 25
+                        },
+                        "snippet": "  23 |\n  24 |       // Accessibility Testing with Axe\n> 25 |       const accessibilityResults = await browserPage.evaluate(() => {\n     |                                                      ^\n  26 |         return new Promise((resolve) => {\n  27 |           axe.run((err, results) => {\n  28 |             if (err) resolve({ violations: [] });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 54,
+                            "line": 25
+                          },
+                          "message": "Error: page.evaluate: ReferenceError: Can't find variable: axe\n\n  23 |\n  24 |       // Accessibility Testing with Axe\n> 25 |       const accessibilityResults = await browserPage.evaluate(() => {\n     |                                                      ^\n  26 |         return new Promise((resolve) => {\n  27 |           axe.run((err, results) => {\n  28 |             if (err) resolve({ violations: [] });\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:54.093Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1ce0b-ual-and-Accessibility-Check-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1ce0b-ual-and-Accessibility-Check-webkit/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1ce0b-ual-and-Accessibility-Check-webkit/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                        "column": 54,
+                        "line": 25
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-539ae74767a2c1a0fca5",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "Header Navigation Functionality",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 22,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30044,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 31,
+                            "line": 50
+                          },
+                          "message": "Error: locator.getAttribute: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('header nav a').nth(1)\u001b[22m\n\n\n  48 |     for (let i = 0; i < linkCount; i++) {\n  49 |       const link = navLinks.nth(i);\n> 50 |       const href = await link.getAttribute('href');\n     |                               ^\n  51 |\n  52 |       await link.click();\n  53 |       await page.waitForURL('**' + href);\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:50:31"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:55.358Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e6853-er-Navigation-Functionality-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e6853-er-Navigation-Functionality-webkit/video.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-fd952a9e7041d854861a",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 41,
+              "column": 3
+            },
+            {
+              "title": "Dark Mode Toggle",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 23,
+                      "parallelIndex": 4,
+                      "status": "failed",
+                      "duration": 841,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Dark mode toggle should exist\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Dark mode toggle should exist\"\u001b[39m\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:65:28",
+                        "location": {
+                          "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                          "column": 28,
+                          "line": 65
+                        },
+                        "snippet": "  63 |     const darkModeToggle = await page.locator('[data-testid=\"dark-mode-toggle\"]');\n  64 |\n> 65 |     expect(darkModeToggle).toBeTruthy('Dark mode toggle should exist');\n     |                            ^\n  66 |\n  67 |     // Toggle dark mode and verify body class changes\n  68 |     await darkModeToggle.click();"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 28,
+                            "line": 65
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Dark mode toggle should exist\"\u001b[39m\n\n  63 |     const darkModeToggle = await page.locator('[data-testid=\"dark-mode-toggle\"]');\n  64 |\n> 65 |     expect(darkModeToggle).toBeTruthy('Dark mode toggle should exist');\n     |                            ^\n  66 |\n  67 |     // Toggle dark mode and verify body class changes\n  68 |     await darkModeToggle.click();\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:65:28"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:57.440Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1f02c-ional-Test-Dark-Mode-Toggle-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1f02c-ional-Test-Dark-Mode-Toggle-webkit/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1f02c-ional-Test-Dark-Mode-Toggle-webkit/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                        "column": 28,
+                        "line": 65
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-40adab714062da36ab91",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 61,
+              "column": 3
+            },
+            {
+              "title": "Contact Form Submission",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 24,
+                      "parallelIndex": 4,
+                      "status": "timedOut",
+                      "duration": 35153,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 16,
+                            "line": 82
+                          },
+                          "message": "Error: page.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[name=\"name\"]')\u001b[22m\n\n\n  80 |\n  81 |     // Fill out contact form\n> 82 |     await page.fill('input[name=\"name\"]', 'Test User');\n     |                ^\n  83 |     await page.fill('input[name=\"email\"]', 'test@example.com');\n  84 |     await page.fill('textarea[name=\"message\"]', 'Test contact form submission');\n  85 |\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:82:16"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:58.744Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-5f698-est-Contact-Form-Submission-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-5f698-est-Contact-Form-Submission-webkit/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-5f698-est-Contact-Form-Submission-webkit/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-116972fa7e2311511386",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 78,
+              "column": 3
+            },
+            {
+              "title": "Responsive Design Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 25,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 718,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Header should be visible at 375px\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Header should be visible at 375px\"\u001b[39m\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:110:40",
+                        "location": {
+                          "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                          "column": 40,
+                          "line": 110
+                        },
+                        "snippet": "  108 |       const footer = await page.locator('footer');\n  109 |\n> 110 |       expect(await header.isVisible()).toBeTruthy(`Header should be visible at ${viewport.width}px`);\n      |                                        ^\n  111 |       expect(await footer.isVisible()).toBeTruthy(`Footer should be visible at ${viewport.width}px`);\n  112 |     }\n  113 |   });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 40,
+                            "line": 110
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Header should be visible at 375px\"\u001b[39m\n\n  108 |       const footer = await page.locator('footer');\n  109 |\n> 110 |       expect(await header.isVisible()).toBeTruthy(`Header should be visible at ${viewport.width}px`);\n      |                                        ^\n  111 |       expect(await footer.isVisible()).toBeTruthy(`Footer should be visible at ${viewport.width}px`);\n  112 |     }\n  113 |   });\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:110:40"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:16:58.977Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-d5589-est-Responsive-Design-Check-webkit/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-d5589-est-Responsive-Design-Check-webkit/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-d5589-est-Responsive-Design-Check-webkit/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                        "column": 40,
+                        "line": 110
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-9a0ee80021cad2b206b5",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 95,
+              "column": 3
+            },
+            {
+              "title": "Page Performance Check",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 26,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 792,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:17:00.146Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-a5a20f58f32cc10fe8da",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 116,
+              "column": 3
+            },
+            {
+              "title": "Page /: Visual and Accessibility Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 27,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 891,
+                      "error": {
+                        "message": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+                        "stack": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54",
+                        "location": {
+                          "file": "eval at evaluate (:291:30), <anonymous>",
+                          "column": 11,
+                          "line": 3
+                        }
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "eval at evaluate (:291:30), <anonymous>",
+                            "column": 11,
+                            "line": 3
+                          },
+                          "message": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:17:01.385Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e8d21-ual-and-Accessibility-Check-Mobile-Chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e8d21-ual-and-Accessibility-Check-Mobile-Chrome/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e8d21-ual-and-Accessibility-Check-Mobile-Chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "eval at evaluate (:291:30), <anonymous>",
+                        "column": 11,
+                        "line": 3
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-5e45024d7c10f59238b6",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "Page /services: Visual and Accessibility Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 28,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 714,
+                      "error": {
+                        "message": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+                        "stack": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54",
+                        "location": {
+                          "file": "eval at evaluate (:291:30), <anonymous>",
+                          "column": 11,
+                          "line": 3
+                        }
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "eval at evaluate (:291:30), <anonymous>",
+                            "column": 11,
+                            "line": 3
+                          },
+                          "message": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:17:02.649Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-03bdf-ual-and-Accessibility-Check-Mobile-Chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-03bdf-ual-and-Accessibility-Check-Mobile-Chrome/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-03bdf-ual-and-Accessibility-Check-Mobile-Chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "eval at evaluate (:291:30), <anonymous>",
+                        "column": 11,
+                        "line": 3
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-aaaa3d13a71f8f3200df",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "Page /contact: Visual and Accessibility Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 29,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 1061,
+                      "error": {
+                        "message": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+                        "stack": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54",
+                        "location": {
+                          "file": "eval at evaluate (:291:30), <anonymous>",
+                          "column": 11,
+                          "line": 3
+                        }
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "eval at evaluate (:291:30), <anonymous>",
+                            "column": 11,
+                            "line": 3
+                          },
+                          "message": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:17:03.415Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-39ae4-ual-and-Accessibility-Check-Mobile-Chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-39ae4-ual-and-Accessibility-Check-Mobile-Chrome/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-39ae4-ual-and-Accessibility-Check-Mobile-Chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "eval at evaluate (:291:30), <anonymous>",
+                        "column": 11,
+                        "line": 3
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-c30125b3c001a2391643",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "Page /about: Visual and Accessibility Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 30,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 722,
+                      "error": {
+                        "message": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+                        "stack": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54",
+                        "location": {
+                          "file": "eval at evaluate (:291:30), <anonymous>",
+                          "column": 11,
+                          "line": 3
+                        }
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "eval at evaluate (:291:30), <anonymous>",
+                            "column": 11,
+                            "line": 3
+                          },
+                          "message": "Error: page.evaluate: ReferenceError: axe is not defined\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at new Promise (<anonymous>)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at eval (eval at evaluate (:291:30), <anonymous>:3:11)\n    at eval (eval at evaluate (:291:30), <anonymous>:2:16)\n    at UtilityScript.evaluate (<anonymous>:293:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:17:03.798Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1ce0b-ual-and-Accessibility-Check-Mobile-Chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1ce0b-ual-and-Accessibility-Check-Mobile-Chrome/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1ce0b-ual-and-Accessibility-Check-Mobile-Chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "eval at evaluate (:291:30), <anonymous>",
+                        "column": 11,
+                        "line": 3
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-e703a3328290c938ceda",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "Header Navigation Functionality",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 31,
+                      "parallelIndex": 2,
+                      "status": "timedOut",
+                      "duration": 30606,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 18,
+                            "line": 52
+                          },
+                          "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('header nav a').first()\u001b[22m\n\u001b[2m    - locator resolved to <a href=\"/\" data-astro-source-loc=\"58:156\" class=\"hover:text-secondary transition text-secondary font-semibold\" data-astro-source-file=\"/Users/hetalkhandwala/eexperts-website/src/components/Header.astro\">Home</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    57 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n\n  50 |       const href = await link.getAttribute('href');\n  51 |\n> 52 |       await link.click();\n     |                  ^\n  53 |       await page.waitForURL('**' + href);\n  54 |\n  55 |       expect(page.url()).toContain(href);\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:52:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:17:04.871Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e6853-er-Navigation-Functionality-Mobile-Chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e6853-er-Navigation-Functionality-Mobile-Chrome/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e6853-er-Navigation-Functionality-Mobile-Chrome/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-5d807bceffd09290c9ac",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 41,
+              "column": 3
+            },
+            {
+              "title": "Dark Mode Toggle",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 32,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 654,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Dark mode toggle should exist\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Dark mode toggle should exist\"\u001b[39m\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:65:28",
+                        "location": {
+                          "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                          "column": 28,
+                          "line": 65
+                        },
+                        "snippet": "  63 |     const darkModeToggle = await page.locator('[data-testid=\"dark-mode-toggle\"]');\n  64 |\n> 65 |     expect(darkModeToggle).toBeTruthy('Dark mode toggle should exist');\n     |                            ^\n  66 |\n  67 |     // Toggle dark mode and verify body class changes\n  68 |     await darkModeToggle.click();"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 28,
+                            "line": 65
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Dark mode toggle should exist\"\u001b[39m\n\n  63 |     const darkModeToggle = await page.locator('[data-testid=\"dark-mode-toggle\"]');\n  64 |\n> 65 |     expect(darkModeToggle).toBeTruthy('Dark mode toggle should exist');\n     |                            ^\n  66 |\n  67 |     // Toggle dark mode and verify body class changes\n  68 |     await darkModeToggle.click();\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:65:28"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:17:04.908Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1f02c-ional-Test-Dark-Mode-Toggle-Mobile-Chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1f02c-ional-Test-Dark-Mode-Toggle-Mobile-Chrome/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1f02c-ional-Test-Dark-Mode-Toggle-Mobile-Chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                        "column": 28,
+                        "line": 65
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-8c5b91668d885aae0b9f",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 61,
+              "column": 3
+            },
+            {
+              "title": "Contact Form Submission",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 33,
+                      "parallelIndex": 3,
+                      "status": "timedOut",
+                      "duration": 30551,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 16,
+                            "line": 82
+                          },
+                          "message": "Error: page.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[name=\"name\"]')\u001b[22m\n\n\n  80 |\n  81 |     // Fill out contact form\n> 82 |     await page.fill('input[name=\"name\"]', 'Test User');\n     |                ^\n  83 |     await page.fill('input[name=\"email\"]', 'test@example.com');\n  84 |     await page.fill('textarea[name=\"message\"]', 'Test contact form submission');\n  85 |\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:82:16"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:17:05.797Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-5f698-est-Contact-Form-Submission-Mobile-Chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-5f698-est-Contact-Form-Submission-Mobile-Chrome/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-5f698-est-Contact-Form-Submission-Mobile-Chrome/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-5a81dfdb6e679e7e1c35",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 78,
+              "column": 3
+            },
+            {
+              "title": "Responsive Design Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 34,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 683,
+                      "error": {
+                        "message": "Error: locator.isVisible: Error: strict mode violation: locator('header') resolved to 7 elements:\n    1) <header data-astro-source-loc=\"15:102\" data-astro-source-file=\"/Users/hetalkhandwala/eexperts-website/src/components/Header.astro\" class=\"bg-white dark:bg-gray-800 shadow-lg sticky top-0 z-50 transition-colors duration-200\">…</header> aka getByRole('banner')\n    2) <header>…</header> aka getByText('4.16.19 Copy debug info')\n    3) <header>…</header> aka getByText('Featured integrationsView all')\n    4) <header>…</header> aka locator('header').filter({ hasText: 'No islands detected.' })\n    5) <header>…</header> aka locator('header').filter({ hasText: 'Audit 0' })\n    6) <header>…</header> aka locator('header').filter({ hasText: 'No accessibility or' })\n    7) <header>…</header> aka locator('header').filter({ hasText: 'Settings' })\n\nCall log:\n\u001b[2m    - checking visibility of locator('header')\u001b[22m\n",
+                        "stack": "Error: locator.isVisible: Error: strict mode violation: locator('header') resolved to 7 elements:\n    1) <header data-astro-source-loc=\"15:102\" data-astro-source-file=\"/Users/hetalkhandwala/eexperts-website/src/components/Header.astro\" class=\"bg-white dark:bg-gray-800 shadow-lg sticky top-0 z-50 transition-colors duration-200\">…</header> aka getByRole('banner')\n    2) <header>…</header> aka getByText('4.16.19 Copy debug info')\n    3) <header>…</header> aka getByText('Featured integrationsView all')\n    4) <header>…</header> aka locator('header').filter({ hasText: 'No islands detected.' })\n    5) <header>…</header> aka locator('header').filter({ hasText: 'Audit 0' })\n    6) <header>…</header> aka locator('header').filter({ hasText: 'No accessibility or' })\n    7) <header>…</header> aka locator('header').filter({ hasText: 'Settings' })\n\nCall log:\n\u001b[2m    - checking visibility of locator('header')\u001b[22m\n\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:110:27",
+                        "location": {
+                          "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                          "column": 27,
+                          "line": 110
+                        },
+                        "snippet": "  108 |       const footer = await page.locator('footer');\n  109 |\n> 110 |       expect(await header.isVisible()).toBeTruthy(`Header should be visible at ${viewport.width}px`);\n      |                           ^\n  111 |       expect(await footer.isVisible()).toBeTruthy(`Footer should be visible at ${viewport.width}px`);\n  112 |     }\n  113 |   });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 27,
+                            "line": 110
+                          },
+                          "message": "Error: locator.isVisible: Error: strict mode violation: locator('header') resolved to 7 elements:\n    1) <header data-astro-source-loc=\"15:102\" data-astro-source-file=\"/Users/hetalkhandwala/eexperts-website/src/components/Header.astro\" class=\"bg-white dark:bg-gray-800 shadow-lg sticky top-0 z-50 transition-colors duration-200\">…</header> aka getByRole('banner')\n    2) <header>…</header> aka getByText('4.16.19 Copy debug info')\n    3) <header>…</header> aka getByText('Featured integrationsView all')\n    4) <header>…</header> aka locator('header').filter({ hasText: 'No islands detected.' })\n    5) <header>…</header> aka locator('header').filter({ hasText: 'Audit 0' })\n    6) <header>…</header> aka locator('header').filter({ hasText: 'No accessibility or' })\n    7) <header>…</header> aka locator('header').filter({ hasText: 'Settings' })\n\nCall log:\n\u001b[2m    - checking visibility of locator('header')\u001b[22m\n\n\n  108 |       const footer = await page.locator('footer');\n  109 |\n> 110 |       expect(await header.isVisible()).toBeTruthy(`Header should be visible at ${viewport.width}px`);\n      |                           ^\n  111 |       expect(await footer.isVisible()).toBeTruthy(`Footer should be visible at ${viewport.width}px`);\n  112 |     }\n  113 |   });\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:110:27"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:17:05.983Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-d5589-est-Responsive-Design-Check-Mobile-Chrome/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-d5589-est-Responsive-Design-Check-Mobile-Chrome/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-d5589-est-Responsive-Design-Check-Mobile-Chrome/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                        "column": 27,
+                        "line": 110
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-3b4683b7c060ed009f2a",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 95,
+              "column": 3
+            },
+            {
+              "title": "Page Performance Check",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Chrome",
+                  "projectName": "Mobile Chrome",
+                  "results": [
+                    {
+                      "workerIndex": 35,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 634,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:17:07.037Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-126d1b0785e6c62dfb6c",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 116,
+              "column": 3
+            },
+            {
+              "title": "Page /: Visual and Accessibility Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 36,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 887,
+                      "error": {
+                        "message": "Error: page.evaluate: ReferenceError: Can't find variable: axe",
+                        "stack": "Error: page.evaluate: ReferenceError: Can't find variable: axe\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54",
+                        "location": {
+                          "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                          "column": 54,
+                          "line": 25
+                        },
+                        "snippet": "  23 |\n  24 |       // Accessibility Testing with Axe\n> 25 |       const accessibilityResults = await browserPage.evaluate(() => {\n     |                                                      ^\n  26 |         return new Promise((resolve) => {\n  27 |           axe.run((err, results) => {\n  28 |             if (err) resolve({ violations: [] });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 54,
+                            "line": 25
+                          },
+                          "message": "Error: page.evaluate: ReferenceError: Can't find variable: axe\n\n  23 |\n  24 |       // Accessibility Testing with Axe\n> 25 |       const accessibilityResults = await browserPage.evaluate(() => {\n     |                                                      ^\n  26 |         return new Promise((resolve) => {\n  27 |           axe.run((err, results) => {\n  28 |             if (err) resolve({ violations: [] });\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:17:08.041Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e8d21-ual-and-Accessibility-Check-Mobile-Safari/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e8d21-ual-and-Accessibility-Check-Mobile-Safari/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e8d21-ual-and-Accessibility-Check-Mobile-Safari/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                        "column": 54,
+                        "line": 25
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-8fd88f2b3395a6f7415c",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "Page /services: Visual and Accessibility Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 37,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 795,
+                      "error": {
+                        "message": "Error: page.evaluate: ReferenceError: Can't find variable: axe",
+                        "stack": "Error: page.evaluate: ReferenceError: Can't find variable: axe\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54",
+                        "location": {
+                          "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                          "column": 54,
+                          "line": 25
+                        },
+                        "snippet": "  23 |\n  24 |       // Accessibility Testing with Axe\n> 25 |       const accessibilityResults = await browserPage.evaluate(() => {\n     |                                                      ^\n  26 |         return new Promise((resolve) => {\n  27 |           axe.run((err, results) => {\n  28 |             if (err) resolve({ violations: [] });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 54,
+                            "line": 25
+                          },
+                          "message": "Error: page.evaluate: ReferenceError: Can't find variable: axe\n\n  23 |\n  24 |       // Accessibility Testing with Axe\n> 25 |       const accessibilityResults = await browserPage.evaluate(() => {\n     |                                                      ^\n  26 |         return new Promise((resolve) => {\n  27 |           axe.run((err, results) => {\n  28 |             if (err) resolve({ violations: [] });\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:17:09.351Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-03bdf-ual-and-Accessibility-Check-Mobile-Safari/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-03bdf-ual-and-Accessibility-Check-Mobile-Safari/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-03bdf-ual-and-Accessibility-Check-Mobile-Safari/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                        "column": 54,
+                        "line": 25
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-28836500542e8aa5f0cf",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "Page /contact: Visual and Accessibility Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 38,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 5828,
+                      "error": {
+                        "message": "Error: page.evaluate: ReferenceError: Can't find variable: axe",
+                        "stack": "Error: page.evaluate: ReferenceError: Can't find variable: axe\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54",
+                        "location": {
+                          "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                          "column": 54,
+                          "line": 25
+                        },
+                        "snippet": "  23 |\n  24 |       // Accessibility Testing with Axe\n> 25 |       const accessibilityResults = await browserPage.evaluate(() => {\n     |                                                      ^\n  26 |         return new Promise((resolve) => {\n  27 |           axe.run((err, results) => {\n  28 |             if (err) resolve({ violations: [] });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 54,
+                            "line": 25
+                          },
+                          "message": "Error: page.evaluate: ReferenceError: Can't find variable: axe\n\n  23 |\n  24 |       // Accessibility Testing with Axe\n> 25 |       const accessibilityResults = await browserPage.evaluate(() => {\n     |                                                      ^\n  26 |         return new Promise((resolve) => {\n  27 |           axe.run((err, results) => {\n  28 |             if (err) resolve({ violations: [] });\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:17:10.588Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-39ae4-ual-and-Accessibility-Check-Mobile-Safari/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-39ae4-ual-and-Accessibility-Check-Mobile-Safari/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-39ae4-ual-and-Accessibility-Check-Mobile-Safari/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                        "column": 54,
+                        "line": 25
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-0daad3aae49dd5a504d9",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "Page /about: Visual and Accessibility Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 39,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 805,
+                      "error": {
+                        "message": "Error: page.evaluate: ReferenceError: Can't find variable: axe",
+                        "stack": "Error: page.evaluate: ReferenceError: Can't find variable: axe\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54",
+                        "location": {
+                          "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                          "column": 54,
+                          "line": 25
+                        },
+                        "snippet": "  23 |\n  24 |       // Accessibility Testing with Axe\n> 25 |       const accessibilityResults = await browserPage.evaluate(() => {\n     |                                                      ^\n  26 |         return new Promise((resolve) => {\n  27 |           axe.run((err, results) => {\n  28 |             if (err) resolve({ violations: [] });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 54,
+                            "line": 25
+                          },
+                          "message": "Error: page.evaluate: ReferenceError: Can't find variable: axe\n\n  23 |\n  24 |       // Accessibility Testing with Axe\n> 25 |       const accessibilityResults = await browserPage.evaluate(() => {\n     |                                                      ^\n  26 |         return new Promise((resolve) => {\n  27 |           axe.run((err, results) => {\n  28 |             if (err) resolve({ violations: [] });\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:25:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:17:16.849Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1ce0b-ual-and-Accessibility-Check-Mobile-Safari/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1ce0b-ual-and-Accessibility-Check-Mobile-Safari/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1ce0b-ual-and-Accessibility-Check-Mobile-Safari/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                        "column": 54,
+                        "line": 25
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-40400b64546154c94592",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 18,
+              "column": 5
+            },
+            {
+              "title": "Header Navigation Functionality",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 40,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30206,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 18,
+                            "line": 52
+                          },
+                          "message": "Error: locator.click: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('header nav a').first()\u001b[22m\n\u001b[2m    - locator resolved to <a href=\"/\" data-astro-source-loc=\"58:156\" class=\"hover:text-secondary transition text-secondary font-semibold\" data-astro-source-file=\"/Users/hetalkhandwala/eexperts-website/src/components/Header.astro\">Home</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    57 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n\n  50 |       const href = await link.getAttribute('href');\n  51 |\n> 52 |       await link.click();\n     |                  ^\n  53 |       await page.waitForURL('**' + href);\n  54 |\n  55 |       expect(page.url()).toContain(href);\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:52:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:17:18.076Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e6853-er-Navigation-Functionality-Mobile-Safari/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e6853-er-Navigation-Functionality-Mobile-Safari/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-e6853-er-Navigation-Functionality-Mobile-Safari/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-0ecbe7afe6ce8b71611d",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 41,
+              "column": 3
+            },
+            {
+              "title": "Dark Mode Toggle",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 41,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 673,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Dark mode toggle should exist\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Dark mode toggle should exist\"\u001b[39m\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:65:28",
+                        "location": {
+                          "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                          "column": 28,
+                          "line": 65
+                        },
+                        "snippet": "  63 |     const darkModeToggle = await page.locator('[data-testid=\"dark-mode-toggle\"]');\n  64 |\n> 65 |     expect(darkModeToggle).toBeTruthy('Dark mode toggle should exist');\n     |                            ^\n  66 |\n  67 |     // Toggle dark mode and verify body class changes\n  68 |     await darkModeToggle.click();"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 28,
+                            "line": 65
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Dark mode toggle should exist\"\u001b[39m\n\n  63 |     const darkModeToggle = await page.locator('[data-testid=\"dark-mode-toggle\"]');\n  64 |\n> 65 |     expect(darkModeToggle).toBeTruthy('Dark mode toggle should exist');\n     |                            ^\n  66 |\n  67 |     // Toggle dark mode and verify body class changes\n  68 |     await darkModeToggle.click();\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:65:28"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:17:25.830Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1f02c-ional-Test-Dark-Mode-Toggle-Mobile-Safari/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1f02c-ional-Test-Dark-Mode-Toggle-Mobile-Safari/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-1f02c-ional-Test-Dark-Mode-Toggle-Mobile-Safari/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                        "column": 28,
+                        "line": 65
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-9ef4b20fdfd1ffd06ec4",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 61,
+              "column": 3
+            },
+            {
+              "title": "Contact Form Submission",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 42,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 35118,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 16,
+                            "line": 82
+                          },
+                          "message": "Error: page.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[name=\"name\"]')\u001b[22m\n\n\n  80 |\n  81 |     // Fill out contact form\n> 82 |     await page.fill('input[name=\"name\"]', 'Test User');\n     |                ^\n  83 |     await page.fill('input[name=\"email\"]', 'test@example.com');\n  84 |     await page.fill('textarea[name=\"message\"]', 'Test contact form submission');\n  85 |\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:82:16"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:17:26.928Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-5f698-est-Contact-Form-Submission-Mobile-Safari/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-5f698-est-Contact-Form-Submission-Mobile-Safari/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-5f698-est-Contact-Form-Submission-Mobile-Safari/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-7b0aa6bec09d28286007",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 78,
+              "column": 3
+            },
+            {
+              "title": "Responsive Design Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 43,
+                      "parallelIndex": 4,
+                      "status": "failed",
+                      "duration": 789,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Header should be visible at 375px\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Header should be visible at 375px\"\u001b[39m\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:110:40",
+                        "location": {
+                          "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                          "column": 40,
+                          "line": 110
+                        },
+                        "snippet": "  108 |       const footer = await page.locator('footer');\n  109 |\n> 110 |       expect(await header.isVisible()).toBeTruthy(`Header should be visible at ${viewport.width}px`);\n      |                                        ^\n  111 |       expect(await footer.isVisible()).toBeTruthy(`Footer should be visible at ${viewport.width}px`);\n  112 |     }\n  113 |   });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                            "column": 40,
+                            "line": 110
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\n\u001b[1mMatcher error\u001b[22m: this matcher must not have an expected argument\n\nExpected has type:  string\nExpected has value: \u001b[32m\"Header should be visible at 375px\"\u001b[39m\n\n  108 |       const footer = await page.locator('footer');\n  109 |\n> 110 |       expect(await header.isVisible()).toBeTruthy(`Header should be visible at ${viewport.width}px`);\n      |                                        ^\n  111 |       expect(await footer.isVisible()).toBeTruthy(`Footer should be visible at ${viewport.width}px`);\n  112 |     }\n  113 |   });\n    at /Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js:110:40"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:17:34.335Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-d5589-est-Responsive-Design-Check-Mobile-Safari/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-d5589-est-Responsive-Design-Check-Mobile-Safari/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/Users/hetalkhandwala/eexperts-website/test-results/comprehensive-site-test-eE-d5589-est-Responsive-Design-Check-Mobile-Safari/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/hetalkhandwala/eexperts-website/tests/comprehensive-site-test.spec.js",
+                        "column": 40,
+                        "line": 110
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-5299ee6bf1a1540830d3",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 95,
+              "column": 3
+            },
+            {
+              "title": "Page Performance Check",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "Mobile Safari",
+                  "projectName": "Mobile Safari",
+                  "results": [
+                    {
+                      "workerIndex": 44,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 672,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-17T03:17:35.575Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "07cba7c6fbd01c9b8d67-39f5e485bd8e5b523d7a",
+              "file": "comprehensive-site-test.spec.js",
+              "line": 116,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-09-17T03:16:25.576Z",
+    "duration": 96625.971,
+    "expected": 5,
+    "skipped": 0,
+    "unexpected": 40,
+    "flaky": 0
+  }
+}

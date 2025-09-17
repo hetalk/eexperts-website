@@ -1,0 +1,289 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "Ritesource Infosystems & Efficiency Experts Data Solutions" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e7] [cursor=pointer]:
+          - img "Ritesource Infosystems" [ref=e9] [cursor=pointer]
+          - generic [ref=e10] [cursor=pointer]: "&"
+          - img "Efficiency Experts Data Solutions" [ref=e12] [cursor=pointer]
+      - generic [ref=e13]:
+        - button "Toggle dark mode" [ref=e14] [cursor=pointer]:
+          - img [ref=e15] [cursor=pointer]
+        - button [ref=e17] [cursor=pointer]:
+          - img [ref=e18] [cursor=pointer]
+  - main [ref=e20]:
+    - generic [ref=e23]:
+      - heading "Contact Us" [level=1] [ref=e24]
+      - paragraph [ref=e25]: Let's discuss how we can help your business
+      - generic [ref=e28]: We're Closed - Opens at 9:00 AM
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - generic [ref=e33]: 🏢
+        - generic [ref=e34]:
+          - generic [ref=e35]: 17+
+          - generic [ref=e36]: Years in Business
+      - generic [ref=e37]:
+        - generic [ref=e38]: 👥
+        - generic [ref=e39]:
+          - generic [ref=e40]: 65+
+          - generic [ref=e41]: Team Members
+      - generic [ref=e42]:
+        - generic [ref=e43]: ✅
+        - generic [ref=e44]:
+          - generic [ref=e45]: 99.5%
+          - generic [ref=e46]: Accuracy Rate
+      - generic [ref=e47]:
+        - generic [ref=e48]: 🔒
+        - generic [ref=e49]:
+          - generic [ref=e50]: HIPAA
+          - generic [ref=e51]: Compliant
+    - generic [ref=e54]:
+      - generic [ref=e55]:
+        - generic [ref=e56]:
+          - heading "Send Us a Message" [level=2] [ref=e57]
+          - paragraph [ref=e58]: We'll respond within 24 hours
+          - generic [ref=e59]:
+            - generic [ref=e60]:
+              - generic [ref=e62]: "1"
+              - paragraph [ref=e64]: Service
+            - generic [ref=e65]:
+              - generic [ref=e67]: "2"
+              - paragraph [ref=e69]: Details
+            - generic [ref=e70]:
+              - generic [ref=e72]: "3"
+              - paragraph [ref=e73]: Contact
+        - generic [ref=e76]:
+          - generic [ref=e77]:
+            - generic [ref=e78]:
+              - text: Which service are you interested in?
+              - generic [ref=e79]: "*"
+            - generic [ref=e80]:
+              - generic [ref=e81] [cursor=pointer]:
+                - radio "Healthcare Documentation QA Medical transcription, clinical documentation" [ref=e82]
+                - generic [ref=e83] [cursor=pointer]:
+                  - generic [ref=e84] [cursor=pointer]: Healthcare Documentation QA
+                  - generic [ref=e85] [cursor=pointer]: Medical transcription, clinical documentation
+              - generic [ref=e86] [cursor=pointer]:
+                - radio "Software Testing Services Manual & automated testing, QA" [ref=e87]
+                - generic [ref=e88] [cursor=pointer]:
+                  - generic [ref=e89] [cursor=pointer]: Software Testing Services
+                  - generic [ref=e90] [cursor=pointer]: Manual & automated testing, QA
+              - generic [ref=e91] [cursor=pointer]:
+                - radio "Geospatial Data Services GIS analysis, map digitization" [ref=e92]
+                - generic [ref=e93] [cursor=pointer]:
+                  - generic [ref=e94] [cursor=pointer]: Geospatial Data Services
+                  - generic [ref=e95] [cursor=pointer]: GIS analysis, map digitization
+              - generic [ref=e96] [cursor=pointer]:
+                - radio "Electronics Data Solutions Component data, BOM optimization" [ref=e97]
+                - generic [ref=e98] [cursor=pointer]:
+                  - generic [ref=e99] [cursor=pointer]: Electronics Data Solutions
+                  - generic [ref=e100] [cursor=pointer]: Component data, BOM optimization
+              - generic [ref=e101] [cursor=pointer]:
+                - radio "AI-Driven Workflows Process automation, intelligent solutions" [ref=e102]
+                - generic [ref=e103] [cursor=pointer]:
+                  - generic [ref=e104] [cursor=pointer]: AI-Driven Workflows
+                  - generic [ref=e105] [cursor=pointer]: Process automation, intelligent solutions
+              - generic [ref=e106] [cursor=pointer]:
+                - radio "Multiple Services I need help with several services" [ref=e107]
+                - generic [ref=e108] [cursor=pointer]:
+                  - generic [ref=e109] [cursor=pointer]: Multiple Services
+                  - generic [ref=e110] [cursor=pointer]: I need help with several services
+          - generic [ref=e111]:
+            - generic [ref=e112]: Project Timeline
+            - combobox [ref=e113]:
+              - option "Select timeline" [selected]
+              - option "Immediate (Within a week)"
+              - option "Within a month"
+              - option "Within 3 months"
+              - option "Just planning"
+          - 'button "Next: Project Details →" [ref=e114] [cursor=pointer]'
+      - generic [ref=e115]:
+        - generic [ref=e116]:
+          - heading "Quick Contact Options" [level=3] [ref=e117]
+          - generic [ref=e118]:
+            - link "Chat on WhatsApp Quick Response" [ref=e119] [cursor=pointer]:
+              - /url: https://wa.me/919876543210?text=Hi,%20I'm%20interested%20in%20your%20services
+              - generic [ref=e120] [cursor=pointer]:
+                - img [ref=e121] [cursor=pointer]
+                - generic [ref=e124] [cursor=pointer]: Chat on WhatsApp
+              - generic [ref=e125] [cursor=pointer]: Quick Response
+            - button "Schedule a Call Book Time Slot" [ref=e126] [cursor=pointer]:
+              - generic [ref=e127] [cursor=pointer]:
+                - img [ref=e128] [cursor=pointer]
+                - generic [ref=e130] [cursor=pointer]: Schedule a Call
+              - generic [ref=e131] [cursor=pointer]: Book Time Slot
+            - button "Request Callback We'll Call You" [ref=e132] [cursor=pointer]:
+              - generic [ref=e133] [cursor=pointer]:
+                - img [ref=e134] [cursor=pointer]
+                - generic [ref=e136] [cursor=pointer]: Request Callback
+              - generic [ref=e137] [cursor=pointer]: We'll Call You
+        - generic [ref=e138]:
+          - heading "Our Offices" [level=3] [ref=e139]
+          - generic [ref=e140]:
+            - heading "Ahmedabad Office" [level=4] [ref=e141]
+            - generic [ref=e142]:
+              - paragraph [ref=e143]: D-607 Ganesh Glory-11
+              - paragraph [ref=e144]: Jagatpur road, off SG Highway
+              - paragraph [ref=e145]: Ahmedabad - 382470, Gujarat
+          - generic [ref=e146]:
+            - heading "Valsad Office" [level=4] [ref=e147]
+            - generic [ref=e148]:
+              - paragraph [ref=e149]: 506, 5th floor, Millennium Empire
+              - paragraph [ref=e150]: Near D-Mart
+              - paragraph [ref=e151]: Valsad - 396001, Gujarat
+          - generic [ref=e152]:
+            - heading "Business Hours (IST)" [level=4] [ref=e153]
+            - generic [ref=e154]:
+              - generic [ref=e155]:
+                - generic [ref=e156]: "Mon - Fri:"
+                - generic [ref=e157]: 9:00 AM - 6:00 PM
+              - generic [ref=e158]:
+                - generic [ref=e159]: "Saturday:"
+                - generic [ref=e160]: 9:00 AM - 1:00 PM
+              - generic [ref=e161]:
+                - generic [ref=e162]: "Sunday:"
+                - generic [ref=e163]: Closed
+        - generic [ref=e164]:
+          - heading "Email Us" [level=3] [ref=e165]
+          - generic [ref=e166]:
+            - generic [ref=e167]:
+              - generic [ref=e168]: ✉️
+              - generic [ref=e169] [cursor=pointer]:
+                - text: info
+                - generic [ref=e170] [cursor=pointer]: Click to reveal
+            - generic [ref=e171]:
+              - generic [ref=e172]: ✉️
+              - generic [ref=e173] [cursor=pointer]:
+                - text: info
+                - generic [ref=e174] [cursor=pointer]: Click to reveal
+            - paragraph [ref=e175]: Click to reveal and copy email address
+    - generic [ref=e178]:
+      - heading "Frequently Asked Questions" [level=2] [ref=e179]
+      - generic [ref=e180]:
+        - button "What services do you offer?" [ref=e182] [cursor=pointer]:
+          - generic [ref=e183] [cursor=pointer]: What services do you offer?
+          - img [ref=e184] [cursor=pointer]
+        - button "What's your typical turnaround time?" [ref=e187] [cursor=pointer]:
+          - generic [ref=e188] [cursor=pointer]: What's your typical turnaround time?
+          - img [ref=e189] [cursor=pointer]
+        - button "Do you work with international clients?" [ref=e192] [cursor=pointer]:
+          - generic [ref=e193] [cursor=pointer]: Do you work with international clients?
+          - img [ref=e194] [cursor=pointer]
+        - button "What are your data security measures?" [ref=e197] [cursor=pointer]:
+          - generic [ref=e198] [cursor=pointer]: What are your data security measures?
+          - img [ref=e199] [cursor=pointer]
+        - button "How do you ensure quality?" [ref=e202] [cursor=pointer]:
+          - generic [ref=e203] [cursor=pointer]: How do you ensure quality?
+          - img [ref=e204] [cursor=pointer]
+        - button "Can you handle large-scale projects?" [ref=e207] [cursor=pointer]:
+          - generic [ref=e208] [cursor=pointer]: Can you handle large-scale projects?
+          - img [ref=e209] [cursor=pointer]
+        - button "What industries do you specialize in?" [ref=e212] [cursor=pointer]:
+          - generic [ref=e213] [cursor=pointer]: What industries do you specialize in?
+          - img [ref=e214] [cursor=pointer]
+        - button "How do we get started?" [ref=e217] [cursor=pointer]:
+          - generic [ref=e218] [cursor=pointer]: How do we get started?
+          - img [ref=e219] [cursor=pointer]
+    - generic [ref=e223]:
+      - heading "Find Us" [level=2] [ref=e224]
+      - iframe [ref=e226]:
+        
+    - link "Chat on WhatsApp" [ref=e227] [cursor=pointer]:
+      - /url: https://wa.me/919876543210?text=Hi,%20I'm%20interested%20in%20your%20services
+      - img [ref=e228] [cursor=pointer]
+  - contentinfo [ref=e231]:
+    - generic [ref=e237]:
+      - generic [ref=e238]:
+        - generic [ref=e239]:
+          - generic [ref=e240]:
+            - img "Ritesource" [ref=e241]
+            - generic [ref=e242]: "&"
+            - img "eExperts" [ref=e243]
+          - heading "Ritesource & eExperts" [level=3] [ref=e244]:
+            - generic [ref=e245]: Ritesource
+            - generic [ref=e246]: "&"
+            - generic [ref=e247]: eExperts
+          - paragraph [ref=e248]: Sister companies delivering excellence in quality assurance and data solutions since 2008.
+        - generic [ref=e253]:
+          - heading "Quick Links" [level=4] [ref=e254]
+          - list [ref=e255]:
+            - listitem [ref=e256]:
+              - link "Home" [ref=e257] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e258]:
+              - link "About Us" [ref=e259] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e260]:
+              - link "Services" [ref=e261] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e262]:
+              - link "Resources" [ref=e263] [cursor=pointer]:
+                - /url: /resources
+            - listitem [ref=e264]:
+              - link "Contact" [ref=e265] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e266]:
+          - heading "Ahmedabad Office" [level=4] [ref=e267]
+          - generic [ref=e268]:
+            - paragraph [ref=e269]:
+              - generic [ref=e270]: 📍
+              - text: D-607 Ganesh Glory-11,
+              - generic [ref=e271]: Jagatpur road, off SG Highway,
+              - generic [ref=e272]: Ahmedabad - 382470
+              - generic [ref=e273]: Gujarat, India
+            - paragraph [ref=e274]:
+              - generic [ref=e275]: 📞
+              - link "+91 79 4895 5466" [ref=e276] [cursor=pointer]:
+                - /url: tel:+917948955466
+        - generic [ref=e277]:
+          - heading "Valsad Office" [level=4] [ref=e278]
+          - generic [ref=e279]:
+            - paragraph [ref=e280]:
+              - generic [ref=e281]: 📍
+              - text: 506, 5th floor, Millennium Empire,
+              - generic [ref=e282]: Near D-Mart, Valsad - 396001
+              - generic [ref=e283]: Gujarat, India
+            - generic [ref=e284]:
+              - paragraph [ref=e285]:
+                - generic [ref=e286]: ✉️
+                - link "info@eexperts.info" [ref=e287] [cursor=pointer]:
+                  - /url: mailto:info@eexperts.info
+              - paragraph [ref=e288]:
+                - generic [ref=e289]: ✉️
+                - link "info@ritesource.com" [ref=e290] [cursor=pointer]:
+                  - /url: mailto:info@ritesource.com
+              - paragraph [ref=e291]:
+                - generic [ref=e292]: 💬
+                - link "WhatsApp Support" [ref=e293] [cursor=pointer]:
+                  - /url: https://wa.me/917948955466
+      - generic [ref=e294]:
+        - paragraph [ref=e300]:
+          - text: © 2025
+          - generic [ref=e301]: Ritesource Infosystems LLP
+          - text: "&"
+          - generic [ref=e302]: Efficiency Experts Data Solutions LLP
+          - text: . All rights reserved.
+        - paragraph [ref=e303]: Crafted with precision • Delivering excellence since 2008
+  - generic [ref=e304]: Analytics disabled (dev mode)
+  - button "Open live chat" [ref=e306] [cursor=pointer]:
+    - img [ref=e307] [cursor=pointer]
+  - generic [ref=e311]:
+    - button "Menu" [ref=e312]:
+      - img [ref=e314]
+      - generic: Menu
+    - button "Inspect" [ref=e318]:
+      - img [ref=e320]
+      - generic: Inspect
+    - button "Audit" [ref=e322]:
+      - generic [ref=e323]:
+        - img [ref=e324]
+        - img [ref=e327]
+      - generic: Audit
+    - button "Settings" [ref=e330]:
+      - img [ref=e332]
+      - generic: Settings
+```
